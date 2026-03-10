@@ -1,0 +1,11 @@
+torch
+transformers
+sentence-transformers
+faiss-cpu
+opencv-python
+Pillow
+spacy
+serpapi
+numpy
+scikit-learn
+python-dotenv
