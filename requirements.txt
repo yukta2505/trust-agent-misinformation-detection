@@ -1,5 +1,5 @@
-torch
-transformers
+torch>=2.0.0
+transformers>=4.35.0
 sentence-transformers
 faiss-cpu
 opencv-python
@@ -9,3 +9,4 @@ serpapi
 numpy
 scikit-learn
 python-dotenv
+langgraph
