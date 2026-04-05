@@ -10,113 +10,88 @@ from openai import OpenAI
 
 from backend.config import Config
 from backend.utils import clean_text
+from backend.llm_client import get_llm_client
 
 LOG = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = """You are a Source Credibility Agent for a misinformation detection system.
 
-Your job: Evaluate the credibility of the sources in the evidence retrieved for a claim.
-You assess whether the evidence comes from trusted outlets, cross-source agreement,
-and whether the sources support or contradict the claim.
+Your job: Evaluate whether the evidence sources support or contradict the claim.
+
+IMPORTANT RULES:
+- If NO evidence was retrieved → return credibility_score: 0.55 (neutral, not suspicious)
+- Absence of evidence is NOT proof of misinformation
+- If sources are irrelevant (not related to the claim topic) → treat as no evidence (score 0.55)
+- Only give LOW score when credible sources SPECIFICALLY contradict the claim
+- If even ONE credible source (BBC, Reuters, AP, AFP, government) supports the claim → score 0.75+
 
 You must respond ONLY with valid JSON — no markdown fences, no extra text.
 
 Response schema:
 {
   "sources_evaluated": [
-    {
-      "source": "source name or domain",
-      "credibility_tier": "HIGH | MEDIUM | LOW | UNKNOWN",
-      "supports_claim": true or false or null,
-      "reason": "one-line rationale"
-    }
+    {"source": "name", "credibility_tier": "HIGH|MEDIUM|LOW|UNKNOWN",
+     "supports_claim": true, "reason": "one line"}
   ],
-  "cross_source_agreement": "AGREE | DISAGREE | MIXED | INSUFFICIENT",
-  "dominant_narrative": "what the majority of credible sources say",
+  "cross_source_agreement": "AGREE|DISAGREE|MIXED|INSUFFICIENT",
+  "dominant_narrative": "what credible sources say",
   "credibility_score": 0.0,
-  "reasoning": "overall credibility assessment summary"
+  "reasoning": "overall assessment"
 }
 
-credibility_score rules:
-- 1.0  → multiple HIGH-credibility sources all AGREE and support the claim
-- 0.7  → mostly credible sources, minor disagreement
-- 0.5  → mixed credibility, insufficient sources, or no external sources
-- 0.2  → credible sources CONTRADICT the claim
-- 0.0  → all credible sources directly debunk the claim
+credibility_score:
+- 0.8–1.0 → credible sources confirm the claim
+- 0.6–0.75 → no sources found OR sources are irrelevant (neutral)
+- 0.35–0.55 → mixed signals, some doubt
+- 0.0–0.3 → credible sources directly contradict the claim
 
-HIGH credibility: Reuters, AP, BBC, NYT, Washington Post, government sites (.gov),
-                  peer-reviewed journals, major broadcast outlets
-MEDIUM: regional news outlets, established blogs, Wikipedia
-LOW: social media posts, unknown domains, tabloids
-UNKNOWN: no identifiable source
+HIGH: BBC, Reuters, AP, AFP, NYT, Washington Post, .gov, Al Jazeera, major broadcasters
+MEDIUM: regional news, Wikipedia, established outlets
+LOW: social media, unknown blogs, tabloids
 """
 
 
 class SourceCredibilityAgent:
-    """Uses GPT-4o to assess trustworthiness of evidence sources."""
-
     def __init__(self, config: Config) -> None:
         self.config = config
-        self.client = OpenAI(api_key=config.openai_api_key)
+        # self.client = OpenAI(api_key=config.openai_api_key)
+        self.client = get_llm_client(config)
 
-    def analyse(
-        self,
-        claim: str,
-        caption: str,
-        evidence_items: List[Dict[str, Any]],
-    ) -> Dict[str, Any]:
+    def analyse(self, claim: str, caption: str,
+                evidence_items: List[Dict[str, Any]]) -> Dict[str, Any]:
         source_lines = []
         for i, e in enumerate(evidence_items[:6]):
             source = e.get("source") or e.get("url") or "unknown"
-            title = e.get("title", "")
-            snippet = e.get("snippet", "")
             source_lines.append(
-                f"[{i+1}] Source: {source}\n    Title: {title}\n    Snippet: {snippet}"
+                f"[{i+1}] Source: {source}\n    {e.get('title','')}: {e.get('snippet','')}"
             )
-        source_block = "\n".join(source_lines) or "(no external sources retrieved)"
+        source_block = "\n".join(source_lines) or "(no sources retrieved)"
 
-        user_message = f"""Evaluate source credibility for the following claim:
-
-CLAIM: {clean_text(claim)}
-
+        user_message = f"""CLAIM: {clean_text(claim)}
 IMAGE CAPTION: {clean_text(caption)}
 
-RETRIEVED EVIDENCE SOURCES:
+RETRIEVED SOURCES:
 {source_block}
 
-Assess each source's credibility tier, whether it supports/contradicts the claim,
-and compute an overall credibility score. Return the JSON response."""
+Assess credibility. No evidence = neutral (0.55), not suspicious.
+Return JSON only."""
 
         try:
             response = self.client.chat.completions.create(
-                model=self.config.openai_model,
-                max_tokens=900,
+                #model=self.config.openai_model,
+                model=self.config.active_model,
+                max_tokens=700,
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user",   "content": user_message},
                 ],
                 response_format={"type": "json_object"},
             )
-            raw = response.choices[0].message.content.strip()
-            result = json.loads(raw)
+            result = json.loads(response.choices[0].message.content.strip())
             LOG.info("Credibility Agent score: %s", result.get("credibility_score"))
             return result
-
-        except json.JSONDecodeError as exc:
-            LOG.error("Credibility Agent JSON parse error: %s", exc)
-            return {
-                "sources_evaluated": [],
-                "cross_source_agreement": "INSUFFICIENT",
-                "dominant_narrative": "Could not determine",
-                "credibility_score": 0.5,
-                "reasoning": "Parse error — defaulting to neutral score.",
-            }
         except Exception as exc:
-            LOG.error("Credibility Agent API error: %s", exc)
-            return {
-                "sources_evaluated": [],
-                "cross_source_agreement": "INSUFFICIENT",
-                "dominant_narrative": "Could not determine",
-                "credibility_score": 0.5,
-                "reasoning": f"API error: {exc}",
-            }
+            LOG.error("Credibility Agent error: %s", exc)
+            return {"sources_evaluated": [], "cross_source_agreement": "INSUFFICIENT",
+                    "dominant_narrative": "No sources available",
+                    "credibility_score": 0.55, "reasoning": f"Error: {exc}"}
