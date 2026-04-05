@@ -18,17 +18,11 @@ import logging
 import time
 from typing import Any, Dict, List
 
-from agents.aggregator_agent2 import AggregatorAgent
-from agents.credibility_agent2 import SourceCredibilityAgent
-from agents.entity_agent2 import EntityAnalysisAgent
-from agents.temporal_agent2 import TemporalReasoningAgent
+from agents.aggregator_agent import AggregatorAgent
+from agents.credibility_agent import SourceCredibilityAgent
+from agents.entity_agent import EntityAnalysisAgent
+from agents.temporal_agent import TemporalReasoningAgent
 from backend.captioning import ImageCaptioner
-
-# from agents.aggregator_agent import AggregatorAgent
-# from agents.credibility_agent import SourceCredibilityAgent
-# from agents.entity_agent import EntityAnalysisAgent
-# from agents.temporal_agent import TemporalReasoningAgent
-# from backend.captioning import ImageCaptioner
 
 from backend.config import Config
 from backend.entity_extraction import EntityExtractor
