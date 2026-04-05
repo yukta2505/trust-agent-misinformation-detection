@@ -1,0 +1,49 @@
+id,image_path,caption,ground_truth,proof_link,type,collector
+1,dataset/images/img001.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+2,dataset/images/img002.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+3,dataset/images/img003.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+4,dataset/images/img004.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+5,dataset/images/img005.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+6,dataset/images/img006.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+7,dataset/images/img007.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+8,dataset/images/img008.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+9,dataset/images/img009.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+10,dataset/images/img010.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+11,dataset/images/img011.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+12,dataset/images/img012.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
+13,dataset/images/img013.jpg,"Massive floods hit Chennai today (March 2026), city completely underwater.",OUT-OF-CONTEXT,https://www.investing.com/news/world-news/record-rains-flood-south-indian-state%3B-more-to-come-374014,time_trick,Yukta
+14,dataset/images/img014.jpg,Breaking: Notre Dame Cathedral caught fire again today in 2026.,OUT-OF-CONTEXT,https://www.bbc.com/news/world-europe-47941794,time_trick,Yukta
+15,dataset/images/img015.jpg,Huge earthquake destroys buildings in Nepal today (2026).,OUT-OF-CONTEXT,https://www.bbc.com/news/world-asia-32470731,time_trick,Yukta
+16,dataset/images/img016.jpg,India enters sudden nationwide lockdown today in April 2026.,OUT-OF-CONTEXT,https://www.reuters.com/news/picture/indias-migrants-walk-home-amid-coronavir-idINRTX7J45T/,time_trick,Yukta
+17,dataset/images/img017.jpg,"Massive explosion rocks Beirut today (2026), hundreds feared injured.",OUT-OF-CONTEXT,https://www.bbc.com/news/world-middle-east-53656220,time_trick,Yukta
+18,dataset/images/img018.jpg,Violence erupts again at US Capitol today in 2025.,OUT-OF-CONTEXT,https://www.reuters.com/news/picture/inside-the-jan-6-us-capitol-attack-idUSRTSETQAA/,time_trick,Yukta
+19,dataset/images/img019.jpg,"Heavy rains cause devastating floods in Kerala today (2026), thousands displaced.",OUT-OF-CONTEXT,https://www.reuters.com/world/india/several-feared-dead-after-landslides-indias-kerala-local-media-report-2024-07-30/,time_trick,Yukta
+20,dataset/images/img020.jpg,"Massive bushfires spread across Australia today (2026), wildlife in danger.",OUT-OF-CONTEXT,https://www.bbc.com/news/science-environment-51590080,time_trick,Yukta
+21,dataset/images/img021.jpg,Protests erupt across US cities today (2026) after police incident.,OUT-OF-CONTEXT,https://apnews.com/article/black-lives-matter-90-million-finances-8a80cad199f54c0c4b9e74283d27366f,time_trick,Yukta
+22,dataset/images/img022.jpg,"Strong earthquake hits Japan today (2026), buildings damaged and people evacuated.",OUT-OF-CONTEXT,https://www.reuters.com/article/economy/japan-quake-property-damage-could-total-35-billion-rms-idUSKCN0XI0XC/,time_trick,Yukta
+23,dataset/images/img023.jpg,"Wildfires spread rapidly in California today (2026), emergency declared.",OUT-OF-CONTEXT,https://www.bbc.com/news/live/c5y81zyp1ext?page=4,time_trick,Yukta
+24,dataset/images/img024.jpg,"Violent protests break out in Paris today (2026), police clash with crowds.",OUT-OF-CONTEXT,https://www.reuters.com/article/world/death-toll-in-french-yellow-vest-protests-rises-to-nine-idUSKCN1OJ1JU/,time_trick,Yukta
+25,dataset/images/img025.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+26,dataset/images/img026.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+27,dataset/images/img027.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+28,dataset/images/img028.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+29,dataset/images/img029.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+30,dataset/images/img030.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+31,dataset/images/img031.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+32,dataset/images/img032.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+33,dataset/images/img033.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+34,dataset/images/img034.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+35,dataset/images/img035.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+36,dataset/images/img036.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
+37,dataset/images/img037.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+38,dataset/images/img038.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+39,dataset/images/img039.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+40,dataset/images/img040.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+41,dataset/images/img041.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+42,dataset/images/img042.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+43,dataset/images/img043.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+44,dataset/images/img044.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+45,dataset/images/img045.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+46,dataset/images/img046.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+47,dataset/images/img047.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+48,dataset/images/img048.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
