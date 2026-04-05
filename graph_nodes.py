@@ -18,17 +18,25 @@ import logging
 import time
 from typing import Any, Dict, List
 
-from agents.aggregator_agent import AggregatorAgent
-from agents.credibility_agent import SourceCredibilityAgent
-from agents.entity_agent import EntityAnalysisAgent
-from agents.temporal_agent import TemporalReasoningAgent
+from agents.aggregator_agent2 import AggregatorAgent
+from agents.credibility_agent2 import SourceCredibilityAgent
+from agents.entity_agent2 import EntityAnalysisAgent
+from agents.temporal_agent2 import TemporalReasoningAgent
 from backend.captioning import ImageCaptioner
+
+# from agents.aggregator_agent import AggregatorAgent
+# from agents.credibility_agent import SourceCredibilityAgent
+# from agents.entity_agent import EntityAnalysisAgent
+# from agents.temporal_agent import TemporalReasoningAgent
+# from backend.captioning import ImageCaptioner
+
 from backend.config import Config
 from backend.entity_extraction import EntityExtractor
 from backend.evidence_retrieval import ReverseImageSearcher, WebSearcher
 from backend.metadata_extractor import MetadataExtractor
 from historical_index import HistoricalEvidenceIndex
 from graph_state import AgentState
+from backend.evidence_filter import filter_relevant_evidence
 
 LOG = logging.getLogger(__name__)
 
@@ -82,6 +90,7 @@ def make_nodes(config: Config) -> Dict[str, Any]:
         return {"entities": entities, "metadata": metadata}
 
     # ── Node 3: Retrieve evidence (reverse image + web) ──────────────────────
+
     def node_retrieve_evidence(state: AgentState) -> Dict[str, Any]:
         LOG.info("[node] Retrieving evidence")
         errors: List[str] = list(state.get("errors") or [])
@@ -113,7 +122,6 @@ def make_nodes(config: Config) -> Dict[str, Any]:
             LOG.warning(msg)
             errors.append(msg)
 
-
         # Historical semantic search (only if index is built)
         try:
             combined = f"{state.get('claim', '')} {state.get('caption', '')}"
@@ -125,8 +133,76 @@ def make_nodes(config: Config) -> Dict[str, Any]:
             msg = f"Historical index search failed: {exc}"
             LOG.warning(msg)
             errors.append(msg)
-        LOG.info("[node] Total evidence: %d items", len(evidence))
+
+        LOG.info("[node] Total evidence before filtering: %d items", len(evidence))
+
+        # ── Filter irrelevant evidence ─────────────────────────────────────────
+        # IMPORTANT: this must be BEFORE the return statement
+        try:
+            from backend.evidence_filter import filter_relevant_evidence
+            evidence = filter_relevant_evidence(
+                evidence=evidence,
+                claim=state.get("claim", ""),
+                caption=state.get("caption", ""),
+                min_overlap=1,
+            )
+            LOG.info("[node] After filtering: %d relevant items", len(evidence))
+        except Exception as exc:
+            LOG.warning("Evidence filtering failed: %s", exc)
+
+        # ── Return filtered evidence ───────────────────────────────────────────
         return {"evidence": evidence, "errors": errors}
+    
+
+    # def node_retrieve_evidence(state: AgentState) -> Dict[str, Any]:
+    #     LOG.info("[node] Retrieving evidence")
+    #     errors: List[str] = list(state.get("errors") or [])
+    #     evidence: List[Dict[str, Any]] = []
+    #     top_k = state.get("top_k", 5)
+
+    #     try:
+    #         rev = rev_searcher.search(
+    #             image_path=state["image_path"], top_k=top_k
+    #         )
+    #         evidence.extend(rev)
+    #         LOG.info("[node] Reverse image: %d results", len(rev))
+    #     except Exception as exc:
+    #         msg = f"Reverse image search failed: {exc}"
+    #         LOG.warning(msg)
+    #         errors.append(msg)
+
+    #     try:
+    #         web = web_searcher.search(
+    #             claim=state.get("claim", ""),
+    #             entities=state.get("entities", {}),
+    #             caption=state.get("caption", ""),
+    #             top_k=top_k,
+    #         )
+    #         evidence.extend(web)
+    #         LOG.info("[node] Web search: %d results", len(web))
+    #     except Exception as exc:
+    #         msg = f"Web search failed: {exc}"
+    #         LOG.warning(msg)
+    #         errors.append(msg)
+
+
+    #     # Historical semantic search (only if index is built)
+    #     try:
+    #         combined = f"{state.get('claim', '')} {state.get('caption', '')}"
+    #         hist = historical_index.search(query=combined, top_k=top_k)
+    #         evidence.extend(hist)
+    #         if hist:
+    #             LOG.info("[node] Historical index: %d results", len(hist))
+    #     except Exception as exc:
+    #         msg = f"Historical index search failed: {exc}"
+    #         LOG.warning(msg)
+    #         errors.append(msg)
+    #     LOG.info("[node] Total evidence: %d items", len(evidence))
+ 
+    #     return {"evidence": evidence, "errors": errors}
+
+        
+
 
     # ── Node 4a: Entity Analysis Agent (Claude API) ───────────────────────────
     def node_entity_agent(state: AgentState) -> Dict[str, Any]:
@@ -148,7 +224,7 @@ def make_nodes(config: Config) -> Dict[str, Any]:
                 "errors": errors,
             }
 
-    # ── Node 4b: Temporal Reasoning Agent (Claude API) ────────────────────────
+    # ── Node 4b: Temporal Reasoning Agent (OpenAI API) ────────────────────────
     def node_temporal_agent(state: AgentState) -> Dict[str, Any]:
         LOG.info("[node] Temporal Reasoning Agent")
         errors: List[str] = list(state.get("errors") or [])
