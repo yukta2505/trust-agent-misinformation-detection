@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>YourProps</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- <link rel="icon" type="image/x-icon" href="./public/favicon.png" /> -->
+    <link rel="icon" type="image/x-icon" href="https://yourprops.com/assets/logo-C-ghXqjI.svg" />
+    <link rel="icon" type="image/x-icon" href="https://yourprops.com/assets/logo-C-ghXqjI.svg" />
+    <script type="module" crossorigin src="/assets/index-CKuCxjBL.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Bd9cY99g.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

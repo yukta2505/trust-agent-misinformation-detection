@@ -1,0 +1,1701 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="canonical" href="https://ptex.au/">
+ <title>Pathology Tests Explained   </title>
+        <meta name="title" content="">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+	    <!-- CSS only -->
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+	        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	    <!-- Stylesheets -->
+	    <link href="css/style.css?vr=1.0.3" rel="stylesheet">
+	    <link href="css/responsive.css" rel="stylesheet">
+	    <link href="/choose/popup.css" rel="stylesheet">
+
+	    <!-- <link type="text/css" rel="stylesheet" id="jssDefault" href="css/custom/theme-2.css" /> -->
+	    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+                  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZXGKCM58W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZXGKCM58W');
+</script>
+
+	</head>
+    <!-- page wrapper -->
+
+<body class="page-wrapper">
+
+<header class="main-header">
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-md-between py-3">
+            <a href="/"
+                class="logo-main d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <img src="./images/logo/logo.png" alt="logo">
+            </a>
+
+
+
+            <!--<div class="nav youtube-box col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <p>Answering your questions about COVID-19 Testing</p>
+
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="play-icon">
+                            <img src="./images/logo/ytv.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 col-xs-12">
+                        <p>Watch Now</p>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="col-md-1 text-end">
+                <button class="toggle-btn" onclick="openRightMenu()">&#9776;</button>
+                <div class="toggle-menu" style="display:none;right:0;" id="rightMenu">
+                    <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close
+                        &times;</button>
+                    <a href="/" class="w3-bar-item w3-button">Home</a>
+                    <a href="ptests_index.php" class="w3-bar-item w3-button">Pathology Tests</a>
+                
+                    <!-- <a href="pages.php?page=Contact Us" class="w3-bar-item w3-button">Contact Us</a> -->
+                      <a href="patient-information-sheets.php" class="w3-bar-item w3-button">Patient Information Sheets</a>
+                    <a href="video.php" class="w3-bar-item w3-button">Video Library</a>
+                    <a href="pages.php?page=About Us" class="w3-bar-item w3-button">About Us</a>
+                   <!--  <a href="pages.php" class="w3-bar-item w3-button">Faqs</a> -->
+                  <!--   <a href="#" class="w3-bar-item w3-button">Links</a> -->
+
+                    <div class="input-box">
+                        <form action="search_via_keyword.php" method="get" data-gtm-form-interact-id="0">
+                            <input type="search" placeholder="Search by keyword" name="keyword_search" data-gtm-form-interact-field-id="0" value="">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+    <!-- end header upper -->
+
+
+
+
+
+    <!-- header lower -->
+    <div class="header-lower">
+
+        <div class="container">
+            <div class="row">
+
+
+                 <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="menu-bar">
+                    <ul class="secondary-navigation">
+                        <li class="current"><a href="/">Home</a>
+                        </li>
+                        <li><a href="ptests_index.php">Pathology Tests</a>
+                        </li>
+                      
+                        <!--  <li><a href="pages.php?page=Contact Us">Contact Us</a>
+                        </li> -->
+                       <!--  <li><a href="search.php">Search</a>
+                        </li> -->
+
+                       <li><a href="patient-information-sheets.php">Patient Information Sheets</a>
+                        </li>
+
+                        <li><a href="video.php">Video Library</a>
+                      <li><a href="pages.php?page=About Us">About Us</a>
+                        </li>
+                       <!--  </li>
+                        <li><a href="pages.php?page=FAQ">FAQs</a>
+                        </li> -->
+
+                       <!--  <li class="ml-auto"><a href="pages.php?page=Links">Links</a> -->
+                        </li>
+
+                       
+
+                    </ul>
+                </div>
+
+
+               </div>
+               <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="input-box">
+                        <form action="search_via_keyword.php" method="get" data-gtm-form-interact-id="0">
+                            <input type="search" placeholder="Search by keyword" name="keyword_search" data-gtm-form-interact-field-id="0" value="">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+               </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end header lower -->
+
+    <!--sticky header-->
+    <div class="sticky-header">
+        <div class="container clearfix">
+            <div class="row">
+                <!-- <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="logo-box">
+                        <a href="index.html"></a>
+                    </div>
+                </div> -->
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="menu-bar">
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                    data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current"><a href="index.html">Home</a>
+                                    </li>
+                                    <li><a href="#">About Us</a>
+                                    </li>
+                                     <li><a href="#">Contact Us</a>
+                                    </li>
+                                    <li><a href="#">Search</a>
+                                    </li>
+
+                                    </li>
+                                    <li><a href="#">Video Library</a>
+
+                                   <!--  </li>
+                                    <li><a href="#">Faqs</a>
+                                    </li> -->
+
+                                   <!--  <li><a href="#">Links</a>
+                                    </li> -->
+
+                                   
+
+                                </ul>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end sticky header -->
+
+</header>
+<!-- end main header area -->
+<div class="container">
+
+
+
+
+
+
+<!-- main slider -->
+<section class="example main-slider">
+
+    <div class="container1">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel home-banner-slider">
+            
+                <div>
+                    <a href="/ai-assistant/">
+                        <img alt="" class="rev-slidebg" src="content/banners/ptex-ai-assistant.jpg">
+                    </a>
+
+
+                    <div class="main-slider-caption">
+                        <!-- <p>//$row['Title']</p> -->
+                        <!-- <a href="// $row['URL']; " class="btn btn-primary">CLICK TO KNOW MORE</a> -->
+                    </div>
+                </div>
+            
+                <div>
+                    <a href="how-can-we-help-you.php">
+                        <img alt="" class="rev-slidebg" src="content/banners/Home page banner 1.jpg">
+                    </a>
+
+
+                    <div class="main-slider-caption">
+                        <!-- <p>//$row['Title']</p> -->
+                        <!-- <a href="// $row['URL']; " class="btn btn-primary">CLICK TO KNOW MORE</a> -->
+                    </div>
+                </div>
+            
+                <div>
+                    <a href="https://pathologytestsexplained.org.au/patient-information-sheets.php">
+                        <img alt="" class="rev-slidebg" src="content/banners/2024-new-info-sheets2.jpg">
+                    </a>
+
+
+                    <div class="main-slider-caption">
+                        <!-- <p>//$row['Title']</p> -->
+                        <!-- <a href="// $row['URL']; " class="btn btn-primary">CLICK TO KNOW MORE</a> -->
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+
+</section>
+
+<section id="test-below text-center" class="main-organ main-organ-variant">
+    <div class="container">
+        <div class="row">
+            <!-- Search Another Test Dropdown -->
+
+            <!-- Find a Test Input -->
+            <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 footer-column">
+                <div class="subscribe-widget footer-widget" style="width:100%;">
+                    <div class="input-box dropdown" style="width:100%;">
+                        <form id="searchForm" action="ptests.php" method="get">
+                             <h2>Select a Pathology Test</h2>
+                            <div class="form-group">
+                                <select name="q" class="form-control" id="searchBySelect" style="padding:10px !important; border-radius:10px; background:#f2f2f7;">
+                                    <option selected disabled>All available tests</option>
+                                                                            <option value="17-Hydroxyprogesterone">17-Hydroxyprogesterone</option>
+                                                                            <option value="5HIAA (5-Hydroxyindoleacetic acid)">5HIAA (5-Hydroxyindoleacetic acid)</option>
+                                                                            <option value="ABG">ABG</option>
+                                                                            <option value="ACE">ACE</option>
+                                                                            <option value="Acetylcholine receptor antibody">Acetylcholine receptor antibody</option>
+                                                                            <option value="Acid fast bacilli culture">Acid fast bacilli culture</option>
+                                                                            <option value="ACTH (Adrenocorticotropic hormone)">ACTH (Adrenocorticotropic hormone)</option>
+                                                                            <option value="Activated partial thromboplastin time">Activated partial thromboplastin time</option>
+                                                                            <option value="AFP (Alpha fetoprotein)">AFP (Alpha fetoprotein)</option>
+                                                                            <option value="Alanine Aminotransferase (ALT)">Alanine Aminotransferase (ALT)</option>
+                                                                            <option value="Albumin">Albumin</option>
+                                                                            <option value="Albumin-creatinine ratio">Albumin-creatinine ratio</option>
+                                                                            <option value="Alcoholism">Alcoholism</option>
+                                                                            <option value="Aldosterone and renin">Aldosterone and renin</option>
+                                                                            <option value="ALK Mutation (Gene Rearrangement)">ALK Mutation (Gene Rearrangement)</option>
+                                                                            <option value="Alkaline phosphatase (ALP)">Alkaline phosphatase (ALP)</option>
+                                                                            <option value="Allergies">Allergies</option>
+                                                                            <option value="ALP">ALP</option>
+                                                                            <option value="Alpha-1-antitrypsin (A1AT)">Alpha-1-antitrypsin (A1AT)</option>
+                                                                            <option value="Alpha-gal antibody">Alpha-gal antibody</option>
+                                                                            <option value="ALT">ALT</option>
+                                                                            <option value="Alzheimer's disease">Alzheimer's disease</option>
+                                                                            <option value="AMH">AMH</option>
+                                                                            <option value="Amino acids">Amino acids</option>
+                                                                            <option value="Ammonia">Ammonia</option>
+                                                                            <option value="Amylase">Amylase</option>
+                                                                            <option value="ANA">ANA</option>
+                                                                            <option value="Anaemia">Anaemia</option>
+                                                                            <option value="Angina">Angina</option>
+                                                                            <option value="Angiotensin converting enzyme (ACE)">Angiotensin converting enzyme (ACE)</option>
+                                                                            <option value="Ankylosing spondylitis">Ankylosing spondylitis</option>
+                                                                            <option value="Antenatal group and screen">Antenatal group and screen</option>
+                                                                            <option value="Anthrax">Anthrax</option>
+                                                                            <option value="Anti Factor Xa">Anti Factor Xa</option>
+                                                                            <option value="Anti-Mullerian Hormone (AMH)">Anti-Mullerian Hormone (AMH)</option>
+                                                                            <option value="Antineutrophil cytoplasmic antibodies (ANCA)">Antineutrophil cytoplasmic antibodies (ANCA)</option>
+                                                                            <option value="Antinuclear antibodies">Antinuclear antibodies</option>
+                                                                            <option value="Antiphospholipid antibodies">Antiphospholipid antibodies</option>
+                                                                            <option value="Antistreptolysin O titre">Antistreptolysin O titre</option>
+                                                                            <option value="Antithrombin">Antithrombin</option>
+                                                                            <option value="Apo A-1">Apo A-1</option>
+                                                                            <option value="Apo-B">Apo-B</option>
+                                                                            <option value="Apolipoprotein A-1">Apolipoprotein A-1</option>
+                                                                            <option value="Apolipoprotein B-100">Apolipoprotein B-100</option>
+                                                                            <option value="Apolipoprotein E genotyping">Apolipoprotein E genotyping</option>
+                                                                            <option value="APTT">APTT</option>
+                                                                            <option value="Arbovirus testing">Arbovirus testing</option>
+                                                                            <option value="Arthritis">Arthritis</option>
+                                                                            <option value="Aspartate Aminotransferase (AST)">Aspartate Aminotransferase (AST)</option>
+                                                                            <option value="AST">AST</option>
+                                                                            <option value="Asthma">Asthma</option>
+                                                                            <option value="B-cell immunoglobulin gene rearrangement">B-cell immunoglobulin gene rearrangement</option>
+                                                                            <option value="Bacterial wound culture">Bacterial wound culture</option>
+                                                                            <option value="Barmah Forest virus">Barmah Forest virus</option>
+                                                                            <option value="BCR-ABL1">BCR-ABL1</option>
+                                                                            <option value="Benign prostatic hypertrophy">Benign prostatic hypertrophy</option>
+                                                                            <option value="Beta HCG quantitation">Beta HCG quantitation</option>
+                                                                            <option value="Beta-2 glycoprotein 1 antibodies">Beta-2 glycoprotein 1 antibodies</option>
+                                                                            <option value="Beta-2-microglobulin">Beta-2-microglobulin</option>
+                                                                            <option value="Beta-2-transferrin">Beta-2-transferrin</option>
+                                                                            <option value="Bicarbonate">Bicarbonate</option>
+                                                                            <option value="Bilirubin">Bilirubin</option>
+                                                                            <option value="Biochemical genetic testing">Biochemical genetic testing</option>
+                                                                            <option value="Blood culture">Blood culture</option>
+                                                                            <option value="Blood film">Blood film</option>
+                                                                            <option value="Blood gases (arterial)">Blood gases (arterial)</option>
+                                                                            <option value="Blood gases - venous">Blood gases - venous</option>
+                                                                            <option value="Blood group antibody screen">Blood group antibody screen</option>
+                                                                            <option value="BNP">BNP</option>
+                                                                            <option value="BNP and NT-proBNP tests">BNP and NT-proBNP tests</option>
+                                                                            <option value="Bone markers">Bone markers</option>
+                                                                            <option value="Bone marrow biopsy">Bone marrow biopsy</option>
+                                                                            <option value="Bone turnover markers">Bone turnover markers</option>
+                                                                            <option value="Bowel cancer">Bowel cancer</option>
+                                                                            <option value="BRAF V600 mutation">BRAF V600 mutation</option>
+                                                                            <option value="BRCA 1 and 2 (Breast cancer gene 1 and 2)">BRCA 1 and 2 (Breast cancer gene 1 and 2)</option>
+                                                                            <option value="Breast cancer">Breast cancer</option>
+                                                                            <option value="BSL">BSL</option>
+                                                                            <option value="C-peptide">C-peptide</option>
+                                                                            <option value="C-reactive protein">C-reactive protein</option>
+                                                                            <option value="CA125 (Cancer antigen 125)">CA125 (Cancer antigen 125)</option>
+                                                                            <option value="CA15-3 (Cancer antigen 15-3)">CA15-3 (Cancer antigen 15-3)</option>
+                                                                            <option value="CA19-9 (Cancer antigen 19-9)">CA19-9 (Cancer antigen 19-9)</option>
+                                                                            <option value="Caeruloplasmin">Caeruloplasmin</option>
+                                                                            <option value="Calcitonin">Calcitonin</option>
+                                                                            <option value="Calcium">Calcium</option>
+                                                                            <option value="Calcium, phosphate and magnesium">Calcium, phosphate and magnesium</option>
+                                                                            <option value="Calprotectin faeces">Calprotectin faeces</option>
+                                                                            <option value="Carbamazepine level">Carbamazepine level</option>
+                                                                            <option value="Carcinoembryonic Ag (CEA)">Carcinoembryonic Ag (CEA)</option>
+                                                                            <option value="Cardiolipin antibody">Cardiolipin antibody</option>
+                                                                            <option value="Catecholamines">Catecholamines</option>
+                                                                            <option value="CCP (Cyclic citrullinated peptide antibody)">CCP (Cyclic citrullinated peptide antibody)</option>
+                                                                            <option value="CD4 count">CD4 count</option>
+                                                                            <option value="CEA">CEA</option>
+                                                                            <option value="Centromere antibody">Centromere antibody</option>
+                                                                            <option value="Cerebrospinal fluid examination">Cerebrospinal fluid examination</option>
+                                                                            <option value="Cervical cancer">Cervical cancer</option>
+                                                                            <option value="Cervical co-test">Cervical co-test</option>
+                                                                            <option value="Cervical screening test">Cervical screening test</option>
+                                                                            <option value="Chlamydia trachomatis nucleic acid">Chlamydia trachomatis nucleic acid</option>
+                                                                            <option value="Chloride">Chloride</option>
+                                                                            <option value="Cholesterol">Cholesterol</option>
+                                                                            <option value="Cholinesterase">Cholinesterase</option>
+                                                                            <option value="Chromogranin A">Chromogranin A</option>
+                                                                            <option value="Chromosome microarray (CMA) testing">Chromosome microarray (CMA) testing</option>
+                                                                            <option value="Chromosome studies">Chromosome studies</option>
+                                                                            <option value="Chronic fatigue syndrome (Myalgic Encephalomyelitis)">Chronic fatigue syndrome (Myalgic Encephalomyelitis)</option>
+                                                                            <option value="CK (Creatine kinase)">CK (Creatine kinase)</option>
+                                                                            <option value="CKMB (Creatine kinase MB)">CKMB (Creatine kinase MB)</option>
+                                                                            <option value="Clostridium difficile">Clostridium difficile</option>
+                                                                            <option value="Coagulation (blood clotting) factors">Coagulation (blood clotting) factors</option>
+                                                                            <option value="Coagulation profile (blood clotting)">Coagulation profile (blood clotting)</option>
+                                                                            <option value="Coeliac disease testing">Coeliac disease testing</option>
+                                                                            <option value="Complement">Complement</option>
+                                                                            <option value="Congenital adrenal hyperplasia">Congenital adrenal hyperplasia</option>
+                                                                            <option value="Congestive heart failure">Congestive heart failure</option>
+                                                                            <option value="Copper">Copper</option>
+                                                                            <option value="Cortisol">Cortisol</option>
+                                                                            <option value="COVID-19">COVID-19</option>
+                                                                            <option value="Creatinine">Creatinine</option>
+                                                                            <option value="Creatinine clearance">Creatinine clearance</option>
+                                                                            <option value="Crossmatch">Crossmatch</option>
+                                                                            <option value="CRP">CRP</option>
+                                                                            <option value="Cryoglobulin">Cryoglobulin</option>
+                                                                            <option value="CSF">CSF</option>
+                                                                            <option value="Cushing's syndrome">Cushing's syndrome</option>
+                                                                            <option value="Cyclosporin">Cyclosporin</option>
+                                                                            <option value="Cystatin C">Cystatin C</option>
+                                                                            <option value="Cystic fibrosis">Cystic fibrosis</option>
+                                                                            <option value="Cystic fibrosis (CF) gene mutation">Cystic fibrosis (CF) gene mutation</option>
+                                                                            <option value="Cytogenetics">Cytogenetics</option>
+                                                                            <option value="D-dimer">D-dimer</option>
+                                                                            <option value="Deamidated Gliadin Antibody (Coeliac Disease Test)">Deamidated Gliadin Antibody (Coeliac Disease Test)</option>
+                                                                            <option value="Dehydroepiandrosterone sulfate (DHEAS)">Dehydroepiandrosterone sulfate (DHEAS)</option>
+                                                                            <option value="DHEAS">DHEAS</option>
+                                                                            <option value="Diabetes">Diabetes</option>
+                                                                            <option value="Diabetes-related autoantibodies">Diabetes-related autoantibodies</option>
+                                                                            <option value="Diarrhoea">Diarrhoea</option>
+                                                                            <option value="Digoxin level">Digoxin level</option>
+                                                                            <option value="Direct antiglobulin test">Direct antiglobulin test</option>
+                                                                            <option value="Diseases of the pancreas">Diseases of the pancreas</option>
+                                                                            <option value="Double stranded DNA antibody">Double stranded DNA antibody</option>
+                                                                            <option value="Down syndrome">Down syndrome</option>
+                                                                            <option value="EGFR (Epidermal growth factor receptor) mutation">EGFR (Epidermal growth factor receptor) mutation</option>
+                                                                            <option value="eGFR (Estimated glomerular filtration rate)">EGFR (Estimated glomerular filtration rate)</option>
+                                                                            <option value="Electrolytes">Electrolytes</option>
+                                                                            <option value="Electrolytes, urea and creatinine">Electrolytes, urea and creatinine</option>
+                                                                            <option value="Emergency and overdose drug testing">Emergency and overdose drug testing</option>
+                                                                            <option value="Epilepsy">Epilepsy</option>
+                                                                            <option value="EPO">EPO</option>
+                                                                            <option value="Epstein-Barr virus antibodies">Epstein-Barr virus antibodies</option>
+                                                                            <option value="Erythrocyte sedimentation rate (ESR)">Erythrocyte sedimentation rate (ESR)</option>
+                                                                            <option value="Erythropoietin">Erythropoietin</option>
+                                                                            <option value="Ethanol">Ethanol</option>
+                                                                            <option value="Extractable nuclear antigen Ab">Extractable nuclear antigen Ab</option>
+                                                                            <option value="Factor V Leiden">Factor V Leiden</option>
+                                                                            <option value="FBC">FBC</option>
+                                                                            <option value="Ferritin">Ferritin</option>
+                                                                            <option value="FH (Familial hypercholesterolaemia) genetic test">FH (Familial hypercholesterolaemia) genetic test</option>
+                                                                            <option value="FIB-4 liver fibrosis test">FIB-4 liver fibrosis test</option>
+                                                                            <option value="Fibrinogen">Fibrinogen</option>
+                                                                            <option value="Fibromyalgia">Fibromyalgia</option>
+                                                                            <option value="FMR1 (Fragile X messenger ribonucleoprotein 1) mutation">FMR1 (Fragile X messenger ribonucleoprotein 1) mutation</option>
+                                                                            <option value="FOBT">FOBT</option>
+                                                                            <option value="Follicle stimulating hormone (FSH)">Follicle stimulating hormone (FSH)</option>
+                                                                            <option value="Fragile X gene">Fragile X gene</option>
+                                                                            <option value="Fragile X syndrome">Fragile X syndrome</option>
+                                                                            <option value="Free light chains">Free light chains</option>
+                                                                            <option value="Free T3 (triiodothyronine)">Free T3 (triiodothyronine)</option>
+                                                                            <option value="Free T4 (thyroxine)">Free T4 (thyroxine)</option>
+                                                                            <option value="Fructosamine">Fructosamine</option>
+                                                                            <option value="FSH">FSH</option>
+                                                                            <option value="Full blood count">Full blood count</option>
+                                                                            <option value="Fungal tests">Fungal tests</option>
+                                                                            <option value="G6PD">G6PD</option>
+                                                                            <option value="Gallstones">Gallstones</option>
+                                                                            <option value="Gamma-glutamyl transferase (GGT)">Gamma-glutamyl transferase (GGT)</option>
+                                                                            <option value="Gastrin">Gastrin</option>
+                                                                            <option value="Genital MCS (Genital Microscopy, Culture and Sensitivity)">Genital MCS (Genital Microscopy, Culture and Sensitivity)</option>
+                                                                            <option value="Gentamicin level">Gentamicin level</option>
+                                                                            <option value="GGT">GGT</option>
+                                                                            <option value="Glucose">Glucose</option>
+                                                                            <option value="Glucose-6-phosphate dehydrogenase">Glucose-6-phosphate dehydrogenase</option>
+                                                                            <option value="Gonorrhoeae">Gonorrhoeae</option>
+                                                                            <option value="Gout">Gout</option>
+                                                                            <option value="Gram stain">Gram stain</option>
+                                                                            <option value="Graves' disease">Graves' disease</option>
+                                                                            <option value="Growth hormone (GH)">Growth hormone (GH)</option>
+                                                                            <option value="Guillain-Barre syndrome">Guillain-Barre syndrome</option>
+                                                                            <option value="Haematocrit">Haematocrit</option>
+                                                                            <option value="Haemochromatosis">Haemochromatosis</option>
+                                                                            <option value="Haemoglobin">Haemoglobin</option>
+                                                                            <option value="Haptoglobin">Haptoglobin</option>
+                                                                            <option value="Hashimoto's thyroiditis">Hashimoto's thyroiditis</option>
+                                                                            <option value="HbA1c">HbA1c</option>
+                                                                            <option value="HCG">HCG</option>
+                                                                            <option value="HCG (Human chorionic gonadotrophin)">HCG (Human chorionic gonadotrophin)</option>
+                                                                            <option value="HDL cholesterol">HDL cholesterol</option>
+                                                                            <option value="Heart attack">Heart attack</option>
+                                                                            <option value="Helicobacter pylori">Helicobacter pylori</option>
+                                                                            <option value="Hepatitis A">Hepatitis A</option>
+                                                                            <option value="Hepatitis B">Hepatitis B</option>
+                                                                            <option value="Hepatitis B surface antibody">Hepatitis B surface antibody</option>
+                                                                            <option value="Hepatitis C">Hepatitis C</option>
+                                                                            <option value="Hepatitis, viral">Hepatitis, viral</option>
+                                                                            <option value="Herpes simplex virus 1 and 2">Herpes simplex virus 1 and 2</option>
+                                                                            <option value="HFE mutations">HFE mutations</option>
+                                                                            <option value="High blood pressure (hypertension) ">High blood pressure (hypertension) </option>
+                                                                            <option value="HIV genotypic resistance">HIV genotypic resistance</option>
+                                                                            <option value="HIV p24 antigen">HIV p24 antigen</option>
+                                                                            <option value="HIV serology">HIV serology</option>
+                                                                            <option value="HIV viral load">HIV viral load</option>
+                                                                            <option value="HLA B27">HLA B27</option>
+                                                                            <option value="HLA B5701">HLA B5701</option>
+                                                                            <option value="HLA tests">HLA tests</option>
+                                                                            <option value="Homocysteine">Homocysteine</option>
+                                                                            <option value="Hormone receptor status">Hormone receptor status</option>
+                                                                            <option value="HPV">HPV</option>
+                                                                            <option value="Human epidermal growth factor receptor 2 (HER-2)">Human epidermal growth factor receptor 2 (HER-2)</option>
+                                                                            <option value="Human immunodeficiency virus (HIV)">Human immunodeficiency virus (HIV)</option>
+                                                                            <option value="Huntington's disease">Huntington's disease</option>
+                                                                            <option value="IGF-1">IGF-1</option>
+                                                                            <option value="Immunoglobulin E Total (Allergy)">Immunoglobulin E Total (Allergy)</option>
+                                                                            <option value="Immunoglobulins">Immunoglobulins</option>
+                                                                            <option value="Immunophenotyping">Immunophenotyping</option>
+                                                                            <option value="Immunoreactive trypsin">Immunoreactive trypsin</option>
+                                                                            <option value="Infertility">Infertility</option>
+                                                                            <option value="Influenza">Influenza</option>
+                                                                            <option value="Influenza (flu) tests">Influenza (flu) tests</option>
+                                                                            <option value="Inherited cancer risk - bowel and endometrial cancer">Inherited cancer risk - bowel and endometrial cancer</option>
+                                                                            <option value="Inhibin">Inhibin</option>
+                                                                            <option value="INR">INR</option>
+                                                                            <option value="Insulin">Insulin</option>
+                                                                            <option value="Ionised calcium">Ionised calcium</option>
+                                                                            <option value="Iron">Iron</option>
+                                                                            <option value="Iron studies">Iron studies</option>
+                                                                            <option value="JAK2 (Janus Kinase 2) mutation">JAK2 (Janus Kinase 2) mutation</option>
+                                                                            <option value="Japanese encephalitis ">Japanese encephalitis </option>
+                                                                            <option value="Jaundice">Jaundice</option>
+                                                                            <option value="Juvenile idiopathic arthritis">Juvenile idiopathic arthritis</option>
+                                                                            <option value="Karyotyping (chromosome studies)">Karyotyping (chromosome studies)</option>
+                                                                            <option value="Kidney function tests">Kidney function tests</option>
+                                                                            <option value="Kidney stone analysis">Kidney stone analysis</option>
+                                                                            <option value="Lactate">Lactate</option>
+                                                                            <option value="Lactate dehydrogenase (LDH)">Lactate dehydrogenase (LDH)</option>
+                                                                            <option value="LDL cholesterol">LDL cholesterol</option>
+                                                                            <option value="Lead">Lead</option>
+                                                                            <option value="Lead poisoning">Lead poisoning</option>
+                                                                            <option value="Leukaemia">Leukaemia</option>
+                                                                            <option value="LFT (Liver function tests)">LFT (Liver function tests)</option>
+                                                                            <option value="Lipase">Lipase</option>
+                                                                            <option value="Lipid profile (cholesterol and triglycerides)">Lipid profile (cholesterol and triglycerides)</option>
+                                                                            <option value="Lipoprotein (a)">Lipoprotein (a)</option>
+                                                                            <option value="Lipoprotein electrophoresis">Lipoprotein electrophoresis</option>
+                                                                            <option value="Lithium">Lithium</option>
+                                                                            <option value="Lupus anticoagulant">Lupus anticoagulant</option>
+                                                                            <option value="Luteinising hormone (LH)">Luteinising hormone (LH)</option>
+                                                                            <option value="Lyme disease">Lyme disease</option>
+                                                                            <option value="Lyme disease serology">Lyme disease serology</option>
+                                                                            <option value="Lymphoma">Lymphoma</option>
+                                                                            <option value="Magnesium">Magnesium</option>
+                                                                            <option value="Malaria">Malaria</option>
+                                                                            <option value="Malnutrition">Malnutrition</option>
+                                                                            <option value="MCS sputum">MCS sputum</option>
+                                                                            <option value="MCS stool">MCS stool</option>
+                                                                            <option value="MCS Urine (Urine culture)">MCS Urine (Urine culture)</option>
+                                                                            <option value="Measles and Mumps serology">Measles and Mumps serology</option>
+                                                                            <option value="Menopause">Menopause</option>
+                                                                            <option value="Mercury">Mercury</option>
+                                                                            <option value="Mesothelin">Mesothelin</option>
+                                                                            <option value="Metanephrines - 24 hr urine">Metanephrines - 24 hr urine</option>
+                                                                            <option value="Methicillin resistant Staphylococcus aureus screening (MRSA)">Methicillin resistant Staphylococcus aureus screening (MRSA)</option>
+                                                                            <option value="Microalbumin (Albumin-creatinine ratio)">Microalbumin (Albumin-creatinine ratio)</option>
+                                                                            <option value="Mitochrondrial antibody">Mitochrondrial antibody</option>
+                                                                            <option value="Monospot or infectious mononucleosis test">Monospot or infectious mononucleosis test</option>
+                                                                            <option value="MPL (Myeloproliferative leukaemia) mutation ">MPL (Myeloproliferative leukaemia) mutation </option>
+                                                                            <option value="MTHFR mutation">MTHFR mutation</option>
+                                                                            <option value="Multiple myeloma">Multiple myeloma</option>
+                                                                            <option value="Multiple sclerosis (MS)">Multiple sclerosis (MS)</option>
+                                                                            <option value="Myasthenia gravis">Myasthenia gravis</option>
+                                                                            <option value="Mycophenolate">Mycophenolate</option>
+                                                                            <option value="Mycoplasma">Mycoplasma</option>
+                                                                            <option value="Myoglobin urine">Myoglobin urine</option>
+                                                                            <option value="Neisseria gonorrhoeae nucleic acid">Neisseria gonorrhoeae nucleic acid</option>
+                                                                            <option value="NH3">NH3</option>
+                                                                            <option value="Nicotine">Nicotine</option>
+                                                                            <option value="NIPT (Non-invasive prenatal testing)">NIPT (Non-invasive prenatal testing)</option>
+                                                                            <option value="NT-proBNP">NT-proBNP</option>
+                                                                            <option value="Occult blood faeces">Occult blood faeces</option>
+                                                                            <option value="Oestradiol (oestrogen)">Oestradiol (oestrogen)</option>
+                                                                            <option value="Organic acids urine">Organic acids urine</option>
+                                                                            <option value="Osmolality">Osmolality</option>
+                                                                            <option value="Osteoporosis">Osteoporosis</option>
+                                                                            <option value="Ova, Cysts and Parasites faeces">Ova, Cysts and Parasites faeces</option>
+                                                                            <option value="Ovarian cancer">Ovarian cancer</option>
+                                                                            <option value="Pancreatic elastase faeces">Pancreatic elastase faeces</option>
+                                                                            <option value="Pancreatitis">Pancreatitis</option>
+                                                                            <option value="Paracetamol level">Paracetamol level</option>
+                                                                            <option value="Parathyroid Hormone (PTH)">Parathyroid Hormone (PTH)</option>
+                                                                            <option value="Parvovirus B19">Parvovirus B19</option>
+                                                                            <option value="Pericardial fluid analysis">Pericardial fluid analysis</option>
+                                                                            <option value="Peritoneal fluid analysis">Peritoneal fluid analysis</option>
+                                                                            <option value="PGx (Pharmacogenomics testing)">PGx (Pharmacogenomics testing)</option>
+                                                                            <option value="Phenobarbitone">Phenobarbitone</option>
+                                                                            <option value="Phenytoin level">Phenytoin level</option>
+                                                                            <option value="Phosphate">Phosphate</option>
+                                                                            <option value="Plasma free metanephrines">Plasma free metanephrines</option>
+                                                                            <option value="Platelet count">Platelet count</option>
+                                                                            <option value="Pleural fluid analysis">Pleural fluid analysis</option>
+                                                                            <option value="PMP22 gene">PMP22 gene</option>
+                                                                            <option value="PoCT (Point of care testing)">PoCT (Point of care testing)</option>
+                                                                            <option value="Polycystic ovarian syndrome">Polycystic ovarian syndrome</option>
+                                                                            <option value="Porphyria">Porphyria</option>
+                                                                            <option value="Porphyrins">Porphyrins</option>
+                                                                            <option value="Potassium">Potassium</option>
+                                                                            <option value="Prealbumin">Prealbumin</option>
+                                                                            <option value="Procalcitonin">Procalcitonin</option>
+                                                                            <option value="Progesterone">Progesterone</option>
+                                                                            <option value="Prolactin">Prolactin</option>
+                                                                            <option value="Prostate cancer">Prostate cancer</option>
+                                                                            <option value="Prostate specific antigen">Prostate specific antigen</option>
+                                                                            <option value="Protein C and S">Protein C and S</option>
+                                                                            <option value="Protein electrophoresis">Protein electrophoresis</option>
+                                                                            <option value="Protein urine">Protein urine</option>
+                                                                            <option value="Prothrombin time (Internationalised normalised ratio)">Prothrombin time (Internationalised normalised ratio)</option>
+                                                                            <option value="PSEN1 (Presenilin 1 genetic analysis)">PSEN1 (Presenilin 1 genetic analysis)</option>
+                                                                            <option value="PT">PT</option>
+                                                                            <option value="RAS gene mutation">RAS gene mutation</option>
+                                                                            <option value="Red blood cell count">Red blood cell count</option>
+                                                                            <option value="Red cell antibody screen">Red cell antibody screen</option>
+                                                                            <option value="Red cell indicies">Red cell indicies</option>
+                                                                            <option value="Renin">Renin</option>
+                                                                            <option value="Reproductive Carrier Screening">Reproductive Carrier Screening</option>
+                                                                            <option value="Respiratory syncytial virus nucleic acid ">Respiratory syncytial virus nucleic acid </option>
+                                                                            <option value="Reticulocyte count">Reticulocyte count</option>
+                                                                            <option value="Rheumatoid arthritis">Rheumatoid arthritis</option>
+                                                                            <option value="Rheumatoid factor (RF)">Rheumatoid factor (RF)</option>
+                                                                            <option value="Rickettsial diseases testing">Rickettsial diseases testing</option>
+                                                                            <option value="RSV">RSV</option>
+                                                                            <option value="Rubella">Rubella</option>
+                                                                            <option value="Salicylate">Salicylate</option>
+                                                                            <option value="Sarcoidosis">Sarcoidosis</option>
+                                                                            <option value="SARS-CoV-2 (COVID-19) tests">SARS-CoV-2 (COVID-19) tests</option>
+                                                                            <option value="SARS-Cov-2 Serology (COVID-19 Antibody)">SARS-Cov-2 Serology (COVID-19 Antibody)</option>
+                                                                            <option value="Semen analysis">Semen analysis</option>
+                                                                            <option value="Sepsis">Sepsis</option>
+                                                                            <option value="Serotonin whole blood">Serotonin whole blood</option>
+                                                                            <option value="Sex hormone binding globulin (SHBG)">Sex hormone binding globulin (SHBG)</option>
+                                                                            <option value="Sickle cell">Sickle cell</option>
+                                                                            <option value="Sickle cell anaemia">Sickle cell anaemia</option>
+                                                                            <option value="Sirolimus">Sirolimus</option>
+                                                                            <option value="Sjögren’s syndrome">Sjögren’s syndrome</option>
+                                                                            <option value="Skin cancer">Skin cancer</option>
+                                                                            <option value="Smooth muscle Ab (SMA)">Smooth muscle Ab (SMA)</option>
+                                                                            <option value="Sodium">Sodium</option>
+                                                                            <option value="Somatic tumour gene testing">Somatic tumour gene testing</option>
+                                                                            <option value="Staph wound infections and MRSA">Staph wound infections and MRSA</option>
+                                                                            <option value="Stroke">Stroke</option>
+                                                                            <option value="Susceptibility testing">Susceptibility testing</option>
+                                                                            <option value="Synacthen short test">Synacthen short test</option>
+                                                                            <option value="Synovial fluid examination">Synovial fluid examination</option>
+                                                                            <option value="Syphilis">Syphilis</option>
+                                                                            <option value="Systemic lupus erythematosus">Systemic lupus erythematosus</option>
+                                                                            <option value="T3">T3</option>
+                                                                            <option value="T4">T4</option>
+                                                                            <option value="Tacrolimus level">Tacrolimus level</option>
+                                                                            <option value="Testicular cancer">Testicular cancer</option>
+                                                                            <option value="Testosterone">Testosterone</option>
+                                                                            <option value="Thalassaemia">Thalassaemia</option>
+                                                                            <option value="Thiopurine methyltransferase (TMPT)">Thiopurine methyltransferase (TMPT)</option>
+                                                                            <option value="Throat culture">Throat culture</option>
+                                                                            <option value="Thyroglobulin">Thyroglobulin</option>
+                                                                            <option value="Thyroid antibodies">Thyroid antibodies</option>
+                                                                            <option value="Thyroid diseases">Thyroid diseases</option>
+                                                                            <option value="Thyroid Function Tests">Thyroid Function Tests</option>
+                                                                            <option value="Thyroid stimulating hormone (TSH)">Thyroid stimulating hormone (TSH)</option>
+                                                                            <option value="TORCH panel">TORCH panel</option>
+                                                                            <option value="Total calcium">Total calcium</option>
+                                                                            <option value="Total Protein (TP)">Total Protein (TP)</option>
+                                                                            <option value="Toxoplasmosis">Toxoplasmosis</option>
+                                                                            <option value="Transferrin and Total Iron Binding Capacity (TIBC)">Transferrin and Total Iron Binding Capacity (TIBC)</option>
+                                                                            <option value="Trichomonas vaginalis detection">Trichomonas vaginalis detection</option>
+                                                                            <option value="Triglycerides">Triglycerides</option>
+                                                                            <option value="Troponin T">Troponin T</option>
+                                                                            <option value="Trypsin faeces">Trypsin faeces</option>
+                                                                            <option value="Tryptase">Tryptase</option>
+                                                                            <option value="Tuberculosis">Tuberculosis</option>
+                                                                            <option value="Tuberculosis screening tests">Tuberculosis screening tests</option>
+                                                                            <option value="Tumour markers">Tumour markers</option>
+                                                                            <option value="Tumour testing for inherited bowel and endometrial cancers (Lynch syndrome)">Tumour testing for inherited bowel and endometrial cancers (Lynch syndrome)</option>
+                                                                            <option value="UACR">UACR</option>
+                                                                            <option value="Urate (Uric Acid)">Urate (Uric Acid)</option>
+                                                                            <option value="Urea (blood and urine)">Urea (blood and urine)</option>
+                                                                            <option value="Urinary tract infection (UTI)">Urinary tract infection (UTI)</option>
+                                                                            <option value="Urine dipstick and microscopy (Urinalysis)">Urine dipstick and microscopy (Urinalysis)</option>
+                                                                            <option value="UTI (Urinary tract infection) testing">UTI (Urinary tract infection) testing</option>
+                                                                            <option value="Valproate level (valproic acid test)">Valproate level (valproic acid test)</option>
+                                                                            <option value="Vancomycin level">Vancomycin level</option>
+                                                                            <option value="Varicella zoster virus">Varicella zoster virus</option>
+                                                                            <option value="Vasculitis">Vasculitis</option>
+                                                                            <option value="VBG">VBG</option>
+                                                                            <option value="VHL (Von Hippel-Lindau) tumour suppressor ">VHL (Von Hippel-Lindau) tumour suppressor </option>
+                                                                            <option value="Vitamin B12 and folate">Vitamin B12 and folate</option>
+                                                                            <option value="Vitamin B12 and folate deficiency">Vitamin B12 and folate deficiency</option>
+                                                                            <option value="Vitamin D">Vitamin D</option>
+                                                                            <option value="von Willebrand factor">Von Willebrand factor</option>
+                                                                            <option value="White cell count">White cell count</option>
+                                                                            <option value="Whole Genome or Whole Exome Testing for Childhood Syndromes">Whole Genome or Whole Exome Testing for Childhood Syndromes</option>
+                                                                            <option value="Whooping Cough">Whooping Cough</option>
+                                                                            <option value="Zinc protoporphyrin">Zinc protoporphyrin</option>
+                                        
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 footer-column">
+                <div class="subscribe-widget footer-widget" style="width:100%;">
+                    <div class="input-box dropdown">
+                        <form action="ptests.php" method="get">
+                            <h2>Find a Pathology Test</h2>
+                            <div class="form-group-wrapper">
+                                <div class="form-group">
+                                    <input id="autoComplete" name="q" type="search" dir="ltr" spellcheck="false" autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="Find a test">
+                                </div>
+                                <button type="submit" id="submitSelectValue"><i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search All Text -->
+            <div class="col-xl-4 col-lg-6 col-sm-12 col-xs-12 footer-column">
+                <div class="subscribe-widget footer-widget" style="width:100%;">
+                    <!-- main slider end -->
+                    <section id="main-adv-bck">
+                        <div class="adv-wrap text-center" style="background: #e8e8e8;width: 20%;margin: auto;padding: 10px;">
+                            <img src="images/sponsors/mhr-logo_small1.png" alt="" style="max-width: 180px;">
+                            <div class="find-more-wrapper">
+                                <p class="text">Find out more about your pathology results</p>
+                                <a href="/pages-mhr.php?page=mhr-home">Find Out More</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+</section>
+
+<script>
+    document.getElementById('searchBySelect').addEventListener('change', function() {
+        var selectedValue = this.value;
+        if (selectedValue) {
+            window.location.href = 'ptests.php?q=' + selectedValue;
+        }
+    });
+</script>
+
+
+
+
+
+
+
+<section class="organ-page organ-first-grid centered">
+    <div class="container">
+        <div class="row item-fourth">
+            <div class="text-center">
+                <h3>Still can't find what you are looking for?</h3>
+                <p>Try clicking on these commonly searched tests</p>
+                <br>
+            </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="ptests.php?q=Kidney+function+tests">
+                                        <img src="content/sidebars/sb_kidney_function_tests.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">Kidney Function Tests</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="https://pathologytestsexplained.org.au/ptests.php?q=Lipid%20profile%20(cholesterol%20and%20triglycerides)">
+                                        <img src="content/sidebars/sb_cholesterol.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">Cholesterol</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="ptests.php?q=Liver%20function%20tests%20(LFT)">
+                                        <img src="content/sidebars/sb_liver_function_tests.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">Liver Function Tests</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="ptests.php?q=Full%20blood%20count">
+                                        <img src="content/sidebars/sb_full_blood_count.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">Full Blood Count</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="ptests.php?q=International%20normalised%20ratio%20(INR)">
+                                        <img src="content/sidebars/sb_INR.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Center">INR</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="ptests.php?q=Thyroid+Function+Tests">
+                                        <img src="content/sidebars/sb_thyroid.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">Thyroid</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="ptests.php?q=HbA1c">
+                                        <img src="content/sidebars/sb_Hba1c.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">HbA1c</p>
+
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun ">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure>
+                                    <a href="pages.php?page=Genetic%20Testing">
+                                        <img src="content/sidebars/sb_genetic_tests.png" alt="">
+                                    </a>
+                                </figure>
+
+                            </div>
+                            <div class="lower-content">
+
+                                <p style="text-align:Left">Genetic Tests</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    </div>
+</section>
+
+<!--  <section class="organ-page centered" style="margin-top:-61px;">
+        <div class="container">
+            <div class="row icons">
+                <div class="col-md-4 col-sm-6 org-page-none col-xs-12 team-colmun"></div>
+                
+                <div class="col-md-4 col-sm-6 col-xs-12 organ-page-display-p team-colmun d-flex lib-content justify-content-center">
+                    <div class="org-page-display">
+                        <i class="fa fa-file-video-o px-5" style="font-size:85px;" aria-hidden="true"></i>
+                        <p style="color:black; font-weight:600; font-size:15px;">Video Library</p>
+                    </div>
+                    <div class="org-page-display">
+                        <i class="fa fa-file-text-o px-5" style="font-size:85px;" aria-hidden="true"></i>
+                        <p style="color:black; font-weight:600; font-size:15px;">Info Sheets</p>
+                    </div>
+                    <div class="org-page-display">
+                        <i class="fa fa-comments-o px-5" style="font-size:85px;" aria-hidden="true"></i>
+                        <p style="color:black; font-weight:600; font-size:15px;">FAQs</p>
+                    </div>
+                    <div class="org-page-display">
+                        <i class="fa fa-newspaper-o px-5" style="font-size:85px;" aria-hidden="true"></i>
+                        <p style="color:black; font-weight:600; font-size:15px;">Latest News</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 org-page-none col-xs-12 team-colmun"></div>
+            </div>
+        </div>
+    </section> -->
+
+<section class="organ-page organ-second-grid centered">
+    <div class="container">
+        <div class="row">
+                                <div class="col-md-4 col-sm-6 col-xs-12 team-colmun test-sec">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure><a href="ptests.php?q=PoCT+%28Point+of+care+testing%29"><img src="content/sidelines/ft_point_of_care_testing.png" alt=""></a></figure>
+                            </div>
+                            <div class="content">
+                                <a href="ptests.php?q=PoCT+%28Point+of+care+testing%29">
+                                    <h3 style="font-weight:300;">Point of Care Testing</h3>
+                                </a>
+                                <!--  <p style="color:black;">Testing at home or at the doctor... <a href="ptests.php?q=PoCT+%28Point+of+care+testing%29" style="color:black; font-weight:600;">Read More</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 team-colmun test-sec">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure><a href="video.php"><img src="content/sidelines/ft_videos.jpg" alt=""></a></figure>
+                            </div>
+                            <div class="content">
+                                <a href="video.php">
+                                    <h3 style="font-weight:300;">Watch the latest videos explaining your test results</h3>
+                                </a>
+                                <!--  <p style="color:black;">Watch the latest videos explaining your test results... <a href="video.php" style="color:black; font-weight:600;">Read More</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12 team-colmun test-sec">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <figure><a href="patient-information-sheets.php"><img src="content/sidelines/ft_patient_information_sheets.png" alt=""></a></figure>
+                            </div>
+                            <div class="content">
+                                <a href="patient-information-sheets.php">
+                                    <h3 style="font-weight:300;">Easy to read patient information sheets</h3>
+                                </a>
+                                <!--  <p style="color:black;">Easy to read patient information sheets... <a href="patient-information-sheets.php" style="color:black; font-weight:600;">Read More</a></p> -->
+                            </div>
+                        </div>
+                    </div>
+                        <!-- <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
+                    <div class="single-item">
+                        <div class="img-box">
+                            <figure><img src="images/img3.jpeg" alt="kidney"></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
+                    <div class="single-item">
+                        <div class="img-box">
+                            <figure><img src="images/img3.jpeg" alt="kidney"></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 team-colmun">
+                    <div class="single-item">
+                        <div class="img-box">
+                            <figure><img src="images/img3.jpeg" alt="kidney"></figure>
+                        </div>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+</section>
+
+    <script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"></script>
+    <button id="myBtn" style="display: none;">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal landing-model" style="overflow:hidden">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">close</span>
+     <section id="test-below" class="main-organ">
+      <div class="container">
+        <div
+          class="row"
+          style="margin-top: 16%; font-family: 'Open Sans', sans-serif">
+          <h3
+            style="
+              text-align: center;
+              font-weight: 500;
+              font-size: 20px;
+              color: black;
+              margin-bottom: 32px;
+            ">
+            Welcome. Where would you like to go?
+          </h3>
+
+          <div
+            style="
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              gap: 3rem;
+              flex-wrap: wrap;
+              margin-inline: auto;
+            ">
+            <div>
+              <div
+                class="adv-wrap text-center box-wrapper" 
+                style="
+                    width:100%!important;
+                    padding-inline: 0!important;
+                    padding-block:0!important;
+                    padding: 2rem 3rem;
+                    box-shadow: 5px 5px 5px 0px #f99e07, -5px -5px 5px 0px rgba(0,0,0,0.1);
+                    background-color: transparent;
+                "
+               >
+                <a
+                  href="https://pathologytestsexplained.org.au/"
+                  style="text-decoration: none"
+                  target="_blank">
+                  <img width="259" height="180"
+                    src="https://ptex-stage.xs.net.au/images/logo/PTEx-Vertical-Orientation-Colored.png"
+                    alt=""
+                    style="object-fit: contain;" />
+                  <p
+                    class="text"
+                    style="
+                      height: 30px;
+                      text-align: center;
+                      font-size: 18px;
+                      color: #777777;
+                      font-weight: 400;
+                      padding-bottom: 5rem;
+                      margin:2rem auto;
+                    ">
+                    Your pathology tests explained
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <div
+                class="adv-wrap text-center box-wrapper"
+                style="
+                    width:100%!important;
+                    padding-inline: 0!important;
+                    padding-block:0!important;
+                    padding: 2rem .5rem;
+                    box-shadow: 5px 5px 5px 0px #f99e07, -5px -5px 5px 0px rgba(0,0,0,0.1);
+                    background-color: transparent;
+                "
+               >
+                <a
+                  href="https://knowpathology.com.au/"
+                  style="text-decoration: none; overflow: hidden;"
+                  target="_blank">
+                  <img width="259" height="180"
+                    src="content/sidelines/KPKH_horizontal_RGB_small_1.jpg"
+                    alt=""
+                    style="object-fit: cover; padding-top: 3rem; transform: scale(1.1);" />
+                  <p
+                    class="text"
+                    style="
+                      height: 30px;
+                      text-align: center;
+                      font-size: 18px;
+                      color: #777777;
+                      font-weight: 400;
+                      padding-bottom: 5rem;
+                      width: 80%;
+                      line-height: 1.3rem;
+                      margin:2rem auto;
+                    ">
+                    How pathology impacts your health care
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+<style>
+  
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 55%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    z-index: 22;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #b215b2;
+    color: white;
+    padding: 1.2rem 0;
+    text-align:center;
+    width:10%;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-style: normal;
+}
+
+.close:hover,
+.close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+
+<script type="text/javascript">
+  
+  // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+jQuery(function () {
+    var anchor = window.location.hash;
+    if (anchor.split('_')[0] == '#choose') {
+       jQuery('#myBtn').trigger('click');
+    }
+});
+</script>
+
+
+    </div>
+    <section class="footer-banner">
+        
+          <div class="container1">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center mb-3" style="font-size: 14px;  color: #000000;">We wish to acknowledge the traditional custodians of country throughout Australia</p>
+                </div>
+                <div class="col-md-12" style="background: url('images/aboriginal-art.png');height: 150px;">
+                     <!--  <img src="images/aboriginal-art.png" width="100%" height="25%"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sponsors-section">
+        <div class="container">
+            <div class="row">
+                <div class="text-center"> 
+                    <!-- <h3>Our Partners in online Pathology</h3> -->
+                    <h3>Useful Links</h3>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="text-column-grid-head">
+                        <p>What is Pathology Tests Explained?</p>
+                    </div>
+                    <div class="d-flex1 justify-content-center">
+                        <div class="text-column-grid">
+                            <p class="text-left">Pathology Tests Explained (PTEx) is a not-for profit group managed by a consortium of Australasian medical and scientific organisations.</p> 
+                            <p>With up-to-date, evidence-based information about pathology tests it is a leading trusted source for consumers.</p>
+                            <p class="text-left">Information is prepared and reviewed by practising pathologists and scientists and is entirely free of any commercial influence.</p>
+                        </div>
+                    <h3 class="text-center">Our partners in online pathology</h3>
+                </div>
+<div class="row">
+  <div class="d-flex justify-content-center partners_logo_list" style="flex-wrap: wrap; gap: 0rem;">
+    
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a HREF="https://www.aacb.asn.au/" target="_blank">
+      <img src="images/sponsors/sponsor_aacb.png" alt="Australian Association for Clinical Biochemistroy and Laboratory Medicine" vspace="60">
+      </a>
+    </div> 
+    
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://www.aims.org.au/" target="_blank">
+        <img src="images/sponsors/sponsor_aims.png" alt="AIMS - Australian Institute of Medical and Clinitcal Scientists" vspace="60">
+      </a>
+    </div> 
+
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://www.hgsa.org.au/" target="_blank">
+        <img src="images/sponsors/sponsor_hgsa.png" alt="Human Genetics Society of Australia" vspace="60">
+      </a>
+    </div> 
+
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://pathology.health.nsw.gov.au/" target="_blank">
+        <img src="images/sponsors/sponsor_nswhp.png" alt="NSW Health Pathology" vspace="60">
+      </a>
+    </div> 
+
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://publicpathology.org.au/" target="_blank">
+        <img src="images/sponsors/sponsor_public_pathology.png" alt="Public Pathology" vspace="60">
+      </a>
+    </div> 
+
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://www.rcpa.edu.au/" target="_blank">
+        <img src="images/sponsors/sponsor_rcpa.png" alt="RCPA" vspace="60">
+      </a>
+    </div> 
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://rcpaqap.com.au/" target="_blank">
+        <img src="images/sponsors/sponsor_rcpaqap.png" alt="RCPAQAP" vspace="60">
+      </a>
+    </div> 
+
+    <div style="flex: 0 1 auto; padding: 1.5rem 0;">
+      <a href="https://www.sonicpathology.com.au/" target="_blank">
+        <img src="images/sponsors/sponsor_sonic.png" alt="Sonic Healthcare Australia Pathology" vspace="60">
+      </a>
+    </div> 
+
+  </div>
+</div>
+
+                        <!-- <div class="col-md-2 col-6">
+                            <img src="images/sponsors/choosing-wisely.png" alt="">
+
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <img src="images/sponsors/nps-medicinewise.png" alt="">
+
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <img src="images/sponsors/your-health-link.png" alt="">
+
+                        </div> -->
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- sponsors ends here -->
+
+
+    <!-- main footer area -->
+    <footer class="main-footer sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12 footer-colmun">
+                    <div class="logo-widget footer-widget footer-main-logo">
+                        <div class="footer-logo footer-logo-img">
+                            <a href="/"></a>
+                        </div>
+
+                        <!-- <div class="button">
+                       <a href="#" class="btn-one style-one radi">Subscribe</a>
+                   </div> -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 footer-colmun">
+                    <div class="service-widget footer-widget">
+                        <div class="footer-title">
+                            <h4>Sitemap</h4>
+                        </div>
+                        <ul class="list">
+                            <li>
+                                <a href="ptests_index.php">Pathology Tests Tests Index</a>
+                            </li>
+                            <li>
+                                <a href="patient-information-sheets.php">Patient Information Sheets</a>
+                            </li>
+                            <li>
+                                <a href="video.php">Video Library</a>
+                            </li>
+                            <li>
+                                <a href="pages.php?page=About%20Us">About Us</a>
+                            </li>
+                            <li>
+                                <a href="pages.php?page=Partners">Partners</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 footer-colmun social-media-foot">
+                    <div class="subscribe-widget footer-widget">
+                        <div class="footer-title">
+                            <h4>Social Media Links</h4>
+                        </div>
+
+
+                        <ul class="footer-social">
+                            <li><a href="https://www.facebook.com/Pathologytestsexplained/" class="active" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                         <!--    <li><a href="https://twitter.com/LabTestsAu" target="_blank"><i class="fa fa-twitter"></i></a></li> -->
+                              <li><a href="https://www.youtube.com/@pathologytestsexplained2754" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 footer-colmun head-office-foot" style="text-align: right;">
+                    <div class="link-widget footer-widget">
+                        <div class="footer-title">
+                            <h4>Head Office</h4>
+                        </div>
+                        <p>PO Box 147</p>
+                       <!--  <p>5/85 Bourke Rd</p> -->
+                        <p>Killara NSW 2071</p> <br>
+
+                        <!-- <p>Level 4, 123 Missenden Rd</p>
+                        <p>Brighton LeSands Not-an-address</p>
+                        <p>PENASACOLA, FL</p> <br>
+
+                        <p>P:+61-2-3344-5567</p>
+                        <p>F:+61-2-3344-5567</p> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- main footer area end -->
+
+    <!-- footer bottom -->
+    <section class="footer-bottom centered">
+        <div class="container">
+            <div class="copyright">
+                <p><a href="#">Pathology Tests Explained</a> Copyright © 2026 All Right Reserved</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--End pagewrapper-->
+
+
+    <!--Scroll to top-->
+<!--     <div class="scroll-to-top scroll-to-target" data-target=".main-header" id="scrollUpgg"><span class="icon fa fa-angle-up"></span>
+    </div> -->
+
+
+    <!--jquery js -->
+
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="js/slider-active.js" type="text/javascript"></script>
+
+
+<!--    <script async src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.9/SmoothScroll.js"></script> -->
+
+
+    <script src="revolution/js/jquery.themepunch.tools.min.js" type="text/javascript">
+    </script>
+    <script src="revolution/js/jquery.themepunch.revolution.min.js" type="text/javascript">
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </script>
+    <script src="revolution/js/extensions/revolution.extension.parallax.min.js" type="text/javascript">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tarekraafat-autocomplete.js/10.2.7/autoComplete.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        function openRightMenu() {
+            document.getElementById("rightMenu").style.display = "block";
+        }
+
+        function closeRightMenu() {
+            document.getElementById("rightMenu").style.display = "none";
+        }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                Width:'1200px',
+                nav: true,
+                autoplay: true,         // Enable autoplay
+                autoplayTimeout: 5000,   // Set autoplay interval in milliseconds (3 seconds in this example)
+                dots: true
+            });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#submitSelectValue").on('click', function(){ 
+                let values = $(this).val()
+                  window.location.href = "/ptests_index.php";
+                // if(values.length > 0){
+                //        $('button#submitSelectValue').prop('disabled', false);
+                //     $('#submitSelectValue').trigger('click');
+                // }
+                return false;
+                
+            })
+        });
+    </script>
+
+
+
+<!-- Scroll Up Styles -->
+
+
+
+
+      <script>
+        const dataSrc = ["17-Hydroxyprogesterone","5HIAA (5-Hydroxyindoleacetic acid)","ABG","ACE","Acetylcholine receptor antibody","Acid fast bacilli culture","ACTH (Adrenocorticotropic hormone)","Activated partial thromboplastin time","AFP (Alpha fetoprotein)","Alanine Aminotransferase (ALT)","Albumin","Albumin-creatinine ratio","Alcoholism","Aldosterone and renin","ALK Mutation (Gene Rearrangement)","Alkaline phosphatase (ALP)","Allergies","ALP","Alpha-1-antitrypsin (A1AT)","Alpha-gal antibody","ALT","Alzheimer's disease","AMH","Amino acids","Ammonia","Amylase","ANA","Anaemia","Angina","Angiotensin converting enzyme (ACE)","Ankylosing spondylitis","Antenatal group and screen","Anthrax","Anti Factor Xa","Anti-Mullerian Hormone (AMH)","Antineutrophil cytoplasmic antibodies (ANCA)","Antinuclear antibodies","Antiphospholipid antibodies","Antistreptolysin O titre","Antithrombin","Apo A-1","Apo-B","Apolipoprotein A-1","Apolipoprotein B-100","Apolipoprotein E genotyping","APTT","Arbovirus testing","Arthritis","Aspartate Aminotransferase (AST)","AST","Asthma","B-cell immunoglobulin gene rearrangement","Bacterial wound culture","Barmah Forest virus","BCR-ABL1","Benign prostatic hypertrophy","Beta HCG quantitation","Beta-2 glycoprotein 1 antibodies","Beta-2-microglobulin","Beta-2-transferrin","Bicarbonate","Bilirubin","Biochemical genetic testing","Blood culture","Blood film","Blood gases (arterial)","Blood gases - venous","Blood group antibody screen","BNP","BNP and NT-proBNP tests","Bone markers","Bone marrow biopsy","Bone turnover markers","Bowel cancer","BRAF V600 mutation","BRCA 1 and 2 (Breast cancer gene 1 and 2)","Breast cancer","BSL","C-peptide","C-reactive protein","CA125 (Cancer antigen 125)","CA15-3 (Cancer antigen 15-3)","CA19-9 (Cancer antigen 19-9)","Caeruloplasmin","Calcitonin","Calcium","Calcium, phosphate and magnesium","Calprotectin faeces","Carbamazepine level","Carcinoembryonic Ag (CEA)","Cardiolipin antibody","Catecholamines","CCP (Cyclic citrullinated peptide antibody)","CD4 count","CEA","Centromere antibody","Cerebrospinal fluid examination","Cervical cancer","Cervical co-test","Cervical screening test","Chlamydia trachomatis nucleic acid","Chloride","Cholesterol","Cholinesterase","Chromogranin A","Chromosome microarray (CMA) testing","Chromosome studies","Chronic fatigue syndrome (Myalgic Encephalomyelitis)","CK (Creatine kinase)","CKMB (Creatine kinase MB)","Clostridium difficile","Coagulation (blood clotting) factors","Coagulation profile (blood clotting)","Coeliac disease testing","Complement","Congenital adrenal hyperplasia","Congestive heart failure","Copper","Cortisol","COVID-19","Creatinine","Creatinine clearance","Crossmatch","CRP","Cryoglobulin","CSF","Cushing's syndrome","Cyclosporin","Cystatin C","Cystic fibrosis","Cystic fibrosis (CF) gene mutation","Cytogenetics","D-dimer","Deamidated Gliadin Antibody (Coeliac Disease Test)","Dehydroepiandrosterone sulfate (DHEAS)","DHEAS","Diabetes","Diabetes-related autoantibodies","Diarrhoea","Digoxin level","Direct antiglobulin test","Diseases of the pancreas","Double stranded DNA antibody","Down syndrome","EGFR (Epidermal growth factor receptor) mutation","eGFR (Estimated glomerular filtration rate)","Electrolytes","Electrolytes, urea and creatinine","Emergency and overdose drug testing","Epilepsy","EPO","Epstein-Barr virus antibodies","Erythrocyte sedimentation rate (ESR)","Erythropoietin","Ethanol","Extractable nuclear antigen Ab","Factor V Leiden","FBC","Ferritin","FH (Familial hypercholesterolaemia) genetic test","FIB-4 liver fibrosis test","Fibrinogen","Fibromyalgia","FMR1 (Fragile X messenger ribonucleoprotein 1) mutation","FOBT","Follicle stimulating hormone (FSH)","Fragile X gene","Fragile X syndrome","Free light chains","Free T3 (triiodothyronine)","Free T4 (thyroxine)","Fructosamine","FSH","Full blood count","Fungal tests","G6PD","Gallstones","Gamma-glutamyl transferase (GGT)","Gastrin","Genital MCS (Genital Microscopy, Culture and Sensitivity)","Gentamicin level","GGT","Glucose","Glucose-6-phosphate dehydrogenase","Gonorrhoeae","Gout","Gram stain","Graves' disease","Growth hormone (GH)","Guillain-Barre syndrome","Haematocrit","Haemochromatosis","Haemoglobin","Haptoglobin","Hashimoto's thyroiditis","HbA1c","HCG","HCG (Human chorionic gonadotrophin)","HDL cholesterol","Heart attack","Helicobacter pylori","Hepatitis A","Hepatitis B","Hepatitis B surface antibody","Hepatitis C","Hepatitis, viral","Herpes simplex virus 1 and 2","HFE mutations","High blood pressure (hypertension) ","HIV genotypic resistance","HIV p24 antigen","HIV serology","HIV viral load","HLA B27","HLA B5701","HLA tests","Homocysteine","Hormone receptor status","HPV","Human epidermal growth factor receptor 2 (HER-2)","Human immunodeficiency virus (HIV)","Huntington's disease","IGF-1","Immunoglobulin E Total (Allergy)","Immunoglobulins","Immunophenotyping","Immunoreactive trypsin","Infertility","Influenza","Influenza (flu) tests","Inherited cancer risk - bowel and endometrial cancer","Inhibin","INR","Insulin","Ionised calcium","Iron","Iron studies","JAK2 (Janus Kinase 2) mutation","Japanese encephalitis ","Jaundice","Juvenile idiopathic arthritis","Karyotyping (chromosome studies)","Kidney function tests","Kidney stone analysis","Lactate","Lactate dehydrogenase (LDH)","LDL cholesterol","Lead","Lead poisoning","Leukaemia","LFT (Liver function tests)","Lipase","Lipid profile (cholesterol and triglycerides)","Lipoprotein (a)","Lipoprotein electrophoresis","Lithium","Lupus anticoagulant","Luteinising hormone (LH)","Lyme disease","Lyme disease serology","Lymphoma","Magnesium","Malaria","Malnutrition","MCS sputum","MCS stool","MCS Urine (Urine culture)","Measles and Mumps serology","Menopause","Mercury","Mesothelin","Metanephrines - 24 hr urine","Methicillin resistant Staphylococcus aureus screening (MRSA)","Microalbumin (Albumin-creatinine ratio)","Mitochrondrial antibody","Monospot or infectious mononucleosis test","MPL (Myeloproliferative leukaemia) mutation ","MTHFR mutation","Multiple myeloma","Multiple sclerosis (MS)","Myasthenia gravis","Mycophenolate","Mycoplasma","Myoglobin urine","Neisseria gonorrhoeae nucleic acid","NH3","Nicotine","NIPT (Non-invasive prenatal testing)","NT-proBNP","Occult blood faeces","Oestradiol (oestrogen)","Organic acids urine","Osmolality","Osteoporosis","Ova, Cysts and Parasites faeces","Ovarian cancer","Pancreatic elastase faeces","Pancreatitis","Paracetamol level","Parathyroid Hormone (PTH)","Parvovirus B19","Pericardial fluid analysis","Peritoneal fluid analysis","PGx (Pharmacogenomics testing)","Phenobarbitone","Phenytoin level","Phosphate","Plasma free metanephrines","Platelet count","Pleural fluid analysis","PMP22 gene","PoCT (Point of care testing)","Polycystic ovarian syndrome","Porphyria","Porphyrins","Potassium","Prealbumin","Procalcitonin","Progesterone","Prolactin","Prostate cancer","Prostate specific antigen","Protein C and S","Protein electrophoresis","Protein urine","Prothrombin time (Internationalised normalised ratio)","PSEN1 (Presenilin 1 genetic analysis)","PT","RAS gene mutation","Red blood cell count","Red cell antibody screen","Red cell indicies","Renin","Reproductive Carrier Screening","Respiratory syncytial virus nucleic acid ","Reticulocyte count","Rheumatoid arthritis","Rheumatoid factor (RF)","Rickettsial diseases testing","RSV","Rubella","Salicylate","Sarcoidosis","SARS-CoV-2 (COVID-19) tests","SARS-Cov-2 Serology (COVID-19 Antibody)","Semen analysis","Sepsis","Serotonin whole blood","Sex hormone binding globulin (SHBG)","Sickle cell","Sickle cell anaemia","Sirolimus","Sj\u00f6gren\u2019s syndrome","Skin cancer","Smooth muscle Ab (SMA)","Sodium","Somatic tumour gene testing","Staph wound infections and MRSA","Stroke","Susceptibility testing","Synacthen short test","Synovial fluid examination","Syphilis","Systemic lupus erythematosus","T3","T4","Tacrolimus level","Testicular cancer","Testosterone","Thalassaemia","Thiopurine methyltransferase (TMPT)","Throat culture","Thyroglobulin","Thyroid antibodies","Thyroid diseases","Thyroid Function Tests","Thyroid stimulating hormone (TSH)","TORCH panel","Total calcium","Total Protein (TP)","Toxoplasmosis","Transferrin and Total Iron Binding Capacity (TIBC)","Trichomonas vaginalis detection","Triglycerides","Troponin T","Trypsin faeces","Tryptase","Tuberculosis","Tuberculosis screening tests","Tumour markers","Tumour testing for inherited bowel and endometrial cancers (Lynch syndrome)","UACR","Urate (Uric Acid)","Urea (blood and urine)","Urinary tract infection (UTI)","Urine dipstick and microscopy (Urinalysis)","UTI (Urinary tract infection) testing","Valproate level (valproic acid test)","Vancomycin level","Varicella zoster virus","Vasculitis","VBG","VHL (Von Hippel-Lindau) tumour suppressor ","Vitamin B12 and folate","Vitamin B12 and folate deficiency","Vitamin D","von Willebrand factor","White cell count","Whole Genome or Whole Exome Testing for Childhood Syndromes","Whooping Cough","Zinc protoporphyrin"];
+
+        const autoCompleteJS = new autoComplete({
+
+            selector: "#autoComplete",
+            placeHolder: "Find a test",
+            data: {
+                src: dataSrc,
+                cache: true,
+            },
+            resultsList: {
+                element: (list, data) => {
+                    if (!data.results.length) {
+                        // Create "No Results" message element
+                        const message = document.createElement("div");
+                        // Add class to the created element
+                        message.setAttribute("class", "no_result");
+                        // Add message text content
+                        message.innerHTML = `<span>Found No Results for "${data.query}"</span>`;
+                        // Append message element to the results list
+                        list.prepend(message);
+                    } else {
+                          const message = document.createElement("div");
+                         // Update the results message
+                    message.innerHTML = `<span>Displaying ${data.results.length} out of ${dataSrc.length} results for "${data.query}"</span>`;
+                    // Update displayed and total results count
+                   list.prepend(message);
+           
+                    }
+                },
+                noResults: true,
+                maxResults: 150,
+            },
+            resultItem: {
+                highlight: true
+            },
+            events: {
+                input: {
+                    selection: (event) => {
+                        const selection = event.detail.selection.value;
+                        autoCompleteJS.input.value = selection;
+                           //$('#submitSelectValue').trigger('click');
+                           $('.subscribe-widget .dropdown form').submit();
+                    }
+                }
+            }
+        });
+    </script>
+    
+
+<style>
+    .partners_logo_list div {
+     width: 20%;
+         display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partners_logo_list div img{ 
+          width: 100%;
+          height: auto;
+           padding-inline:0px;
+  }
+  @media(max-width: 1399px){
+    .partners_logo_list div img{
+        padding-inline:20px;
+    }
+  }
+  @media(max-width: 900px){
+    .partners_logo_list div {
+     width: 48%;
+  }
+  }
+  @media(max-width: 575px){
+    .partners_logo_list div {
+     width: 100%;
+  }
+   .partners_logo_list div img{
+        padding-inline:20px;
+    }
+    .partners_logo_list div:not(:first-child){
+        margin-top: -80px;
+    }
+  }
+ 
+</style>
+    <!-- End of .page_wrapper -->
+
+
+
+
+<!-- Survey Pop-up -->
+<div id="survey-popup" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 16px;
+    z-index: 9999;
+    display: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="color: #F47C20; font-weight: bold;">We'd love your feedback</span>
+        <button onclick="hideSurveyPopup()" style="background: none; border: none; font-size: 18px; cursor: pointer; color: #888;">X</button>
+    </div>
+    <p style="margin-top: 8px; color:#888888;">Could you take a moment to complete our quick survey?</p>
+    <a href="/forms_survey.php" target="_blank" style="color: #0072CE; text-decoration: underline;" onclick="hideSurveyPopup()">Take the Survey</a>
+</div>
+
+<script>
+// Cookie helpers
+/*function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Show popup if not already seen
+function hideSurveyPopup() {
+    document.getElementById('survey-popup').style.display = 'none';
+    setCookie('surveySeen', 'true', 30);
+}
+
+window.addEventListener('load', function () {
+    const isPTExPage = window.location.href.includes('/forms_survey.php'); // Adjust path if needed
+    if (getCookie('surveySeen')=="false" && 1==2) {
+        setTimeout(function () {
+            document.getElementById('survey-popup').style.display = 'block';
+        }, 5000); // Show after 60s
+    }
+}); */
+// Function to hide survey popup and set localStorage
+function hideSurveyPopup() {
+    document.getElementById('survey-popup').style.display = 'none';
+    localStorage.setItem('surveySeen', Date.now()); // Store timestamp
+}
+
+// Function to check if popup should be shown
+function shouldShowSurveyPopup() {
+    const seenTimestamp = localStorage.getItem('surveySeen'); 
+    if (!seenTimestamp) return true; // If no record, show popup
+
+    const elapsedTime = Date.now() - parseInt(seenTimestamp, 10);
+    const daysElapsed = elapsedTime / (1000 * 60 * 60 * 24);
+    return daysElapsed >= 30; // Show popup if 30 days have passed
+}
+
+window.addEventListener('load', function () {
+    if (shouldShowSurveyPopup() && 1==2) {
+        setTimeout(function () {
+            document.getElementById('survey-popup').style.display = 'block';
+        }, 50000); // Show after 50 seconds
+    }
+});
+
+</script>
+
+
+
+
+<div class="scroll-to-top scroll-to-target" data-target=".main-header" id="prtexscroll"><span class="icon fa fa-angle-up"></span>
+    </div>
+<script>
+jQuery(document).ready(function ($) {
+  // Scroll Event
+  $('body').on('scroll', function () { 
+  
+    if ($(this).scrollTop() > 600) {
+      $('#prtexscroll').fadeIn();
+    } else {
+      $('#prtexscroll').fadeOut();
+    }
+  });
+
+  // Click Scroll to Top
+  $('#prtexscroll').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+});
+</script>
+</body>
+
+
+
+</html> 
