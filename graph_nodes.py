@@ -18,11 +18,15 @@ import logging
 import time
 from typing import Any, Dict, List
 
+
 from agents.aggregator_agent import AggregatorAgent
 from agents.credibility_agent import SourceCredibilityAgent
 from agents.entity_agent import EntityAnalysisAgent
+from agents.plausibility_agent import ClaimPlausibilityAgent
 from agents.temporal_agent import TemporalReasoningAgent
-from backend.captioning import ImageCaptioner
+from backend.captioning2 import ImageCaptioner
+from agents.clip_agent import CLIPVisualAgent
+
 
 from backend.config import Config
 from backend.entity_extraction import EntityExtractor
@@ -33,6 +37,8 @@ from graph_state import AgentState
 from backend.evidence_filter import filter_relevant_evidence
 
 LOG = logging.getLogger(__name__)
+
+clip_agent = CLIPVisualAgent()
 
 
 def make_nodes(config: Config) -> Dict[str, Any]:
@@ -48,10 +54,11 @@ def make_nodes(config: Config) -> Dict[str, Any]:
     rev_searcher     = ReverseImageSearcher(config)
     web_searcher     = WebSearcher(config)
     historical_index = HistoricalEvidenceIndex(config)
-    entity_agent     = EntityAnalysisAgent(config)
-    temporal_agent   = TemporalReasoningAgent(config)
-    cred_agent       = SourceCredibilityAgent(config)
-    aggregator       = AggregatorAgent(config)
+    entity_agent        = EntityAnalysisAgent(config)
+    temporal_agent      = TemporalReasoningAgent(config)
+    cred_agent          = SourceCredibilityAgent(config)
+    plausibility_agent  = ClaimPlausibilityAgent(config)
+    aggregator          = AggregatorAgent(config)
 
     # ── Node 1: Caption the image with BLIP ──────────────────────────────────
     def node_caption(state: AgentState) -> Dict[str, Any]:
@@ -68,20 +75,51 @@ def make_nodes(config: Config) -> Dict[str, Any]:
             return {"caption": "", "errors": errors}
 
     # ── Node 2: Extract entities with spaCy + metadata from EXIF/text ─────────
-    def node_extract_entities(state: AgentState) -> Dict[str, Any]:
-        LOG.info("[node] Extracting entities + metadata")
+    
+    def node_extract_entities(state):
+        """Extract entities + metadata + run local CLIP analysis."""
+        LOG = __import__('logging').getLogger(__name__)
+        errors = list(state.get("errors") or [])
+ 
         combined = f"{state.get('claim', '')} {state.get('caption', '')}"
         entities = extractor.extract(combined)
         LOG.info("[node] Entities: %s", {k: v for k, v in entities.items() if v})
-
-        # Extract metadata (EXIF + temporal clues from claim + caption)
+ 
         metadata = meta_extractor.extract_all(
             image_path=state.get("image_path", ""),
             claim=state.get("claim", ""),
             caption=state.get("caption", ""),
         )
-        LOG.info("[node] Metadata summary: %s", metadata.get("summary"))
-        return {"entities": entities, "metadata": metadata}
+        LOG.info("[node] Metadata: %s", metadata.get("summary"))
+ 
+        # ── Run CLIP agent locally (no API) ──────────────────────────────────────
+        clip_result = {"clip_score": 0.5, "interpretation": "SKIPPED", "reasoning": "CLIP disabled"}
+        if config.use_clip_agent:
+            try:
+                LOG.info("[node] Running local CLIP visual consistency check...")
+                clip_result = clip_agent.analyse(
+                    image_path=state.get("image_path", ""),
+                    claim=state.get("claim", ""),
+                    caption=state.get("caption", ""),
+                )
+                LOG.info(
+                    "[node] CLIP: score=%.3f interpretation=%s",
+                    clip_result.get("clip_score", 0.5),
+                    clip_result.get("interpretation", "?"),
+                )
+            except Exception as exc:
+                msg = f"CLIP agent failed: {exc}"
+                LOG.warning(msg)
+                errors.append(msg)
+                clip_result = {"clip_score": 0.5, "interpretation": "ERROR", "reasoning": msg}
+ 
+        return {
+            "entities":    entities,
+            "metadata":    metadata,
+            "clip_result": clip_result,
+            "errors":      errors,
+        }
+ 
 
     # ── Node 3: Retrieve evidence (reverse image + web) ──────────────────────
 
@@ -261,34 +299,30 @@ def make_nodes(config: Config) -> Dict[str, Any]:
                 "errors": errors,
             }
 
-    # ── Node 5: Score fusion — weighted average → threshold verdict ───────────
-    def node_score_fusion(state: AgentState) -> Dict[str, Any]:
-        LOG.info("[node] Score fusion")
-        e = float((state.get("entity_result") or {}).get("entity_score", 0.5))
-        t = float((state.get("temporal_result") or {}).get("temporal_score", 0.5))
-        c = float((state.get("credibility_result") or {}).get("credibility_score", 0.5))
-
-        # Clamp to [0, 1]
-        e = max(0.0, min(1.0, e))
-        t = max(0.0, min(1.0, t))
-        c = max(0.0, min(1.0, c))
-
-        from backend.config import Config as _Cfg
-        cfg = config  # captured from closure
-        final = (cfg.weight_entity * e) + (cfg.weight_temporal * t) + (cfg.weight_credibility * c)
-        verdict = "PRISTINE" if final >= cfg.pristine_threshold else "OUT-OF-CONTEXT"
-
-        LOG.info(
-            "[node] Scores — entity=%.3f temporal=%.3f cred=%.3f final=%.3f → %s",
-            e, t, c, final, verdict,
-        )
-        return {
-            "entity_score": e,
-            "temporal_score": t,
-            "credibility_score": c,
-            "final_score": final,
-            "math_verdict": verdict,
-        }
+    # ── Node 5: Claim Plausibility Agent (soft OOC signal) ──────────────────
+    def node_plausibility_agent(state: AgentState) -> Dict[str, Any]:
+        LOG.info("[node] Claim Plausibility Agent")
+        errors: List[str] = list(state.get("errors") or [])
+        try:
+            result = plausibility_agent.analyse(
+                claim=state.get("claim", ""),
+                caption=state.get("caption", ""),
+            )
+            return {"plausibility_result": result}
+        except Exception as exc:
+            msg = f"Plausibility agent failed: {exc}"
+            LOG.error(msg)
+            errors.append(msg)
+            return {
+                "plausibility_result": {
+                    "plausibility_score": 0.70,
+                    "red_flags": [],
+                    "positive_signals": [],
+                    "claim_type_assessment": "ordinary",
+                    "reasoning": msg,
+                },
+                "errors": errors,
+            }
 
     # ── Node 6: Aggregator — Claude generates the human explanation ───────────
     def node_aggregator(state: AgentState) -> Dict[str, Any]:
@@ -301,8 +335,9 @@ def make_nodes(config: Config) -> Dict[str, Any]:
                 entity_result=state.get("entity_result", {}),
                 temporal_result=state.get("temporal_result", {}),
                 credibility_result=state.get("credibility_result", {}),
-                final_score=state.get("final_score", 0.5),
-                verdict=state.get("math_verdict", "OUT-OF-CONTEXT"),
+                clip_result=state.get("clip_result", {}),
+                evidence_items=state.get("evidence", []),
+                plausibility_result=state.get("plausibility_result", {}),
             )
             return {
                 "verdict": agg.get("verdict", state.get("math_verdict")),
@@ -310,6 +345,10 @@ def make_nodes(config: Config) -> Dict[str, Any]:
                 "explanation": agg.get("explanation", ""),
                 "key_evidence_for_verdict": agg.get("key_evidence_for_verdict", []),
                 "flags": agg.get("flags", []),
+                "threshold_used": float(agg.get("threshold_used", 0.0)),
+                "plausibility_score": float(agg.get("plausibility_score", 0.70)),
+                "ooc_signal_count": int(agg.get("ooc_signal_count", 0)),
+                "ooc_category": agg.get("ooc_category", "none"),
             }
         except Exception as exc:
             msg = f"Aggregator failed: {exc}"
@@ -333,6 +372,6 @@ def make_nodes(config: Config) -> Dict[str, Any]:
         "node_entity_agent":      node_entity_agent,
         "node_temporal_agent":    node_temporal_agent,
         "node_credibility_agent": node_credibility_agent,
-        "node_score_fusion":      node_score_fusion,
+        "node_plausibility_agent": node_plausibility_agent,
         "node_aggregator":        node_aggregator,
     }
