@@ -1,0 +1,46 @@
+============================================================
+TRUST-AGENT EVALUATION RESULTS
+Date: 2026-04-11 00:59
+Samples evaluated: 24
+============================================================
+
+OVERALL METRICS
+----------------------------------------
+  Accuracy  : 0.6667  (66.7%)
+  Precision : 0.7000  (70.0%)
+  Recall    : 0.5833  (58.3%)
+  F1-Score  : 0.6364  (63.6%)
+
+CONFUSION MATRIX
+----------------------------------------
+  True Positives  (OOC correctly flagged) : 7
+  True Negatives  (PRISTINE correctly ok) : 9
+  False Positives (PRISTINE wrongly flagged): 3
+  False Negatives (OOC missed)            : 5
+
+METRICS BY SAMPLE TYPE
+----------------------------------------
+  real_news            | n=12 | Acc=0.75 | F1=0.00
+  time_trick           | n=12 | Acc=0.58 | F1=0.74
+
+WRONG PREDICTIONS (8 cases)
+----------------------------------------
+  ID   3 | True=PRISTINE        Pred=OUT-OF-CONTEXT  | "Fifteen‑year‑old Sooryavanshi tears apart Chennai with 15‑b
+  ID   4 | True=PRISTINE        Pred=OUT-OF-CONTEXT  | "Taylor Swift sued for trademark infringement over 'Life of 
+  ID   6 | True=PRISTINE        Pred=OUT-OF-CONTEXT  | "Bollywood's 'He-Man' Dharmendra dies at 89"
+  ID  19 | True=OUT-OF-CONTEXT  Pred=PRISTINE        | “Heavy rains cause devastating floods in Kerala today (2026)
+  ID  20 | True=OUT-OF-CONTEXT  Pred=PRISTINE        | “Massive bushfires spread across Australia today (2026), wil
+  ID  21 | True=OUT-OF-CONTEXT  Pred=PRISTINE        | “Protests erupt across US cities today (2026) after police i
+  ID  22 | True=OUT-OF-CONTEXT  Pred=PRISTINE        | “Strong earthquake hits Japan today (2026), buildings damage
+  ID  24 | True=OUT-OF-CONTEXT  Pred=PRISTINE        | “Violent protests break out in Paris today (2026), police cl
+
+COMPARISON WITH EXISTING SYSTEMS
+----------------------------------------
+  COSMOS (Aneja 2020)        | ~73.0% accuracy | trained model
+  NewsCLIPpings (Abdel 2022) | ~78.0% accuracy | fine-tuned CLIP
+  EXCLAIM (Wu 2025)          | ~85.0% accuracy | agentic retrieval
+  TRUST-AGENT (ours)         | 66.7% accuracy | zero-shot, no training
+
+NOTE: Published systems trained and tested on same distribution.
+TRUST-AGENT is zero-shot — no training data used at all.
+============================================================

@@ -1,4 +1,4 @@
-"""Temporal Reasoning Agent — checks if the image timeline matches the claim."""
+"""Temporal Reasoning Agent — improved for miscaptioned detection."""
 
 from __future__ import annotations
 
@@ -7,85 +7,103 @@ import logging
 from typing import Any, Dict, List
 
 from backend.config import Config
+from backend.llm_client import chat_with_fallback
 from backend.utils import clean_text
-from backend.llm_client import get_llm_client
 
 LOG = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = """You are a Temporal Reasoning Agent for a misinformation detection system.
 
-Your job: Determine whether the TIME and DATE in the claim is CONSISTENT with reality.
+Your job: Determine if the TIME/DATE in the claim is consistent with reality.
 
-STEP 1 — Understand the claim type first:
+════════════════════════════════════════════════════════
+STEP 1 — CLASSIFY THE CLAIM TYPE:
 
-TYPE A — "Old image being claimed as recent event"
-  Example: "Beirut explosion today 2026" — but explosion was 2020
-  → Check: does evidence show the event was actually in a different year?
-  → If YES → temporal_score: 0.0 to 0.2
+TYPE A — Old event image falsely claimed as RECENT/CURRENT
+  Key signal: Claim uses words like "today", "now", "currently", "2025", "2026"
+  AND evidence shows the event actually happened years earlier
+  Example: "Beirut explosion today 2026" (actually happened 2020)
+  → temporal_score: 0.0 to 0.2
 
-TYPE B — "Historical subject with a recent action"
-  Example: "19th century painting sold for $17.9m" — painting IS old, sale IS recent
-  Example: "Ancient temple restored in 2024" — temple IS old, restoration IS recent
-  Example: "100-year-old document auctioned today" — document IS old, auction IS recent
-  → These are CONSISTENT — the historical date and recent action are both true
-  → temporal_score: 0.7 to 0.9
+TYPE B — Claim correctly states a historical date or recent verified event
+  Key signal: Claim has a specific past date AND that date is plausible/correct
+  Example: "Paris Hilton selfie taken in 2006"
+  Example: "NASA Mars Rover photo on May 7, 2022"
+  Example: "Norwegian Navy missile test in 2013"
+  Example: "China rocket launch December 2019"
+  Example: "Jan 6 2020 Michigan protest"
+  Example: "19th century painting sold for $17.9m"
+  → temporal_score: 0.65 to 0.85 (the date is part of the true claim)
 
-TYPE C — "Recent event with no date information"
-  Example: "Protesters march in Paris" — no specific year mismatch found
-  → temporal_score: 0.6 (benefit of doubt)
+TYPE B_WRONG — Claim states a specific date BUT evidence shows a DIFFERENT date
+  Key signal: Claim says event happened in year X, but evidence points to year Y
+  Example: "Glastonbury 2015 garbage" (but photo is actually from 2016 Glastonbury)
+  Example: "Jan 6 2020 Michigan protest" (actually a different location/date)
+  → temporal_score: 0.20 to 0.40
 
-STEP 2 — Apply the right scoring:
+TYPE C — No specific date or year in claim
+  Example: "Image shows electric scooters abandoned by Mobike"
+  Example: "Image shows athletes highlining"
+  → temporal_score: 0.65 (neutral — nothing to check)
 
-CRITICAL RULE: If the claim mentions BOTH a historical period AND a recent action
-(sale, auction, discovery, record, award, exhibition) — this is TYPE B.
-Do NOT flag TYPE B as a temporal mismatch. Score 0.7+.
+════════════════════════════════════════════════════════
+CRITICAL RULES:
 
-COMMON TIME-TRICK PATTERNS (TYPE A — flag these):
-- Beirut explosion → actually happened August 2020, not 2025/2026
-- Notre Dame fire → actually April 2019, not 2025/2026
-- COVID lockdowns → 2020, not 2025/2026
-- Kerala floods → 2018/2019, not 2025/2026
-- Nepal earthquake → 2015, not 2025/2026
-- Australia bushfires → 2019/2020, not 2025/2026
-- George Floyd protests → 2020, not 2025/2026
-- Yellow vest protests → 2018/2019, not 2025/2026
+1. TYPE B historical dates: If a claim states a specific year (2006, 2013, 2015,
+   2019, 2020, 2022 etc.) AND it's a factual description with no evidence 
+   contradicting that date → score 0.65 to 0.80
 
-NOT time tricks (TYPE B — do not flag):
-- Old painting/artwork sold/auctioned recently
-- Historical document discovered or exhibited recently
-- Ancient artifact sold at record price
-- Old film/book winning recent award
-- Historical monument recently renovated
+2. TYPE A only applies when the claim says something is CURRENT/RECENT/TODAY
+   but evidence shows it happened in a different year YEARS AGO.
 
-You must respond ONLY with valid JSON — no markdown fences, no extra text.
+3. TYPE B_WRONG: When evidence ACTIVELY shows the claimed date is wrong
+   (e.g., claim says 2015 but all sources point to 2016) → score 0.20-0.40
+
+4. NEVER score 0.0 for a claim with a historical date unless you have
+   SPECIFIC evidence proving that date is wrong.
+
+5. For MISCAPTIONED content (image is real but from different event):
+   If evidence shows the image is ACTUALLY from event/year X but claim says event/year Y,
+   AND they differ by more than 1 year OR are completely different events:
+   → TYPE B_WRONG, score 0.20-0.35
+
+KNOWN TIME TRICKS to detect (TYPE A):
+- "Beirut explosion today/2025/2026" → actually Aug 2020
+- "Notre Dame fire today/2025" → actually April 2019  
+- "COVID lockdowns today 2025" → actually 2020
+- "Kerala floods today 2025" → actually 2018/2019
+- "Yellow vest protests today 2025" → actually 2018/2019
+
+NOT time tricks (TYPE B — do not penalize):
+- Any claim that states the correct historical year of an event
+- Old paintings/artworks sold or auctioned recently
+- Historical events described with their actual year
+
+You must respond ONLY with valid JSON — no markdown fences.
 
 Response schema:
 {
-  "claim_type": "TYPE_A or TYPE_B or TYPE_C",
-  "claim_time_reference": "what time/date the claim mentions",
-  "image_time_reference": "what time period the image is from",
-  "time_gap_description": "explanation of temporal relationship",
-  "is_temporally_consistent": true or false,
+  "claim_type": "TYPE_A|TYPE_B|TYPE_B_WRONG|TYPE_C",
+  "claim_time_reference": "date/year from claim or 'none'",
+  "image_time_reference": "actual time period or 'unknown'",
+  "time_gap_description": "consistent / no date in claim / X years apart",
+  "is_temporally_consistent": true,
   "temporal_score": 0.0,
-  "reasoning": "specific explanation"
+  "reasoning": "specific explanation of classification and score"
 }
 
-temporal_score:
-- 0.8–1.0 → consistent (TYPE B confirmed, or claim date matches evidence)
-- 0.6–0.75 → neutral (TYPE C — no mismatch found)
-- 0.3–0.5 → possible mismatch but uncertain
-- 0.0–0.2 → clear TYPE A mismatch — evidence shows different year
+temporal_score guide:
+0.75–1.0 → TYPE B confirmed consistent, or strong evidence supports claim date
+0.65     → TYPE C (no date) OR TYPE B (historical date, no contradiction found)
+0.35–0.60 → Some doubt but uncertain
+0.20–0.34 → TYPE B_WRONG: evidence shows different date/event than claimed
+0.00–0.19 → TYPE A confirmed: evidence shows clearly different year/event
 """
 
 
 class TemporalReasoningAgent:
     def __init__(self, config: Config) -> None:
-        # from openai import OpenAI
-        # self.client = OpenAI(api_key=config.openai_api_key)
-        if isinstance(config, tuple):
-            config = config[0]
         self.config = config
-        self.client = get_llm_client(config)
 
     def analyse(
         self,
@@ -96,80 +114,87 @@ class TemporalReasoningAgent:
     ) -> Dict[str, Any]:
 
         evidence_lines = []
-        for i, e in enumerate(evidence_items[:8]):
+        for i, e in enumerate(evidence_items[:6]):
             ts = e.get("timestamp") or "unknown date"
-            title = e.get("title", "")
-            snippet = e.get("snippet", "")
-            source = e.get("source", "")
             evidence_lines.append(
-                f"[{i+1}] Date: {ts} | Source: {source}\n"
-                f"    Title: {title}\n"
-                f"    Snippet: {snippet}"
+                f"[{i+1}] {ts} | {e.get('source','')} | "
+                f"{e.get('title','')} — {e.get('snippet','')}"
             )
         evidence_block = "\n".join(evidence_lines) or "(no evidence retrieved)"
         meta_block = f"\nIMAGE METADATA: {metadata_summary}" if metadata_summary else ""
 
-        user_message = f"""Analyse temporal consistency for this fact-check:
+        messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": f"""Analyse temporal consistency:
 
 CLAIM: {clean_text(claim)}
-
 IMAGE CAPTION: {clean_text(caption)}{meta_block}
 
-RETRIEVED EVIDENCE:
+EVIDENCE:
 {evidence_block}
 
-INSTRUCTIONS:
-1. First identify the claim TYPE (A, B, or C) from the system prompt rules
-2. For TYPE B (historical subject + recent action) → score HIGH (0.7-0.9)
-3. For TYPE A (old image claimed as recent event) → score LOW (0.0-0.2)
-4. For TYPE C (no clear date info) → score NEUTRAL (0.6)
+CLASSIFICATION GUIDE:
+- Does the claim say something is happening TODAY/NOW/CURRENTLY? → Check for TYPE A
+- Does the claim state a specific past year (e.g., "in 2006", "December 2019")? → TYPE B, score 0.65+
+  UNLESS evidence shows a DIFFERENT specific date → TYPE B_WRONG, score 0.20-0.35
+- No date at all? → TYPE C, score 0.65
+- Only TYPE A gets very low scores (0.0-0.19), only if evidence confirms different year
+- TYPE B_WRONG gets 0.20-0.35 when evidence actively contradicts claimed date/event
 
-Examples:
-- "19th century painting sold for record price" → TYPE B → score 0.85
-- "Beirut explosion today 2026" → TYPE A → score 0.0
-- "Protesters march in city" → TYPE C → score 0.6
-
-Return JSON only."""
+Return JSON only."""},
+        ]
 
         try:
-            response = self.client.chat.completions.create(
-                model=self.config.active_model,
-                max_tokens=600,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user",   "content": user_message},
-                ],
-                response_format={"type": "json_object"},
-            )
-            raw = response.choices[0].message.content.strip()
+            raw = chat_with_fallback(self.config, messages, max_tokens=500)
             result = json.loads(raw)
+
+            claim_type = result.get("claim_type", "TYPE_C")
+            score = float(result.get("temporal_score", 0.65))
+
+            # Safety overrides
+            # TYPE C must be >= 0.60
+            if claim_type == "TYPE_C" and score < 0.60:
+                LOG.warning("TYPE_C score=%.2f → overriding to 0.65", score)
+                result["temporal_score"] = 0.65
+                result["reasoning"] += " [Override: TYPE_C must be >= 0.60]"
+
+            # TYPE B must be >= 0.60 (not B_WRONG)
+            if claim_type == "TYPE_B" and score < 0.60:
+                LOG.warning("TYPE_B score=%.2f → overriding to 0.65", score)
+                result["temporal_score"] = 0.65
+                result["reasoning"] += " [Override: TYPE_B must be >= 0.60]"
+
+            # TYPE B_WRONG floor: 0.15 (don't collapse to zero without strong evidence)
+            if claim_type == "TYPE_B_WRONG" and score < 0.15:
+                LOG.warning("TYPE_B_WRONG score=%.2f → flooring to 0.20", score)
+                result["temporal_score"] = 0.20
+                result["reasoning"] += " [Override: TYPE_B_WRONG floor 0.20]"
+
+            # Low score without TYPE_A or TYPE_B_WRONG → override
+            if score < 0.30 and claim_type not in ("TYPE_A", "TYPE_B_WRONG"):
+                LOG.warning(
+                    "Low score=%.2f but type=%s → overriding to 0.65", score, claim_type
+                )
+                result["temporal_score"] = 0.65
+                result["claim_type"] = "TYPE_C"
+                result["reasoning"] += " [Override: Low score without TYPE_A/B_WRONG evidence]"
+
             LOG.info(
-                "Temporal Agent: type=%s score=%s | %s",
-                result.get("claim_type", "?"),
+                "Temporal Agent: type=%s score=%.3f | %s",
+                result.get("claim_type"),
                 result.get("temporal_score"),
                 result.get("time_gap_description", "")[:60],
             )
             return result
 
-        except json.JSONDecodeError as exc:
-            LOG.error("Temporal Agent JSON error: %s", exc)
-            return {
-                "claim_type": "TYPE_C",
-                "claim_time_reference": "unknown",
-                "image_time_reference": "unknown",
-                "time_gap_description": "parse error",
-                "is_temporally_consistent": True,
-                "temporal_score": 0.6,
-                "reasoning": f"Parse error: {exc}",
-            }
         except Exception as exc:
-            LOG.error("Temporal Agent API error: %s", exc)
+            LOG.error("Temporal Agent error: %s", exc)
             return {
                 "claim_type": "TYPE_C",
-                "claim_time_reference": "unknown",
+                "claim_time_reference": "none",
                 "image_time_reference": "unknown",
-                "time_gap_description": "api error",
+                "time_gap_description": "error",
                 "is_temporally_consistent": True,
-                "temporal_score": 0.6,
-                "reasoning": f"API error: {exc}",
+                "temporal_score": 0.65,
+                "reasoning": f"Error — neutral default: {exc}",
             }

@@ -29,12 +29,17 @@ class AgentState(TypedDict, total=False):
     entity_result: Dict[str, Any]
     temporal_result: Dict[str, Any]
     credibility_result: Dict[str, Any]
+    plausibility_result: Dict[str, Any]
 
     # ── Scoring ───────────────────────────────────────────────────────────────
     entity_score: float
     temporal_score: float
     credibility_score: float
+    clip_score: float
     final_score: float
+    threshold_used: float
+    ooc_signal_count: int
+    ooc_category: str
     math_verdict: str          # threshold-based: "PRISTINE" or "OUT-OF-CONTEXT"
 
     # ── Final output (from aggregator agent) ─────────────────────────────────

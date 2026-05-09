@@ -13,6 +13,10 @@ class AnalyseResponse(BaseModel):
     verdict: str                          # "PRISTINE" or "OUT-OF-CONTEXT"
     confidence_percent: int               # 0 – 100
     explanation: str                      # plain-English reason
+    plausibility_score: Optional[float] = None
+    ooc_signal_count: Optional[int] = None
+    threshold_used: Optional[float] = None
+    ooc_category: Optional[str] = None
 
     # ── Image understanding ───────────────────────────────────────────────────
     caption: str                          # BLIP-generated caption

@@ -1,0 +1,6 @@
+TRUST-AGENT — VERITE Benchmark
+Samples  : 220
+Accuracy : 0.8636 (86.4%)
+Precision: 0.8279
+Recall   : 0.9182
+F1-Score : 0.8707

@@ -1,0 +1,222 @@
+id,verite_label,ground_truth,predicted,correct,confidence,entity_score,temporal_score,credibility_score,final_score,claim,time_sec,source
+0,true,PRISTINE,PRISTINE,YES,54,0.6,0.75,0.2,0.54,Photograph shows a family that was taken away by local epidemic prevention personnel after they had returned home from H,46.3,VERITE
+9,true,PRISTINE,PRISTINE,YES,75,0.6,0.65,0.85,0.64,A sketchfab 3D rendering of the actor Andre the Giant.,21.0,VERITE
+15,true,PRISTINE,PRISTINE,YES,56,0.8,0.65,0.2,0.56,"Image shows athletes resting in hammocks while participating in an extreme sport called highlining, which entails walkin",31.5,VERITE
+1,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,34,0.6,0.1,0.2,0.345,Photograph shows Chinese officials in white protective hazmat suits carrying people down a hallway to be quarantined for,15.7,VERITE
+2,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,29,0.6,0.0,0.1,0.295,Photograph shows a family that was taken away by local epidemic prevention personnel after they had returned home from H,18.4,VERITE
+4,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Image shows electric green scooters that have reached the end of their battery life. Due to the batteries being so expen,17.8,VERITE
+5,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Image shows electric scooters abandoned due to Mobike's downsizing its fleets to avoid an oversupply as the bike-sharing,19.9,VERITE
+7,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Image shows Balenciaga stylist Lotta Volkova holding two baby dolls drenched in blood-colored red paint.,19.1,VERITE
+  ,,,,,,,,,,,,
+18,true,PRISTINE,PRISTINE,YES,64,0.8,0.9,0.2,0.635,Image shows grounds covered with garbage after the end of Glastonbury Music Festival in 2015.,42.2,VERITE
+24,true,PRISTINE,PRISTINE,YES,57,0.6,0.85,0.2,0.57,"A photograph shows a sign that reads 'whites only within city limits after dark', taken from 2018 movie Green Book.",18.8,VERITE
+27,true,PRISTINE,PRISTINE,YES,52,0.65,0.65,0.2,0.523,"Image of a bus powered by compressed natural gas, bursting into flames in Italy.",20.8,VERITE
+30,true,PRISTINE,PRISTINE,YES,57,0.6,0.85,0.2,0.57,A Norwegian naval ship is being struck by a missile that was fired by the Norwegian Navy in 2013,18.7,VERITE
+8,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Image shows unnamed runway model showcasing designs from Chinese designer and performance artist Sheguang Hu's collectio,16.0,VERITE
+10,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,"3D model accurately depicting what Joseph, husband of Mary, the mother of Jesus Christ, looked like.",21.1,VERITE
+14,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.2,0.75,0.485,Image shows abandoned white cars in China that belong to an electric car-sharing company that was named Microcity which ,21.3,VERITE
+36,true,PRISTINE,PRISTINE,YES,57,0.6,0.85,0.2,0.57,Image shows historical plane being towed behind a tractor while celebrating the 20th anniversary of the formation of the,57.7,VERITE
+45,true,PRISTINE,PRISTINE,YES,61,0.6,0.85,0.4,0.61,Image of a 12 year old Palestinian activist girl confronting an Israeli soldier in November 2012.,22.9,VERITE
+17,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,"Image shows athletes resting in hammocks while participating in an extreme sport called highlining, which entails walkin",24.4,VERITE
+19,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,37,0.6,0.2,0.2,0.375,Image shows grounds covered with garbage after Greta Thunberg's environmentalist speech at the Glastonbury Music Festiva,26.4,VERITE
+22,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,53,0.25,0.8,0.2,0.468,"A photograph captured by NASA’s Mars Curiosity Rover on May 7, 2022, showed an artificial portal nearby.",27.3,VERITE
+23,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,19,0.1,0.0,0.2,0.19,"A photograph captured by NASA’s Mars Curiosity Rover on May 7, 2022, showed a rock crevice on the red planet.",19.7,VERITE
+54,true,PRISTINE,PRISTINE,YES,58,0.6,0.9,0.2,0.585,Image shows U.S. Senator Rand Paul receiving a booster vaccination for Hepatitis A in 2015.,23.5,VERITE
+57,true,PRISTINE,PRISTINE,YES,58,0.6,0.65,0.55,0.58,"Image shows Autolib storing some of their cars, that are in 'not-so-good condition', in a lot in an industrial area near",28.5,VERITE
+66,true,PRISTINE,PRISTINE,YES,57,0.6,0.85,0.2,0.57,"Photograph of U.S. presidential candidate Joe Biden kneeling to speak with a young boy in Detroit, Michigan, in Septembe",27.6,VERITE
+25,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,68,0.6,0.0,0.2,0.315,"A photograph shows a sign that reads 'whites only within city limits after dark', taken in a Sundown town in 2022.",56.9,VERITE
+28,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Image of an electric powered BasiGo bus bursting into flames on Karen Road in Kenya.,33.5,VERITE
+29,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,42,0.25,0.65,0.2,0.422,"Image of a bus powered by compressed natural gas, bursting into flames in Italy.",32.9,VERITE
+31,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,33,0.6,0.0,0.3,0.335,Image shows an explosion on a Russian warship as it is struck with a Ukrainian missile in April 2022.,25.1,VERITE
+72,true,PRISTINE,PRISTINE,YES,71,0.6,0.9,0.85,0.715,"Photograph of U.S. Senator Lindsey Graham with far-right politician Geert Wilders at the Ambrosetti Forum, an annual int",49.5,VERITE
+75,true,PRISTINE,PRISTINE,YES,73,0.8,0.85,0.75,0.73,"Photograph shows a boat being frozen in Geneva, Switzerland, in 2005",19.3,VERITE
+84,true,PRISTINE,PRISTINE,YES,62,0.8,0.85,0.2,0.62,"Α photograph shows οne of the nine parents that were deported by Trump, being reunited with his child in the U.S. in Jan",27.1,VERITE
+34,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,"Image shows a giant snake skeleton, that of the extinct Titanoboa, was discovered in France on Google Maps.",21.0,VERITE
+35,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,60,0.25,0.65,0.1,0.403,Image shows an art installation of a giant snake by the Chinese artist Huang Yong Ping is exhibited on a beach in France,17.8,VERITE
+37,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,70,0.6,0.0,0.1,0.295,"Image shows Russian plane being towed behind a tractor in Ukraine, February 2022.",23.1,VERITE
+105,true,PRISTINE,PRISTINE,YES,63,0.6,0.65,0.8,0.63,"A photograph of Wernher von Braun walking on a replica model of the moon landing at the Southeastern Fair in Atlanta, Ge",18.8,VERITE
+123,true,PRISTINE,PRISTINE,YES,60,0.6,0.65,0.65,0.6,A photograph of a 19 year-old Japanese student with an unusual punk-inspired style who has garnered some attention in th,29.4,VERITE
+40,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,31,0.6,0.0,0.2,0.315,Image from a video shows Ukrainian soldiers killing civilians in Chechnya.,27.6,VERITE
+44,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,52,0.2,0.65,0.55,0.48,"Image shows a 'Die in' climate protest in Austria, where protesters got inside of body bags to signify the catastrophic ",37.8,VERITE
+46,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,61,0.6,0.0,0.55,0.385,"Image of an 8 year old Ukrainian girl confronting a Russian soldier and telling him to go back to his country, taken dur",36.8,VERITE
+126,true,PRISTINE,PRISTINE,YES,68,0.8,0.65,0.8,0.68,"Photograph shows a member of Batista's army who was charged as a war criminal, being executed by a Fidel Castro firing s",64.9,VERITE
+135,true,PRISTINE,PRISTINE,YES,68,0.8,0.65,0.8,0.68,"Image of Jesus by artist Rob Ferrel who uses a variety of media to create his artworks, including salt and other food pr",27.0,VERITE
+138,true,PRISTINE,PRISTINE,YES,58,0.6,0.65,0.55,0.58,"Image of President Bill Clinton siting next to Reverend Jesse Jackson during the homegoing service for Jackson's mother,",21.7,VERITE
+141,true,PRISTINE,PRISTINE,YES,56,0.6,0.65,0.45,0.56,"Photograph shows buses of the Toronto Raptors team, who wrapped their buses with the Black Lives Matter name to show of ",23.1,VERITE
+144,true,PRISTINE,PRISTINE,YES,63,0.6,0.65,0.8,0.63,"Image of Joe Biden kissing his 19-year-old granddaughter, Finnegan Biden.",32.6,VERITE
+49,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Picture of China launching an artificial sun in January 2022.,19.8,VERITE
+55,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,68,0.6,0.0,0.2,0.315,Image shows U.S. Senator Rand Paul receiving a COVID-19 vaccination in 2021.,50.0,VERITE
+3,true,PRISTINE,PRISTINE,YES,53,0.6,0.65,0.34,0.538,Image shows electric scooters abandoned due to Mobike's downsizing its fleets to avoid an oversupply as the bike-sharing,56.6,VERITE
+6,true,PRISTINE,PRISTINE,YES,58,0.6,0.65,0.55,0.58,Image shows unnamed runway model showcasing designs from Chinese designer and performance artist Sheguang Hu's collectio,23.1,VERITE
+21,true,PRISTINE,PRISTINE,YES,53,0.25,0.8,0.55,0.537,"A photograph captured by NASA’s Mars Curiosity Rover on May 7, 2022, showed a rock crevice on the red planet.",57.8,VERITE
+147,true,PRISTINE,PRISTINE,YES,62,0.6,0.65,0.75,0.62,Photograph of Dr. Nancy Sullivan of NIH’s National Institute of Allergy and Infectious Diseases (NIAID) discussing Ebola,70.3,VERITE
+153,true,PRISTINE,PRISTINE,YES,61,0.6,0.75,0.55,0.61,Artwork 'Maskcommunication' by artists named Trinidad was created to raise money for teachers who had been stranded by t,49.1,VERITE
+159,true,PRISTINE,PRISTINE,YES,60,0.6,0.65,0.65,0.6,Image shows a person in blackface taken into police custody for causing a disturbance during an anti-racism march a Cana,24.6,VERITE
+162,true,PRISTINE,PRISTINE,YES,61,0.6,0.75,0.55,0.61,Surveillance camera footage shows an attempted robbery and assault that took place in Minneapolis in August 2019,85.7,VERITE
+165,true,PRISTINE,PRISTINE,YES,61,0.6,0.75,0.55,0.61,Image shows former U.S. President Barack Obama and first lady Michelle Obama joined thousands of Americans to mark the 5,41.9,VERITE
+62,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,51,0.6,0.65,0.2,0.51,Image shows plastic bags of gasoline in the trunk of a car after two men attempted to steal gasoline from a gas station ,42.8,VERITE
+67,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,37,0.6,0.2,0.2,0.375,Photograph of U.S. President Joe Biden kneeling in front of George Floyd’s son to apologize for the death of his father ,25.4,VERITE
+168,true,PRISTINE,PRISTINE,YES,66,0.8,0.75,0.55,0.66,"Image shows a member of the 173rd Airborne Brigade sitting on a pile of gold, after nearly 1,000 gold bars were confisca",54.2,VERITE
+171,true,PRISTINE,PRISTINE,YES,62,0.5,0.8,0.65,0.62,"Image shows demonstrators wearing 'I Can Breathe' shirts in December 2014, months after the death of Eric Garner, a blac",39.8,VERITE
+174,true,PRISTINE,PRISTINE,YES,63,0.6,0.65,0.8,0.63,"Photograph shows police officers arrest a black male in Rochester, Minnesota in 2019.",31.3,VERITE
+177,true,PRISTINE,PRISTINE,YES,67,0.6,0.8,0.8,0.675,"Image of Justine Damond, a white woman, was killed by a police officer named Mohamed Noor in Minneapolis in 2017.",34.6,VERITE
+180,true,PRISTINE,PRISTINE,YES,65,0.65,0.8,0.65,0.657,"Photograph shows McDonald's burning in November 2016 after a grease fire started in Lebanon, Pennsylvania.",35.7,VERITE
+183,true,PRISTINE,PRISTINE,YES,58,0.6,0.65,0.55,0.58,"Photograph shows Jonathan Riches, a supporter of U.S. President Donald Trump who is also a former federal inmate, wearin",83.1,VERITE
+192,true,PRISTINE,PRISTINE,YES,58,0.6,0.65,0.55,0.58,Image shows a naked person is using bedsheets to escape a building in a stealth promotion created for the television ser,40.6,VERITE
+195,true,PRISTINE,PRISTINE,YES,64,0.6,0.75,0.7,0.64,U.S. President Donald Trump said 'I don't care how sick you are. [...] Get out and vote' during a campaign event in Nove,30.4,VERITE
+198,true,PRISTINE,PRISTINE,YES,58,0.6,0.65,0.55,0.58,Image from comedic youtube video during the COVID-19 pandemic showing a person using violent tactics to enforce social d,30.2,VERITE
+76,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,61,0.1,0.65,0.2,0.385,Photograph shows the 'USS Al Gore' global warming research vessel being frozen in February 2021.,26.1,VERITE
+91,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,60,0.6,0.2,0.34,0.403,Image shows former child star Amanda Bynes working a 9 to 5 job in product support.,28.7,VERITE
+94,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,74,0.2,0.0,0.35,0.245,Photograph shows Trump family looting historical artifacts from the White House.,24.0,VERITE
+201,true,PRISTINE,PRISTINE,YES,52,0.25,0.75,0.55,0.522,Photograph shows a soldier rescuing a starving donkey during the Algerian War in 1958 by carrying it on his back.,47.1,VERITE
+204,true,PRISTINE,PRISTINE,YES,69,0.6,0.8,0.9,0.695,Photograph shows anti-surveillance protesters tearing down a 'smart' lamppost in Hong Kong in August 2019.,48.8,VERITE
+207,true,PRISTINE,PRISTINE,YES,66,0.8,0.75,0.55,0.66,Air Force One during U.S. President George W. Bush's trip to the annual NASCAR race in 2004.,25.7,VERITE
+210,true,PRISTINE,PRISTINE,YES,59,0.65,0.65,0.55,0.593,"Image of a mother fox feeding fox cubs near Montréal, Canada in 2009.",47.9,VERITE
+213,true,PRISTINE,PRISTINE,YES,69,0.8,0.8,0.65,0.695,Photograph of a mass of people at the 50th anniversary celebration for the Golden Gate Bridge.,25.3,VERITE
+100,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,58,0.1,0.65,0.34,0.413,Photograph of a living triceratops being unloaded from a truck in Indonesia in December 2020.,26.8,VERITE
+216,true,PRISTINE,PRISTINE,YES,65,0.8,0.65,0.65,0.65,"Image shows a life-size statue of a horse in an apartment in Galena, Illinois.",46.7,VERITE
+225,true,PRISTINE,PRISTINE,YES,61,0.6,0.75,0.55,0.61,"Image shows thousands of people at a parade in honor of the 2019 NBA Champions, the Toronto Raptors, taken in June 2019.",28.5,VERITE
+231,true,PRISTINE,PRISTINE,YES,59,0.65,0.65,0.55,0.593,Photograph of a Greta Thunberg look-alike shooting a gun.,35.0,VERITE
+237,true,PRISTINE,PRISTINE,YES,66,0.6,0.65,0.95,0.66,"Image of Nancy Pelosi meeting with Mexican President Enrique Peña Nieto, kicking off a three-country tour to discuss sec",54.6,VERITE
+106,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,A banned photograph of a man in a suit walking on the moon reveals the 1969 moon landing was a hoax.,44.3,VERITE
+107,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,75,0.5,0.5,0.5,0.5,"A photograph of Wernher von Braun walking on a replica model of the moon landing at the Southeastern Fair in Atlanta, Ge",27.3,VERITE
+86,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,78,0.5,0.5,0.5,0.5,"Α photograph shows οne of the nine parents that were deported by Trump, being reunited with his child in the U.S. in Jan",22.5,VERITE
+89,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,70,0.5,0.5,0.5,0.5,Photograph of a spectacled hairless Andean bear named Dolores.,15.8,VERITE
+109,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,"This photograph of Paris Hilton and Britney Spears, taken by Hilton in 2006, was the world's first selfie.",31.6,VERITE
+110,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,85,0.5,0.5,0.5,0.5,"A selfie of Paris Hilton and Britney Spears, taken in 2006.",63.7,VERITE
+116,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image shows three U.S. Democratic senators during the confirmation hearing of Supreme Court nominee Brett Kavanaugh in S,71.2,VERITE
+246,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,Image shows a group of people playfully gathered around their co-worker who was found sleeping at work.,29.3,VERITE
+249,true,PRISTINE,OUT-OF-CONTEXT,NO,80,0.5,0.5,0.5,0.5,Image shows a crowd of people during a 'crusade' by the religious group 'In His Name Ministries' in November 2014 in Nik,26.7,VERITE
+252,true,PRISTINE,PRISTINE,YES,67,0.5,0.5,0.5,0.5,"An image shows shacks by Roma people in Paris, France in 2015.",31.6,VERITE
+258,true,PRISTINE,PRISTINE,YES,72,0.5,0.5,0.5,0.5,A photograph from the 1977 ballet 'Blaubart' by the late German dancer and choreographer Pina Bausch.,29.9,VERITE
+119,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,68,0.5,0.5,0.5,0.5,Photograph shows empty envelopes being disposed after the election in November 2018.,32.3,VERITE
+122,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,Image shows portions of a fishnet as well as several fish being stuck up on power lines after traffic accident with a fi,39.0,VERITE
+124,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,A photograph shows the Supreme Army General of Antifa in Portland.,26.1,VERITE
+125,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,60,0.5,0.5,0.5,0.5,A photograph of a 19 year-old Japanese student with an unusual punk-inspired style who has garnered some attention in th,33.2,VERITE
+127,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,87,0.5,0.5,0.5,0.5,Photograph shows a priest giving the last rites to a Cuban farmer who was being executed because he refused to work for ,32.6,VERITE
+267,true,PRISTINE,PRISTINE,YES,85,0.5,0.5,0.5,0.5,A photograph shows a woman recruit of the Somali Army checking her automatic weapon at a military training campus at Hal,50.5,VERITE
+270,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,A long exposure photograph of an ingloo that is illuminated by a flashlight inside of it.,20.5,VERITE
+273,true,PRISTINE,PRISTINE,YES,70,0.5,0.5,0.5,0.5,"A photograph of a homeless encampment in San Jose, California, southeast of San Francisco.",28.2,VERITE
+276,true,PRISTINE,PRISTINE,YES,85,0.5,0.5,0.5,0.5,"Photograph shows House Speaker Nancy Pelosi and 13 members of Congress in Ghana, marked the 400-year anniversary of the ",32.9,VERITE
+285,true,PRISTINE,OUT-OF-CONTEXT,NO,68,0.5,0.5,0.5,0.5,Image shows a 'We plan to cut all homeless people in half by 2025' sign created by street artist who goes by the name of,89.4,VERITE
+128,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,73,0.5,0.5,0.5,0.5,"Photograph shows a member of Batista's army who was charged as a war criminal, being executed by a Fidel Castro firing s",62.0,VERITE
+131,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Photograph of goodyear Blimp flying over New Jersey in September 2020.,53.5,VERITE
+134,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,"Photograph shows mounds of refuse and other trash in Greenpoint, a neighborhood in northern Brooklyn, New York after a t",64.0,VERITE
+136,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image of Jesus on a table miraculously formed after salt was spilled from a fallen shaker.,61.6,VERITE
+137,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,92,0.5,0.5,0.5,0.5,"Image of Jesus by artist Rob Ferrel who uses a variety of media to create his artworks, including salt and other food pr",63.2,VERITE
+288,true,PRISTINE,OUT-OF-CONTEXT,NO,78,0.5,0.5,0.5,0.5,A photograph shows three U.S. women's soccers players after visiting the Jewish heritage museum in New York City.,87.1,VERITE
+291,true,PRISTINE,OUT-OF-CONTEXT,NO,85,0.5,0.5,0.5,0.5,"A photograph shows columns of tanks taking part in the U.S. military tanks parade near Capitol Building, Washington DC i",67.4,VERITE
+294,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,A German-English dictionary used as part of a crystallization experiment by Catherine McEver in 2014.,64.9,VERITE
+309,true,PRISTINE,OUT-OF-CONTEXT,NO,78,0.5,0.5,0.5,0.5,An image of a 12-year-old girl in Brazil with an enlarged liver and spleen.,57.9,VERITE
+312,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,"A photogram shows a pile of rubbish left in Hyde Park in the aftermath of a celebration for 420, a marijuana-centric hol",67.4,VERITE
+139,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,92,0.5,0.5,0.5,0.5,"Image of Democrats not wearing a mask at the funeral of U.S. Representative John Lewis in July 2020, during the Covid 19",74.8,VERITE
+140,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,"Image of President Bill Clinton siting next to Reverend Jesse Jackson during the homegoing service for Jackson's mother,",63.3,VERITE
+142,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,74,0.5,0.5,0.5,0.5,Photograph shows buses purchased by Black Lives Matter to transport members to riots.,67.6,VERITE
+143,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,"Photograph shows buses of the Toronto Raptors team, who wrapped their buses with the Black Lives Matter name to show of ",61.8,VERITE
+145,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,90,0.5,0.5,0.5,0.5,Image of Joe Biden kissing a 15-year-old girl on the lips.,62.6,VERITE
+32,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,A Norwegian naval ship is being struck by a missile that was fired by the Norwegian Navy in 2013,37.9,VERITE
+38,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,65,0.5,0.5,0.5,0.5,Image shows historical plane being towed behind a tractor while celebrating the 20th anniversary of the formation of the,64.7,VERITE
+47,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image of a 12 year old Palestinian activist girl confronting an Israeli soldier in November 2012.,64.8,VERITE
+324,true,PRISTINE,OUT-OF-CONTEXT,NO,72,0.5,0.5,0.5,0.5,An image of a toy called 'Abortion Barbie' that was created by an artist to make a politican point against former Texas ,95.5,VERITE
+330,true,PRISTINE,PRISTINE,YES,56,0.5,0.5,0.5,0.5,A photograph captures a 7-year-old girl feeling embarrassed for making several mistakes during her participating in a Qu,41.1,VERITE
+149,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Photograph of Dr. Nancy Sullivan of NIH’s National Institute of Allergy and Infectious Diseases (NIAID) discussing Ebola,63.5,VERITE
+155,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,72,0.5,0.5,0.5,0.5,Artwork 'Maskcommunication' by artists named Trinidad was created to raise money for teachers who had been stranded by t,97.8,VERITE
+336,true,PRISTINE,OUT-OF-CONTEXT,NO,88,0.5,0.5,0.5,0.5,"A photograph captures a protest by a group of Pakistani refugees who had made their way to Lesbos island, Greece, in Mar",38.8,VERITE
+339,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,"A photograph captures a cruise ship starting up its turbines before dropping anchor, stiring sand and mud from the botto",68.5,VERITE
+342,true,PRISTINE,OUT-OF-CONTEXT,NO,80,0.5,0.5,0.5,0.5,A photograph shows an extra from the film Dunkirk doing a 'dab' in the summer of 2016.,76.9,VERITE
+148,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,"Photgraph of President Obama, Dr. Anthony Fauci, and Melinda Gates at a laboratory in Wuhan, China, in 2015.",102.6,VERITE
+152,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,75,0.5,0.5,0.5,0.5,Imgae of Melania Trump wore a dress designed by Alexander McQueen in collaboration with art students and was inspired by,26.3,VERITE
+154,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,79,0.5,0.5,0.5,0.5,Mural painted in 1994 at Denver International Airport that shows citizens of the world wearing masks.,87.9,VERITE
+77,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,90,0.5,0.5,0.5,0.5,"Photograph shows a boat being frozen in Geneva, Switzerland, in 2005",33.0,VERITE
+80,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,97,0.5,0.5,0.5,0.5,Image of a sculpture handmade by Susi Brister that is made out of platinum blonde hair extension and is exhibited at the,72.1,VERITE
+85,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,82,0.5,0.5,0.5,0.5,"Α photograph shows οne of the nine parents that were deported by Trump, being reunited with his child in the U.S. during",50.6,VERITE
+95,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,72,0.5,0.5,0.5,0.5,Photograph shows historical artifacts from the White House being returned to museums and galleries at the end of the pre,55.5,VERITE
+97,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,70,0.5,0.5,0.5,0.5,"Image of a cross being erected by rioters in front of the U.S. Capitol, Washington, D.C., on January 6, 2021.",61.5,VERITE
+98,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,73,0.5,0.5,0.5,0.5,"Image of a cross being erected by rioters in Michigan Jan. 6, 2020, during a protest against the 2020 election results.",64.3,VERITE
+101,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,62,0.5,0.5,0.5,0.5,Photograph of a triceratops model being unloaded from a truck at the Mojosemi Forest Park in Indonesia.,57.1,VERITE
+104,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,67,0.5,0.5,0.5,0.5,"Image shows demonstrators during the March for Our Lives rally on March 24, 2018 in the District of Columbia.",68.8,VERITE
+158,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,70,0.5,0.5,0.5,0.5,A photograph shows the Bettmann Archive showing a woman and a young boy dressed in KKK garb.,68.9,VERITE
+160,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,73,0.5,0.5,0.5,0.5,Image shows an arrested looter amid social unrest in 2020 wearing blackface.,55.4,VERITE
+161,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,90,0.5,0.5,0.5,0.5,Image shows a person in blackface taken into police custody for causing a disturbance during an anti-racism march a Cana,64.0,VERITE
+163,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,85,0.5,0.5,0.5,0.5,Surveillance camera footage shows person being attacked by Black Lives Matter protesters in June 2020.,114.7,VERITE
+164,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,78,0.5,0.5,0.5,0.5,Surveillance camera footage shows an attempted robbery and assault that took place in Minneapolis in August 2019,27.9,VERITE
+39,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,A image taken from the movie 'The Search' shows Russian soldiers before they start killing Chechnyans at the start of th,55.5,VERITE
+42,true,PRISTINE,OUT-OF-CONTEXT,NO,78,0.5,0.5,0.5,0.5,"Image shows a 'Die in' climate protest in Austria, where protesters got inside of body bags to signify the catastrophic ",64.6,VERITE
+345,true,PRISTINE,OUT-OF-CONTEXT,NO,71,0.5,0.5,0.5,0.5,"A photograph shows 'Osman the Pelican' that befriended a stray on in Erdek, Turkey, circa 2007.",65.6,VERITE
+348,true,PRISTINE,PRISTINE,YES,65,0.5,0.5,0.5,0.5,A photograph shows Migrant Cubans using mobile phones inside the migrant shelter 'Casa del Migrante' in Mexico. They onl,64.0,VERITE
+351,true,PRISTINE,OUT-OF-CONTEXT,NO,85,0.5,0.5,0.5,0.5,A photograph shows personnel of the U.S. Customs and Border Protection who have been injured from being struck in the fa,66.3,VERITE
+354,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,A photograph shows dozens of guitars that were damaged during Typhoon Mangkhut in the Guangdong province of southern Chi,97.9,VERITE
+360,true,PRISTINE,OUT-OF-CONTEXT,NO,72,0.5,0.5,0.5,0.5,"A photograph shows a man in a polar bear costume being arrested during Flood Wall Street, an environmental protest stage",52.8,VERITE
+26,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,"A photograph shows a sign that reads 'whites only within city limits after dark', taken from 2018 movie Green Book.",70.2,VERITE
+41,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,90,0.5,0.5,0.5,0.5,A image taken from the movie 'The Search' shows Russian soldiers before they start killing Chechnyans at the start of th,70.4,VERITE
+43,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,89,0.5,0.5,0.5,0.5,News report on the death toll from Russia's invasion of Ukraine showed a dead person in a body bag moving.,59.3,VERITE
+50,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Picture of China launching a space rocket in December 2019.,63.5,VERITE
+363,true,PRISTINE,PRISTINE,YES,70,0.5,0.5,0.5,0.5,"A photograph shows morning commuters driving in San Diego during the Skirball fire near Bel-Air, California, in December",52.2,VERITE
+372,true,PRISTINE,PRISTINE,YES,58,0.5,0.5,0.5,0.5,A photograph shows a protester standing on a U.S. flag. at the University of Wisconsin-Milwaukee before the campaign app,23.8,VERITE
+381,true,PRISTINE,PRISTINE,YES,80,0.5,0.5,0.5,0.5,"A photograph shows protestors dragging a police officer in Acapulco, Mexico in November 2014.",34.7,VERITE
+169,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,Image shows U.S. Senator Tom Cotton of Arkansas sitting on a pile of gold during his time in the military.,34.2,VERITE
+170,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,78,0.5,0.5,0.5,0.5,"Image shows a member of the 173rd Airborne Brigade sitting on a pile of gold, after nearly 1,000 gold bars were confisca",33.4,VERITE
+172,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,90,0.5,0.5,0.5,0.5,Image shows members of the NYPD wearing 'I Can Breathe' shirts mocking the death of George Floyd.,32.3,VERITE
+166,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image shows former U.S. President Barack Obama and first lady Michelle Obama marching with protesters against racial inj,75.1,VERITE
+167,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image shows former U.S. President Barack Obama and first lady Michelle Obama joined thousands of Americans to mark the 5,73.3,VERITE
+16,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,85,0.5,0.5,0.5,0.5,Image shows campers sleeping in hammocks suspended high above ground in an activity known as sky camping.,39.6,VERITE
+20,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,92,0.5,0.5,0.5,0.5,Image shows grounds covered with garbage after the end of Glastonbury Music Festival in 2015.,124.9,VERITE
+58,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,73,0.5,0.5,0.5,0.5,"Image shows a 'boneyard' of electric vehicles, abandoned because their battery storage cells gave out.",37.8,VERITE
+384,true,PRISTINE,PRISTINE,YES,65,0.5,0.5,0.5,0.5,A photograph shows a family of Honduran caravan members resting in front of a tent provided by the Red Cross Societies o,70.5,VERITE
+396,true,PRISTINE,PRISTINE,YES,75,0.5,0.5,0.5,0.5,A photograph shows the parade held in honor of the Cleveland Cavaliers' winning the NBA Championship in 2016.,64.3,VERITE
+175,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,76,0.5,0.5,0.5,0.5,Photograph shows police officers attempting to arrest a black FBI agent during the George Floyd protests in 2020.,64.4,VERITE
+176,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,68,0.5,0.5,0.5,0.5,"Photograph shows police officers arrest a black male in Rochester, Minnesota in 2019.",63.9,VERITE
+178,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,78,0.5,0.5,0.5,0.5,"Image of Ricky Ellsworth, a white woman, was killed by a black police officer in Minnesota in 2020.",65.7,VERITE
+179,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,87,0.5,0.5,0.5,0.5,"Image of Justine Damond, a white woman, was killed by a police officer named Mohamed Noor in Minneapolis in 2017.",70.6,VERITE
+181,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Photograph shows McDonald's set afire during protests over George Floyd's death.,64.0,VERITE
+184,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,85,0.5,0.5,0.5,0.5,Photograph shows former Minneapolis police officer Derek Chauvin wearing a 'Make Whites Great Again' hat.,62.9,VERITE
+185,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,82,0.5,0.5,0.5,0.5,"Photograph shows Jonathan Riches, a supporter of U.S. President Donald Trump who is also a former federal inmate, wearin",63.2,VERITE
+188,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image shows Brian Cash at a protest against lockdown orders implemented in Michigan as a result of the COVID-19 coronavi,64.1,VERITE
+190,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,68,0.5,0.5,0.5,0.5,Photograph shows swastika flag bearing the names of Trump and Pence displayed at the Operation Gridlock protest in Michi,62.7,VERITE
+402,true,PRISTINE,PRISTINE,YES,78,0.5,0.5,0.5,0.5,"Image shows members of a migrant caravan in Guatemala who were given some money to help them get by, en route to the Uni",56.8,VERITE
+405,true,PRISTINE,PRISTINE,YES,65,0.5,0.5,0.5,0.5,A photograph shows a storm approaching Pensacola Beach in July 2018.,44.6,VERITE
+408,true,PRISTINE,PRISTINE,YES,66,0.5,0.5,0.5,0.5,A digitally created image by the artist Nickolay Lamm shoes a flooded runway to illustrate the effect that unchecked cli,47.0,VERITE
+411,true,PRISTINE,PRISTINE,YES,63,0.5,0.5,0.5,0.5,"A group of bikers in Boulevard Peripherique in Paris, France in 2016.",45.6,VERITE
+414,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,A small parade by member of the LGBT community on the day before New York City's official annual gay pride parade in 201,48.8,VERITE
+182,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,"Photograph shows McDonald's burning in November 2016 after a grease fire started in Lebanon, Pennsylvania.",49.2,VERITE
+90,true,PRISTINE,PRISTINE,YES,72,0.5,0.5,0.5,0.5,Image shows former child star Amanda Bynes wearing a willie product support t-shirt.,26.0,VERITE
+93,true,PRISTINE,PRISTINE,YES,66,0.5,0.5,0.5,0.5,Photograph shows historical artifacts from the White House being returned to museums and galleries at the end of the pre,34.3,VERITE
+96,true,PRISTINE,PRISTINE,YES,65,0.5,0.5,0.5,0.5,"Image of a cross being erected by rioters in Michigan Jan. 6, 2020, during a protest against the 2020 election results.",48.4,VERITE
+99,true,PRISTINE,PRISTINE,YES,86,0.5,0.5,0.5,0.5,Photograph of a triceratops model being unloaded from a truck at the Mojosemi Forest Park in Indonesia.,46.2,VERITE
+399,true,PRISTINE,PRISTINE,YES,65,0.5,0.5,0.5,0.5,Photograph shows an injured police officer after altercations between police officers and protesters in Mexico in Octobe,48.9,VERITE
+33,true,PRISTINE,OUT-OF-CONTEXT,NO,80,0.5,0.5,0.5,0.5,Image shows an art installation of a giant snake by the Chinese artist Huang Yong Ping is exhibited on a beach in France,26.7,VERITE
+48,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,Picture of China launching a space rocket in December 2019.,12.8,VERITE
+69,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,"Photograph of Prince Philip wearing the ceremonial dress, preparing to escort Queen Elizabeth to the ceremony of the Gre",17.9,VERITE
+108,true,PRISTINE,OUT-OF-CONTEXT,NO,65,0.5,0.5,0.5,0.5,"A selfie of Paris Hilton and Britney Spears, taken in 2006.",80.4,VERITE
+375,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,A photograph shows an Immigrant at the 'Customs and Border Protection' facility in South Texas with a case of scabies on,11.8,VERITE
+378,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,Image from surveillance video shows a group of plain clothed police officers shooting an armed robber in a pharmacy in B,13.8,VERITE
+387,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,A photograph shows trash that was left behind by a caravan of refugees near the Austria-Germany border in September 2015,11.9,VERITE
+393,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,"Photograph shows protestor burning a Trump flag during an anti-Trump riot in Albuquerque, New Mexico, in May 2016.",11.8,VERITE
+11,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,62,0.5,0.5,0.5,0.5,A sketchfab 3D rendering of the actor Andre the Giant.,19.8,VERITE
+189,true,PRISTINE,OUT-OF-CONTEXT,NO,70,0.5,0.5,0.5,0.5,"Photograph shows swastika flag bearing the names of Trump and Pence displayed at a Bernie Sanders rally, in Boise, Idaho",21.3,VERITE
+222,true,PRISTINE,PRISTINE,YES,70,0.5,0.5,0.5,0.5,A 3D visualization showing all the areas which have been affected by fires in Australia in 2020.,15.9,VERITE
+243,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,Image shows a face projector that enables to change ones face within seconds that is an Art project created by students ,24.1,VERITE
+68,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,60,0.5,0.5,0.5,0.5,"Photograph of U.S. presidential candidate Joe Biden kneeling to speak with a young boy in Detroit, Michigan, in Septembe",24.7,VERITE
+70,miscaptioned,OUT-OF-CONTEXT,PRISTINE,NO,62,0.5,0.5,0.5,0.5,Photograph of Queen Elizabeth laughing after Prince Philip pranked her by disguising himself as a palace guard.,28.1,VERITE
+73,miscaptioned,OUT-OF-CONTEXT,PRISTINE,NO,62,0.5,0.5,0.5,0.5,Photograph of U.S. Senator Lindsey Graham with far-right politician Geert Wilders in March 2021.,22.1,VERITE
+417,true,PRISTINE,PRISTINE,YES,64,0.5,0.5,0.5,0.5,A photographs shows a mining lift crammed full of Italian workers who were channel into the Belgian labor market in ealy,21.1,VERITE
+420,true,PRISTINE,PRISTINE,YES,64,0.5,0.5,0.5,0.5,A woman holding a 'Not My President' sign in a protest against president Donald Trump in New York City on 12 November 20,11.6,VERITE
+423,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,Photographs show a group of pigs on a flooded farm after Hurricane Floyd in September 1999.,20.9,VERITE
+426,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,Photographs document CNN's Anderson Cooper shows the variations of depths in the water after Hurricane Ike in September ,11.8,VERITE
+429,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,Artist Kelsey Amy created a pair of custom Nike Monarchs that were hand-painted to look like as if they had been burned.,18.5,VERITE
+191,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,70,0.5,0.5,0.5,0.5,"Photograph shows swastika flag bearing the names of Trump and Pence displayed at a Bernie Sanders rally, in Boise, Idaho",22.6,VERITE
+193,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,65,0.5,0.5,0.5,0.5,Image shows a fully naked 'Filipino looking child is using bedsheets to escape from an upper story of Buckingham Palace.,23.6,VERITE
+197,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,U.S. President Donald Trump said 'I don't care how sick you are. [...] Get out and vote' during a campaign event in Nove,77.6,VERITE
+199,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,60,0.5,0.5,0.5,0.5,Image from video taken during the COVID-19 pandemic showing a member of the Maasai tribe - employed by the Kenyan govern,12.8,VERITE
+432,true,PRISTINE,PRISTINE,YES,65,0.5,0.5,0.5,0.5,A photograph shows police officers escorting a group of convicts at a sentencing rally in China in 2004.,25.1,VERITE
+435,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,A composite photograph documenting the evolution of a single tornado in Kansas in 2016.,10.8,VERITE
+441,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,"Image from a video shows students vandalising the cafeteria at Tshwane University of Technology in Pretoria, South Afric",12.5,VERITE
+444,true,PRISTINE,PRISTINE,YES,62,0.5,0.5,0.5,0.5,An image shows a group of antifa protesters beating a right-wing activist in Berkeley during an alt-right rally in Augus,13.6,VERITE
+447,true,PRISTINE,PRISTINE,YES,60,0.5,0.5,0.5,0.5,"Α photograph taken in 2009 during a Tea Party protest in West Palm Beach, Florida, in which parents brought their kids f",26.8,VERITE
+205,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,70,0.5,0.5,0.5,0.5,Photograph shows people in China tearing down a 5G tower in an attempt to stop the spread of COVID-19 coronavirus diseas,24.5,VERITE
+206,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,80,0.5,0.5,0.5,0.5,Photograph shows anti-surveillance protesters tearing down a 'smart' lamppost in Hong Kong in August 2019.,25.1,VERITE
+74,out-of-context,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,68,0.5,0.5,0.5,0.5,"Photograph of U.S. Senator Lindsey Graham with far-right politician Geert Wilders at the Ambrosetti Forum, an annual int",32.5,VERITE
+196,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,82,0.5,0.5,0.5,0.5,U.S. President Donald Trump said 'I don't care how sick you are. [...] Get out and vote' during the COVID-19 coronavirus,55.5,VERITE
+202,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,72,0.5,0.5,0.5,0.5,Photograph shows a soldier carrying a donkey on his back during World War II to prevent the animal from inadvertently se,46.4,VERITE
+203,out-of-context,OUT-OF-CONTEXT,PRISTINE,NO,78,0.5,0.5,0.5,0.5,Photograph shows a soldier rescuing a starving donkey during the Algerian War in 1958 by carrying it on his back.,40.6,VERITE
+208,miscaptioned,OUT-OF-CONTEXT,OUT-OF-CONTEXT,YES,47,0.5,0.5,0.5,0.5,Air Force One during U.S. President Donald Trump's visit to the Daytona 500 in February 2020.,41.0,VERITE
