@@ -197,7 +197,7 @@ trust-agent-misinformation-detection/
         │   Task: Assess whether the claim sounds plausible given the image caption
         │   Output: plausibility_result, plausibility_score
         │
-        └─► [node_clip_agent_wrapper]
+        └─► [CLIP runs inside node_extract_entities]
             Input: image, claim, caption
             Task: Visual consistency (local, no API)
             Output: clip_result, clip_score
@@ -206,7 +206,7 @@ trust-agent-misinformation-detection/
    FUSION & AGGREGATION PHASE
    ══════════════╪════════════════════════════════════════
         │
-        ├─► [node_aggregator_agent]
+        ├─► [node_aggregator]
         │   Input: entity_result, temporal_result, credibility_result,
         │          clip_result, plausibility_result, evidence
         │   Task: Combine signals, adjust threshold via plausibility,
@@ -214,10 +214,13 @@ trust-agent-misinformation-detection/
         │   Output: verdict, final_score, confidence_percent,
         │           key_evidence_for_verdict, flags, ooc_category
         │
-        └─► [node_aggregator_agent]
-            Input: All agent results + final_score + verdict
-            Task: Generate plain-English explanation
-            Output: explanation, confidence%, key_evidence, flags
+        └─► [node_aggregator]
+            Input: entity_result, temporal_result, credibility_result,
+                   clip_result, plausibility_result, evidence
+            Task: (1) compute weighted final_score, (2) choose verdict using
+                  adaptive threshold + overrides, (3) ask an LLM for the public
+                  explanation (with deterministic fallback if the LLM fails)
+            Output: verdict, confidence_percent, explanation, flags, ooc_category
    
    ══════════════╪════════════════════════════════════════
                  │
@@ -326,7 +329,9 @@ trust-agent-misinformation-detection/
 
 ### Phase 2: Parallel Agent Execution
 
-All 4 agents receive the state simultaneously. Each runs independently and returns results.
+The reasoning agents receive the state and run independently, returning structured JSON outputs.
+
+Note: CLIP runs earlier during preprocessing (`node_extract_entities`) and is included here for completeness.
 
 #### Agent 1: Entity Analysis Agent (35% Weight)
 
@@ -506,19 +511,45 @@ All 4 agents receive the state simultaneously. Each runs independently and retur
 
 ---
 
+#### Agent 5: Claim Plausibility Agent *(soft signal, no direct weight)*
+
+**Location:** `agents/plausibility_agent.py` â†’ `ClaimPlausibilityAgent.analyse()`
+
+**Input:**
+- `claim`: Text claim
+- `caption`: BLIP-generated caption
+
+**What it does:**
+- Flags claims that *sound* suspicious or inconsistent with the caption even if web evidence is missing
+- Typical red flags: extraordinary/conspiracy framing, entity-type mismatch, overly specific unverifiable assertions, or claim text that contradicts what the caption describes
+
+**Output:** `plausibility_result: Dict`
+```json
+{
+  "plausibility_score": 0.70,
+  "red_flags": [],
+  "positive_signals": [],
+  "claim_type_assessment": "ordinary|extraordinary|misleading_framing|entity_mismatch",
+  "reasoning": "brief explanation"
+}
+```
+
+**How it affects the verdict:**
+- Used as an additional OUT-OF-CONTEXT signal in the aggregator's *adaptive threshold* logic
+- It does **not** contribute a weighted term inside `final_score`
+
+---
+
 ### Phase 3: Aggregation & Verdict
 
 #### Step 3.1 — Aggregator Decision
 
 **Module:** `agents/aggregator_agent.py` → `AggregatorAgent.aggregate()`
 
-**Calculation:**
-```
-final_score = (0.35 × entity_score) 
-            + (0.30 × temporal_score)
-            + (0.20 × credibility_score)
-            + (0.15 × clip_score)
-```
+**Calculation (implemented):**
+- `final_score` is a weighted fusion of `entity_score`, `temporal_score`, `credibility_score`, and `clip_score`
+- If credibility evidence is absent, its weight is redistributed to the other signals
+- Plausibility is a soft signal used to adjust the adaptive threshold (not a weighted term in `final_score`)
 
 **Weights Rationale:**
 - Entity + Temporal: **65%** — Core mismatch detection (people, place, time)
@@ -653,7 +684,7 @@ Flags:
 - `node_temporal_agent`: Temporal reasoning
 - `node_credibility_agent`: Source credibility
 - `node_score_fusion`: Calculate final score
-- `node_aggregator_agent`: Generate explanation
+- `node_aggregator`: Fuse scores + generate explanation
 
 ---
 
@@ -699,14 +730,19 @@ Flags:
 
 ## Scoring System
 
-### Individual Agent Scores
+This section describes the implemented end-to-end scoring + verdict logic (see `agents/aggregator_agent.py` and `backend/config.py`).
 
-| Agent | Weight | Range | Interpretation |
-|-------|--------|-------|---|
-| **Entity** | 35% | 0.0-1.0 | People/place/org consistency |
-| **Temporal** | 30% | 0.0-1.0 | Date/time consistency |
-| **Credibility** | 20% | 0.0-1.0 | Source trustworthiness |
-| **CLIP** | 15% | 0.0-1.0 | Visual consistency |
+### Agent Outputs (0.0 â†’ 1.0)
+
+| Agent | Used in `final_score`? | Default weight | What the score means |
+|---|---:|---:|---|
+| **Entity** | Yes | `0.25` (`WEIGHT_ENTITY`) | Do entities/scene details match across claim, caption, and evidence? |
+| **Temporal** | Yes | `0.30` (`WEIGHT_TEMPORAL`) | Is the claimed time consistent? Also outputs `claim_type` (TYPE_A/B/C). |
+| **Credibility** | Yes* | `0.20` (`WEIGHT_CREDIBILITY`) | Are there reliable sources supporting/contradicting the claim? |
+| **CLIP** | Yes | `0.25` (`WEIGHT_CLIP`) | Local visual consistency: imageâ†”claim vs imageâ†”caption baseline. |
+| **Plausibility** | No | *(soft signal)* | Does not change `final_score` directly; affects threshold via “signal count”. |
+
+`*` Credibility is down-weighted to 0 when the system finds *no usable evidence* (and its weight is redistributed).
 
 ### Score Ranges
 
@@ -739,15 +775,35 @@ Flags:
 ### Final Verdict Logic
 
 ```
-final_score = weighted_avg(all_agents)
+we, wt, wc, wl = WEIGHT_ENTITY, WEIGHT_TEMPORAL, WEIGHT_CREDIBILITY, WEIGHT_CLIP
 
-if final_score >= 0.60:
-    verdict = "PRISTINE"           # ✓ Image consistent with claim
-    confidence = ceil(final_score * 100)
-else:
-    verdict = "OUT-OF-CONTEXT"     # ✗ Detected mismatch
-    confidence = ceil((1 - final_score) * 100)
+if credibility evidence is absent:
+  credibility_score = max(credibility_score, 0.55)
+  we += wc * 0.40
+  wt += wc * 0.35
+  wl += wc * 0.25
+  wc = 0.0
+
+final_score =
+  (we/total)*entity_score +
+  (wt/total)*temporal_score +
+  (wc/total)*credibility_score +
+  (wl/total)*clip_score
+
+signals >= 3  -> threshold = 0.52
+signals == 2  -> threshold = 0.56
+signals <= 1  -> threshold = 0.60
+
+# Absolute overrides force OUT-OF-CONTEXT:
+# - TYPE_A with temporal_score <= 0.20
+# - miscaptioned_signals present with entity_score <= 0.25
+
+verdict = "PRISTINE"       if final_score >= threshold else "OUT-OF-CONTEXT"
 ```
+
+Notes:
+- `confidence_percent` and the public-facing explanation are produced by the aggregator LLM; if that call fails, the code falls back to a deterministic confidence heuristic.
+- CLIP is executed during preprocessing (`node_extract_entities`) and passed forward as `clip_result`.
 
 ---
 
