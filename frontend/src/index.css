@@ -1,38 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;700;800&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg: #0d0f14;
+  --surface: #161a22;
+  --border: #252b38;
+  --text: #e8eaf0;
+  --muted: #6b7280;
+  --pristine: #10b981;
+  --ooc: #ef4444;
+  --accent: #6366f1;
+  --amber: #f59e0b;
 }
 
-html,
-body,
-#root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  @apply bg-slate-50 text-gray-900 dark:bg-[#0B1120] dark:text-white;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-textarea:focus,
-input:focus,
-button:focus {
-  outline: none;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #94a3b8;
-  border-radius: 999px;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text);
+       font-family: 'Syne', sans-serif; min-height: 100vh; }

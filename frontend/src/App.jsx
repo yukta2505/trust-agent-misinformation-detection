@@ -1,37 +1,58 @@
-import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import AnalyzePage from "./components/AnalyzePage";
-import HowItWorksPage from "./components/HowItWorksPage";
-import AboutPage from "./components/AboutPage";
+import { useState } from "react"
+import axios from "axios"
+import UploadForm from "./components/UploadForm"
+import VerdictCard from "./components/VerdictCard"
+import AgentScores from "./components/AgentScores"
+import EvidenceList from "./components/EvidenceList"
+import LoadingSpinner from "./components/LoadingSpinner"
+
+const API = "http://localhost:8000"
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("analyze");
-  const [theme, setTheme] = useState("light");
+  const [result, setResult] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("trust-agent-theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
+  async function handleSubmit(image, claim) {
+    setLoading(true); setError(null); setResult(null)
+    const form = new FormData()
+    form.append("image", image)
+    form.append("claim", claim)
+    try {
+      const { data } = await axios.post(`${API}/analyse`, form)
+      setResult(data)
+    } catch (err) {
+      setError(err.response?.data?.detail || "Server error")
+    } finally {
+      setLoading(false)
     }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("trust-agent-theme", theme);
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme]);
+  }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-gray-900 dark:bg-[#0B1120] dark:text-white transition-colors duration-300">
-      <Navbar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        theme={theme}
-        setTheme={setTheme}
-      />
+    <div style={{ maxWidth: 900, margin: "0 auto", padding: "2rem 1rem" }}>
+      <h1 style={{ fontWeight: 800, fontSize: "2rem", marginBottom: "0.25rem" }}>
+        TRUST-AGENT
+      </h1>
+      <p style={{ color: "var(--muted)", marginBottom: "2rem" }}>
+        Out-of-context misinformation detection
+      </p>
 
-      {activeTab === "analyze" && <AnalyzePage />}
-      {activeTab === "how" && <HowItWorksPage />}
-      {activeTab === "about" && <AboutPage />}
+      <UploadForm onSubmit={handleSubmit} loading={loading} />
+
+      {loading && <LoadingSpinner />}
+      {error && (
+        <div style={{ color: "var(--ooc)", padding: "1rem",
+                      background: "#1a0a0a", borderRadius: 8, marginTop: "1rem" }}>
+          Error: {error}
+        </div>
+      )}
+      {result && (
+        <>
+          <VerdictCard result={result} />
+          <AgentScores result={result} />
+          <EvidenceList evidence={result.evidence} />
+        </>
+      )}
     </div>
-  );
+  )
 }
