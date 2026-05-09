@@ -25,14 +25,17 @@ Graph structure:
               ┌────────────▼┐ ┌▼─────────┐ ┌▼────────────┐
               │entity_agent │ │temp_agent│ │cred_agent   │
               └────────────┬┘ └┬─────────┘ └┬────────────┘
-                           │   │             │             ← fan-in
-                        ┌──▼───▼─────────────▼──┐
-                        │     score_fusion       │
-                        └──────────┬─────────────┘
-                                   │
-                        ┌──────────▼─────────────┐
-                        │      aggregator         │   (Claude)
-                        └──────────┬─────────────┘
+                           │   │             │
+                           │   │             │
+                           │   │             │
+                        ┌──▼───▼───┐         │
+                        │ plausibility │
+                        │   agent      │
+                        └──────┬───────┘
+                               │
+                        ┌──────▼────────────┐
+                        │     aggregator     │   (Claude)
+                        └──────────┬─────────┘
                                    │
                                __end__
 """
@@ -65,10 +68,15 @@ class TrustAgentResult:
     entity_analysis: Dict[str, Any]
     temporal_analysis: Dict[str, Any]
     credibility_analysis: Dict[str, Any]
+    plausibility_analysis: Dict[str, Any]
     entity_score: float
     temporal_score: float
     credibility_score: float
+    plausibility_score: float
     final_score: float
+    threshold_used: float
+    ooc_signal_count: int
+    ooc_category: str
     verdict: str
     confidence_percent: int
     explanation: str
@@ -88,11 +96,16 @@ class TrustAgentResult:
                 "entity": round(self.entity_score, 4),
                 "temporal": round(self.temporal_score, 4),
                 "credibility": round(self.credibility_score, 4),
+                "plausibility": round(self.plausibility_score, 4),
                 "final_weighted": round(self.final_score, 4),
             },
             "entity_analysis": self.entity_analysis,
             "temporal_analysis": self.temporal_analysis,
             "credibility_analysis": self.credibility_analysis,
+            "plausibility_analysis": self.plausibility_analysis,
+            "threshold_used": self.threshold_used,
+            "ooc_signal_count": self.ooc_signal_count,
+            "ooc_category": self.ooc_category,
             "verdict": self.verdict,
             "confidence_percent": self.confidence_percent,
             "explanation": self.explanation,
@@ -129,11 +142,11 @@ class TrustAgentOrchestrator:
         builder.add_node("caption",           nodes["node_caption"])
         builder.add_node("extract_entities",  nodes["node_extract_entities"])
         builder.add_node("retrieve_evidence", nodes["node_retrieve_evidence"])
-        builder.add_node("entity_agent",      nodes["node_entity_agent"])
-        builder.add_node("temporal_agent",    nodes["node_temporal_agent"])
-        builder.add_node("credibility_agent", nodes["node_credibility_agent"])
-        builder.add_node("score_fusion",      nodes["node_score_fusion"])
-        builder.add_node("aggregator",        nodes["node_aggregator"])
+        builder.add_node("entity_agent",         nodes["node_entity_agent"])
+        builder.add_node("temporal_agent",       nodes["node_temporal_agent"])
+        builder.add_node("credibility_agent",    nodes["node_credibility_agent"])
+        builder.add_node("plausibility_agent",   nodes["node_plausibility_agent"])
+        builder.add_node("aggregator",           nodes["node_aggregator"])
 
         # Sequential: start → caption → entities → evidence
         builder.add_edge(START,               "caption")
@@ -144,15 +157,16 @@ class TrustAgentOrchestrator:
         builder.add_edge("retrieve_evidence", "entity_agent")
         builder.add_edge("retrieve_evidence", "temporal_agent")
         builder.add_edge("retrieve_evidence", "credibility_agent")
+        builder.add_edge("retrieve_evidence", "plausibility_agent")
 
-        # Fan-in: all 3 → score_fusion
-        builder.add_edge("entity_agent",      "score_fusion")
-        builder.add_edge("temporal_agent",    "score_fusion")
-        builder.add_edge("credibility_agent", "score_fusion")
+        # Fan-in: all agents into aggregator
+        builder.add_edge("entity_agent",       "aggregator")
+        builder.add_edge("temporal_agent",     "aggregator")
+        builder.add_edge("credibility_agent",  "aggregator")
+        builder.add_edge("plausibility_agent", "aggregator")
 
-        # Final: fusion → aggregator → end
-        builder.add_edge("score_fusion",      "aggregator")
-        builder.add_edge("aggregator",        END)
+        # Final: aggregator → end
+        builder.add_edge("aggregator",         END)
 
         return builder.compile()
 
@@ -193,10 +207,15 @@ class TrustAgentOrchestrator:
             entity_analysis=final_state.get("entity_result", {}),
             temporal_analysis=final_state.get("temporal_result", {}),
             credibility_analysis=final_state.get("credibility_result", {}),
+            plausibility_analysis=final_state.get("plausibility_result", {}),
             entity_score=final_state.get("entity_score", 0.5),
             temporal_score=final_state.get("temporal_score", 0.5),
             credibility_score=final_state.get("credibility_score", 0.5),
+            plausibility_score=float((final_state.get("plausibility_result", {}) or {}).get("plausibility_score", 0.70)),
             final_score=final_state.get("final_score", 0.5),
+            threshold_used=float(final_state.get("threshold_used", 0.0)),
+            ooc_signal_count=int(final_state.get("ooc_signal_count", 0)),
+            ooc_category=str(final_state.get("ooc_category", "none")),
             verdict=final_state.get("verdict", "OUT-OF-CONTEXT"),
             confidence_percent=final_state.get("confidence_percent", 50),
             explanation=final_state.get("explanation", ""),

@@ -1,49 +1,46 @@
 id,image_path,caption,ground_truth,proof_link,type,collector
-1,dataset/images/img001.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-2,dataset/images/img002.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-3,dataset/images/img003.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-4,dataset/images/img004.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-5,dataset/images/img005.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-6,dataset/images/img006.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-7,dataset/images/img007.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-8,dataset/images/img008.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-9,dataset/images/img009.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-10,dataset/images/img010.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-11,dataset/images/img011.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-12,dataset/images/img012.jpg,[REAL CAPTION FROM SOURCE],PRISTINE,[proof URL],real_news,Saakshi
-13,dataset/images/img013.jpg,"Massive floods hit Chennai today (March 2026), city completely underwater.",OUT-OF-CONTEXT,https://www.investing.com/news/world-news/record-rains-flood-south-indian-state%3B-more-to-come-374014,time_trick,Yukta
-14,dataset/images/img014.jpg,Breaking: Notre Dame Cathedral caught fire again today in 2026.,OUT-OF-CONTEXT,https://www.bbc.com/news/world-europe-47941794,time_trick,Yukta
+1,dataset/images/img001.jpg,"""Iconic 19th Century painting sets Indian art record with $17.9m sale""",PRISTINE,https://www.bbc.com/news/articles/cje4l98wjzwo,real_news,Saakshi
+2,dataset/images/img002.jpg,"""New Peaky Blinders TV series to star Jamie Bell""",PRISTINE,https://www.bbc.com/news/articles/ce35njqvz02o,real_news,Saakshi
+3,dataset/images/img003.jpg,"""Fifteen‑year‑old Sooryavanshi tears apart Chennai with 15‑ball fifty in IPL""",PRISTINE,https://www.reuters.com/sports/cricket/fifteenyearold-sooryavanshi-tears-apart-chennai-with-15ball-fifty-ipl-2026-03-30/,real_news,Saakshi
+4,dataset/images/img004.jpg,"""Taylor Swift sued for trademark infringement over 'Life of a Showgirl'",PRISTINE,https://www.reuters.com/legal/litigation/taylor-swift-sued-trademark-infringement-over-life-showgirl-2026-03-30/,real_news,Saakshi
+5,dataset/images/img005.jpg,"""Singer Olivia Dean wins big at BRIT Awards""",PRISTINE,https://www.reuters.com/business/media-telecom/messy-singer-lola-young-olivia-dean-vie-prizes-brit-awards-2026-02-28/,real_news,Saakshi
+6,dataset/images/img006.jpg,"""Bollywood's 'He-Man' Dharmendra dies at 89""",PRISTINE,https://www.bbc.com/news/articles/cg66lv566kyo,real_news,Saakshi
+7,dataset/images/img007.jpg,"""Russian attack on Ukraine market kills five""",PRISTINE,https://www.bbc.com/news/articles/cp869m2gzr0o,real_news,Saakshi
+8,dataset/images/img008.jpg,"""Strong 7.4 magnitude quake hits southern Philippines""",PRISTINE,https://www.bbc.com/news/articles/cjr5e0jrqnyo,real_news,Saakshi
+9,dataset/images/img009.jpg,"""Amy Madigan wins best supporting actress Oscar for 'Weapons'",PRISTINE,https://www.reuters.com/business/media-telecom/amy-madigan-wins-best-supporting-actress-oscar-weapons-2026-03-15/,real_news,Saakshi
+10,dataset/images/img010.jpg,"""New Isles of Scilly freight ship begins sea trials""",PRISTINE,https://www.bbc.com/news/articles/cn82q5d6vq6o,real_news,Saakshi
+11,dataset/images/img011.jpg,"""No Kings protests draw large crowds to rally against Donald Trump""",PRISTINE,https://www.bbc.com/news/articles/cq8wy7g1gd1o,real_news,Saakshi
+12,dataset/images/img012.jpg,"""Serbian students, protesters clash with police in Belgrade""",PRISTINE,https://www.reuters.com/world/serbian-students-protesters-clash-with-police-belgrade-2026-03-31/,real_news,Saakshi
+13,dataset/images/img013.jpg,"“Massive floods hit Chennai today (March 2026), city completely underwater.”",OUT-OF-CONTEXT,https://www.investing.com/news/world-news/record-rains-flood-south-indian-state%3B-more-to-come-374014,time_trick,Yukta
+14,dataset/images/img014.jpg,“Breaking: Notre Dame Cathedral caught fire again today in 2026.”,OUT-OF-CONTEXT,https://www.bbc.com/news/world-europe-47941794,time_trick,Yukta
 15,dataset/images/img015.jpg,Huge earthquake destroys buildings in Nepal today (2026).,OUT-OF-CONTEXT,https://www.bbc.com/news/world-asia-32470731,time_trick,Yukta
-16,dataset/images/img016.jpg,India enters sudden nationwide lockdown today in April 2026.,OUT-OF-CONTEXT,https://www.reuters.com/news/picture/indias-migrants-walk-home-amid-coronavir-idINRTX7J45T/,time_trick,Yukta
-17,dataset/images/img017.jpg,"Massive explosion rocks Beirut today (2026), hundreds feared injured.",OUT-OF-CONTEXT,https://www.bbc.com/news/world-middle-east-53656220,time_trick,Yukta
-18,dataset/images/img018.jpg,Violence erupts again at US Capitol today in 2025.,OUT-OF-CONTEXT,https://www.reuters.com/news/picture/inside-the-jan-6-us-capitol-attack-idUSRTSETQAA/,time_trick,Yukta
-19,dataset/images/img019.jpg,"Heavy rains cause devastating floods in Kerala today (2026), thousands displaced.",OUT-OF-CONTEXT,https://www.reuters.com/world/india/several-feared-dead-after-landslides-indias-kerala-local-media-report-2024-07-30/,time_trick,Yukta
-20,dataset/images/img020.jpg,"Massive bushfires spread across Australia today (2026), wildlife in danger.",OUT-OF-CONTEXT,https://www.bbc.com/news/science-environment-51590080,time_trick,Yukta
-21,dataset/images/img021.jpg,Protests erupt across US cities today (2026) after police incident.,OUT-OF-CONTEXT,https://apnews.com/article/black-lives-matter-90-million-finances-8a80cad199f54c0c4b9e74283d27366f,time_trick,Yukta
-22,dataset/images/img022.jpg,"Strong earthquake hits Japan today (2026), buildings damaged and people evacuated.",OUT-OF-CONTEXT,https://www.reuters.com/article/economy/japan-quake-property-damage-could-total-35-billion-rms-idUSKCN0XI0XC/,time_trick,Yukta
-23,dataset/images/img023.jpg,"Wildfires spread rapidly in California today (2026), emergency declared.",OUT-OF-CONTEXT,https://www.bbc.com/news/live/c5y81zyp1ext?page=4,time_trick,Yukta
-24,dataset/images/img024.jpg,"Violent protests break out in Paris today (2026), police clash with crowds.",OUT-OF-CONTEXT,https://www.reuters.com/article/world/death-toll-in-french-yellow-vest-protests-rises-to-nine-idUSKCN1OJ1JU/,time_trick,Yukta
-25,dataset/images/img025.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-26,dataset/images/img026.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-27,dataset/images/img027.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-28,dataset/images/img028.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-29,dataset/images/img029.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-30,dataset/images/img030.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-31,dataset/images/img031.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-32,dataset/images/img032.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-33,dataset/images/img033.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-34,dataset/images/img034.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-35,dataset/images/img035.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-36,dataset/images/img036.jpg,[REAL IMAGE - WRONG LOCATION IN CAPTION],OUT-OF-CONTEXT,[original source URL],place_trick,Yashaswini
-37,dataset/images/img037.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-38,dataset/images/img038.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-39,dataset/images/img039.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-40,dataset/images/img040.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-41,dataset/images/img041.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-42,dataset/images/img042.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-43,dataset/images/img043.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-44,dataset/images/img044.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-45,dataset/images/img045.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-46,dataset/images/img046.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-47,dataset/images/img047.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
-48,dataset/images/img048.jpg,[REAL IMAGE - WRONG CONTEXT IN CAPTION],OUT-OF-CONTEXT,[original source URL],context_trick,Apurva
+16,dataset/images/img016.webp,India enters sudden nationwide lockdown today in April 2026.,OUT-OF-CONTEXT,https://www.reuters.com/news/picture/indias-migrants-walk-home-amid-coronavir-idINRTX7J45T/,time_trick,Yukta
+17,dataset/images/img017.jpg,"“Massive explosion rocks Beirut today (2026), hundreds feared injured.”",OUT-OF-CONTEXT,https://www.bbc.com/news/world-middle-east-53656220,time_trick,Yukta
+18,dataset/images/img018.jpg,Violence erupts again at US Capitol today in 2025,OUT-OF-CONTEXT,https://www.britannica.com/event/January-6-U-S-Capitol-attack,time_trick,Yukta
+19,dataset/images/img019.jpg,"“Heavy rains cause devastating floods in Kerala today (2026), thousands displaced.”",OUT-OF-CONTEXT,https://www.indiatvnews.com/news/india-kerala-floods-latest-updates-rescue-relief-operation-on-war-footing-many-people-killed-torrential-rains-overflowing-rivers-landslides-458495,time_trick,Yukta
+20,dataset/images/img020.jpg,"“Massive bushfires spread across Australia today (2026), wildlife in danger.”",OUT-OF-CONTEXT,https://www.bbc.com/news/science-environment-51590080,time_trick,Yukta
+21,dataset/images/img021.jpg,“Protests erupt across US cities today (2026) after police incident.”,OUT-OF-CONTEXT,https://apnews.com/article/black-lives-matter-90-million-finances-8a80cad199f54c0c4b9e74283d27366f,time_trick,Yukta
+22,dataset/images/img022.jpg,"“Strong earthquake hits Japan today (2026), buildings damaged and people evacuated.”",OUT-OF-CONTEXT,https://www.reuters.com/article/economy/japan-quake-property-damage-could-total-35-billion-rms-idUSKCN0XI0XC/,time_trick,Yukta
+23,dataset/images/img023.jpg,"“Wildfires spread rapidly in California today (2026), emergency declared.”",OUT-OF-CONTEXT,https://www.bbc.com/news/live/c5y81zyp1ext?page=4,time_trick,Yukta
+24,dataset/images/img024.jpg,"“Violent protests break out in Paris today (2026), police clash with crowds.”",OUT-OF-CONTEXT,https://www.reuters.com/article/world/death-toll-in-french-yellow-vest-protests-rises-to-nine-idUSKCN1OJ1JU/,time_trick,Yukta
+25,dataset/images/img025.jpeg,"""Men paddle their boat through the lawns of a partially submerged church in Tamil Nadu""",OUT-OF-CONTEXT,https://www.reuters.com/news/picture/floods-in-kerala-idINRTS1XFOF/?utm_source=chatgpt.com,place_trick,Yashaswini
+26,dataset/images/img026.jpeg,"""A man removes debris from a collapsed house after floods in Paravur, in Karnataka, India""",OUT-OF-CONTEXT,https://www.reuters.com/news/picture/floods-in-kerala-idINRTS1XFOF/?utm_source=chatgpt.com,place_trick,Yashaswini
+27,dataset/images/img027.jpeg,"""An Army soldier carries an infant as they evacuate flood-affected people to a safer place in Beed district""",OUT-OF-CONTEXT,https://www.reuters.com/news/picture/monsoon-rains-flood-parts-of-india-idUSRTS2MBE8/?utm_source=chatgpt.com,place_trick,Yashaswini
+28,dataset/images/img028.jpeg,"""Navy personnel evacuate flood-affected people to safer places in Kolhapur district in the -state of Maharashtra""",OUT-OF-CONTEXT,https://www.reuters.com/news/picture/monsoon-rains-flood-parts-of-india-idUSRTS2MBE8/?utm_source=chatgpt.com,place_trick,Yashaswini
+29,dataset/images/img029.jpeg,"""School girls wade through a waterlogged street after heavy rains in Punjab""",OUT-OF-CONTEXT,https://www.reuters.com/news/picture/monsoon-rains-flood-parts-of-india-idUSRTS2MBE8/?utm_source=chatgpt.com,place_trick,Yashaswini
+30,dataset/images/img030.jpg,"""WTO membership could boost France's economy, even as the trade group faces crisis""",OUT-OF-CONTEXT,https://www.reuters.com/world/africa/wto-membership-could-boost-ethiopias-economy-even-trade-group-faces-crisis-2026-04-02/,place_trick,Yashaswini
+31,dataset/images/img031.jpg,"""Peru in talks with US over third-country deportations""",OUT-OF-CONTEXT,https://www.reuters.com/world/americas/congo-talks-with-us-over-third-country-deportations-sources-say-2026-04-03/,place_trick,Yashaswini
+32,dataset/images/img032.jpg,"""Trump may have given Iraq a $500 bln money spinner""",OUT-OF-CONTEXT,https://www.reuters.com/commentary/breakingviews/trump-may-have-given-iran-500-bln-money-spinner-2026-04-01/,place_trick,Yashaswini
+33,dataset/images/img033.jpg,"""Kenya asks Gulf nations for steady energy supply, safety of Korean vessels""",OUT-OF-CONTEXT,https://www.reuters.com/sustainability/boards-policy-regulation/south-korea-asks-gulf-nations-steady-energy-supply-safety-korean-vessels-2026-04-05/,place_trick,Yashaswini
+34,dataset/images/img034.jpg,"""Ukraine raises electricity prices for higher-use households, businesses amid energy crisis""",OUT-OF-CONTEXT,https://www.reuters.com/business/energy/egypt-raises-electricity-prices-higher-use-households-businesses-april-2026-04-04/,place_trick,Yashaswini
+35,dataset/images/img035.png,"""Russian males under 45 may need military approval for long stays abroad""",OUT-OF-CONTEXT,https://www.bbc.com/news/articles/cvg3nr83xyvo,place_trick,Yashaswini
+36,dataset/images/img036.jpg,"""'God squad' waives animal protections to expand oil drilling in Gulf of Maldives""",OUT-OF-CONTEXT,https://www.bbc.com/news/articles/cre19zrg5dxo,place_trick,Yashaswini
+37,dataset/images/img037.jpg,"""Citizens gather in Mosul to protest against rising fuel prices and economic conditions""",OUT-OF-CONTEXT,Iraqis celebrate win over Bolivia as they qualified for world cup,context_trick,Apurva
+38,dataset/images/img038.jpg,"""Government officials gather in Tokyo for an emergency national security meeting.""",OUT-OF-CONTEXT,Japan Airlines group initiation ceremony,context_trick,Apurva
+39,dataset/images/img039.jpg,"""World leaders gather in Tokyo for emergency peace talks following rising geopolitical tensions.""",OUT-OF-CONTEXT,French President Emmanuel Macron with officials at economic forum in Tokyo,context_trick,Apurva
+40,dataset/images/img040.jpg,"""U.S. President Donald Trump addresses lawmakers during an emergency government meeting in Washington, D.C.""",OUT-OF-CONTEXT,U.S. President Donald Trump and Melania Trump at theatre event,context_trick,Apurva
+41,dataset/images/img041.jpg,"""Protesters stage a demonstration in Malta to highlight human rights concerns.""",OUT-OF-CONTEXT,Interactive Street Play Actors performing crucifixion scene during Holy Week Passion play in Malta,context_trick,Apurva
+42,dataset/images/img042.jpg,"""A gas explosion damages a residential building in Beirut""",OUT-OF-CONTEXT,"An Israeli strike on a building in Beirut,Lebanon",context_trick,Apurva
+43,dataset/images/img043.jpg,"""Journalists gather in Florida to cover a missile test that Military personnel prepare for a defense rocket test at a military base.""",OUT-OF-CONTEXT,NASA Artemis II rocket on launch pad with photographers,context_trick,Apurva
+44,dataset/images/img044.jpg,"""Citizens painted themselves and gather for a political rally ahead of upcoming elections at Baltic Square in Gateshead.""",OUT-OF-CONTEXT,People join Holi festival in celebration of colour and music.,context_trick,Apurva
+45,dataset/images/img045.jpg,"""Authorities control a crowd after protests erupted during a public gathering in Kolkata's Salt Lake Stadium.""",OUT-OF-CONTEXT,Angry fans throw chairs and bottles at Messi event in India.,context_trick,Apurva

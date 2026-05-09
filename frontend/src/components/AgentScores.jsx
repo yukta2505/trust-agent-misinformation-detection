@@ -33,6 +33,8 @@ export default function AgentScores({ result }) {
                 score={result.temporal_score} color="var(--amber)" />
       <ScoreBar label="Source Credibility (30%)"
                 score={result.credibility_score} color="#34d399" />
+      <ScoreBar label="Claim Plausibility (soft)"
+                score={result.plausibility_score ?? 0.7} color="#f97316" />
       <div style={{ marginTop: "1rem", paddingTop: "1rem",
                     borderTop: "1px solid var(--border)" }}>
         <ScoreBar label="Final Weighted Score"

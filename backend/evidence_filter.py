@@ -1,6 +1,10 @@
 """
 Evidence quality filter — removes irrelevant results before agents see them.
-Place this file in your backend/ folder.
+
+IMPORTANT: Be conservative with filtering.
+It is better to pass slightly irrelevant evidence than to remove real evidence.
+The agents (GPT/Groq) are smart enough to ignore irrelevant sources.
+The filter should only remove OBVIOUS garbage like music videos and dictionary pages.
 """
 
 from __future__ import annotations
@@ -11,47 +15,47 @@ from typing import Any, Dict, List
 
 LOG = logging.getLogger(__name__)
 
-# ── Noise source patterns — always remove these ───────────────────────────────
+# ── Only remove OBVIOUS garbage ───────────────────────────────────────────────
+# Keep this list SHORT — only things that are NEVER useful for fact-checking
+
 _NOISE_TITLE_PATTERNS = [
-    # Generic concept articles
-    "metropolitan area", "what is a metro", "metropolitan area network",
-    "definition", "merriam-webster", "britannica", "study.com",
-    # Music/entertainment
-    "official video", "official music video", "audio", "stream/download",
-    "subscribe for more", "official audio", "lyric video", "music video",
-    "ft.", "feat.", "album", "single", "spotify", "soundcloud",
-    # Generic YouTube
-    "youtube - topic", "vevo",
+    # Music content
+    "official music video", "official video", "stream/download",
+    "ft. kian", "duckwrth", "audio stream",
+    # Generic concept definitions (not news)
+    "what is a metropolitan area",
+    "metropolitan area network definition",
+    "merriam-webster definition",
+    # Pure entertainment with no news value
+    "lyrics genius", "azlyrics",
 ]
 
-_NOISE_SOURCE_PATTERNS = [
-    "genius.com", "spotify.com", "soundcloud.com", "bandcamp.com",
-    "musixmatch.com", "azlyrics.com",
+_NOISE_SOURCES = [
+    "genius.com", "azlyrics.com", "spotify.com",
+    "soundcloud.com", "bandcamp.com",
 ]
 
 
-def _is_noise(item: Dict[str, Any]) -> bool:
-    """Return True if this evidence item is clearly irrelevant."""
-    title = (item.get("title") or "").lower()
-    snippet = (item.get("snippet") or "").lower()
-    source = (item.get("source") or "").lower()
-    url = (item.get("url") or "").lower()
+def _is_obvious_garbage(item: Dict[str, Any]) -> bool:
+    """Only returns True for things that are NEVER useful for fact-checking."""
+    title  = (item.get("title", "") or "").lower()
+    source = (item.get("source", "") or "").lower()
+    url    = (item.get("url", "") or "").lower()
 
-    # Check noise title patterns
     for pattern in _NOISE_TITLE_PATTERNS:
-        if pattern in title or pattern in snippet:
+        if pattern in title:
             return True
 
-    # Check noise sources
-    for pattern in _NOISE_SOURCE_PATTERNS:
-        if pattern in source or pattern in url:
+    for noise in _NOISE_SOURCES:
+        if noise in source or noise in url:
             return True
 
-    # YouTube music videos (URL contains watch but title has music keywords)
-    if "youtube" in source and any(
-        kw in title for kw in ["ft.", "feat.", "official", "audio", "album"]
-    ):
-        return True
+    # YouTube music videos specifically (not YouTube news)
+    if "youtube" in source:
+        music_signals = ["ft.", "feat.", "official video",
+                         "official audio", "lyric video", "album"]
+        if any(s in title for s in music_signals):
+            return True
 
     return False
 
@@ -60,52 +64,57 @@ def filter_relevant_evidence(
     evidence: List[Dict[str, Any]],
     claim: str,
     caption: str,
-    min_overlap: int = 2,
+    min_overlap: int = 1,
 ) -> List[Dict[str, Any]]:
     """
-    Keep only evidence items relevant to the claim.
+    Filter evidence — remove obvious garbage, keep everything else.
 
-    Two-stage filter:
-    1. Remove known noise/garbage (music videos, dictionaries, etc.)
-    2. Keep items with keyword overlap with claim
+    Strategy:
+    1. Remove obvious garbage (music videos, dictionary sites)
+    2. Check keyword overlap with claim — keep if overlap >= 1
+    3. If EVERYTHING gets filtered, return original unfiltered list
+       (better to have noisy evidence than no evidence)
     """
     if not evidence:
         return []
 
-    # ── Stage 1: Remove obvious noise ────────────────────────────────────────
+    # ── Stage 1: Remove obvious garbage only ─────────────────────────────────
     stage1 = []
     for e in evidence:
-        if _is_noise(e):
-            LOG.info("[filter] Noise removed: %s", e.get("title", "")[:60])
+        if _is_obvious_garbage(e):
+            LOG.info("[filter] Removed garbage: %s", e.get("title", "")[:60])
         else:
             stage1.append(e)
 
-    LOG.info("[filter] After noise removal: %d / %d items", len(stage1), len(evidence))
-
     if not stage1:
+        LOG.warning("[filter] All items were garbage — returning empty")
         return []
 
-    # ── Stage 2: Keyword overlap with claim ───────────────────────────────────
+    # ── Stage 2: Keyword overlap check ────────────────────────────────────────
+    # Clean claim — remove encoding garbage
+    claim_clean = re.sub(r'[^\x00-\x7F]+', '', claim).lower()
+
     stopwords = {
         "the", "and", "for", "are", "was", "were", "has", "have",
         "that", "this", "with", "from", "but", "not", "been", "its",
         "will", "they", "their", "can", "all", "hit", "today", "now",
         "amid", "after", "over", "into", "out", "more", "than", "when",
-        "about", "been", "also", "had", "who", "one", "him", "her",
-        "what", "just", "back", "would", "could", "should", "may",
+        "about", "also", "had", "who", "one", "what", "just", "back",
+        "shows", "show", "image", "images", "photo", "photograph",
+        "picture", "video", "taken", "captured", "during",
     }
 
-    # Clean claim — remove encoding garbage, lowercase
-    claim_clean = re.sub(r'[^\x00-\x7F]+', '', claim).lower()
     claim_words = {
         w for w in re.findall(r'[a-z]{3,}', claim_clean)
         if w not in stopwords
     }
 
-    LOG.info("[filter] Claim keywords for matching: %s", sorted(claim_words))
+    LOG.debug("[filter] Claim keywords: %s", sorted(claim_words)[:15])
 
+    # If no meaningful keywords extracted — return all stage1 results
     if not claim_words:
-        # Can't filter — return stage1 results as-is
+        LOG.info("[filter] No keywords extracted — returning %d items unfiltered",
+                 len(stage1))
         return stage1
 
     filtered = []
@@ -121,16 +130,19 @@ def filter_relevant_evidence(
 
         if overlap >= min_overlap:
             filtered.append(item)
-            LOG.info("[filter] KEPT (overlap=%d): %s",
-                     overlap, item.get("title", "")[:60])
         else:
-            LOG.info("[filter] REMOVED (overlap=%d): %s",
-                     overlap, item.get("title", "")[:60])
+            LOG.debug("[filter] Low overlap (%d): %s",
+                      overlap, item.get("title", "")[:60])
 
-    # If filter removed everything, return stage1 to avoid empty evidence
-    if not filtered:
-        LOG.warning("[filter] All items filtered out — returning stage1 unfiltered")
+    # ── Safety net: never return empty if stage1 had results ─────────────────
+    if not filtered and stage1:
+        LOG.warning(
+            "[filter] Keyword filter removed all %d items — "
+            "returning unfiltered stage1 to preserve evidence",
+            len(stage1)
+        )
         return stage1
 
-    LOG.info("[filter] Final: %d relevant items kept", len(filtered))
+    LOG.info("[filter] Kept %d / %d evidence items (from %d total)",
+             len(filtered), len(stage1), len(evidence))
     return filtered
