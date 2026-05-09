@@ -31,6 +31,7 @@ export default function AnalyzePage() {
     { title: "Context Analysis", icon: Eye },
     { title: "Temporal Check", icon: Search },
     { title: "Source Verification", icon: Shield },
+    { title: "Claim Plausibility", icon: AlertTriangle },
   ];
 
   const handleBrowse = () => inputRef.current?.click();
@@ -79,8 +80,9 @@ export default function AnalyzePage() {
 
   // Derive display values from real API response
   // API returns: verdict, confidence_percent, entity_score, temporal_score,
-  //              credibility_score, final_score, explanation, caption,
-  //              flags, key_evidence_for_verdict, evidence[]
+  //              credibility_score, plausibility_score, final_score,
+  //              explanation, caption, flags, key_evidence_for_verdict,
+  //              evidence[], ooc_category, threshold_used
   const isOOC = result?.verdict === "OUT-OF-CONTEXT";
   const verdictLabel = result
     ? isOOC
@@ -282,6 +284,13 @@ export default function AnalyzePage() {
               />
             </div>
 
+            {/* OOC Category */}
+            {result.ooc_category && result.ooc_category !== "none" && (
+              <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                Category: <span className="font-semibold text-gray-800 dark:text-gray-200">{result.ooc_category.replace(/_/g, " ")}</span>
+              </p>
+            )}
+
             {/* Explanation */}
             {result.explanation && (
               <p className="mt-5 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -305,7 +314,7 @@ export default function AnalyzePage() {
           </div>
 
           {/* Score Cards */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {scoreCard(
               "Context Score",
               Math.round((result.entity_score ?? 0) * 100),
@@ -323,6 +332,12 @@ export default function AnalyzePage() {
               Math.round((result.credibility_score ?? 0) * 100),
               "Supported by reliable sources",
               Shield
+            )}
+            {scoreCard(
+              "Plausibility Score",
+              Math.round((result.plausibility_score ?? 0.7) * 100),
+              "Claim sounds plausible given the caption",
+              AlertTriangle
             )}
           </div>
 
