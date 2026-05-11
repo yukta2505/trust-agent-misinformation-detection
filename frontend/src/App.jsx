@@ -8,7 +8,7 @@ import AgentScores from "./components/AgentScores"
 import EvidenceList from "./components/EvidenceList"
 import LoadingSpinner from "./components/LoadingSpinner"
 
-const API = "http://localhost:8000"
+const API = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
 function Shell({ children }) {
   const [theme, setTheme] = useState(() => {
