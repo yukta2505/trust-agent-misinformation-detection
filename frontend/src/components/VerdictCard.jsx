@@ -1,70 +1,110 @@
+function clampPct(value) {
+  const num = Number(value)
+  if (!Number.isFinite(num)) return 0
+  return Math.max(0, Math.min(100, Math.round(num)))
+}
+
 export default function VerdictCard({ result }) {
-  const isOOC = result.verdict === "OUT-OF-CONTEXT"
+  const isOOC = result?.verdict === "OUT-OF-CONTEXT"
   const color = isOOC ? "var(--ooc)" : "var(--pristine)"
+  const pct = clampPct(result?.confidence_percent)
 
   return (
-    <div style={{ marginTop: "1.5rem", background: "var(--surface)",
-                  borderRadius: 12, padding: "1.5rem",
-                  border: `2px solid ${color}` }}>
-      <div style={{ display: "flex", alignItems: "center",
-                    gap: "1rem", marginBottom: "1rem" }}>
-        <span style={{ fontSize: "2rem" }}>{isOOC ? "⚠" : "✓"}</span>
-        <div>
-          <div style={{ color, fontWeight: 800, fontSize: "1.4rem" }}>
-            {result.verdict.replace("-", " ")}
+    <section
+      className="panel panel--pad"
+      style={{
+        borderColor: isOOC ? "rgba(239,68,68,.30)" : "rgba(34,197,94,.25)",
+        boxShadow: isOOC ? "var(--shadow), var(--ringDanger)" : "var(--shadow), var(--ringGood)",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 14, flexWrap: "wrap" }}>
+        <div
+          aria-hidden
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 14,
+            display: "grid",
+            placeItems: "center",
+            background: "rgba(255,255,255,.04)",
+            border: "1px solid rgba(255,255,255,.10)",
+          }}
+        >
+          <span style={{ fontSize: 18, color }}>{isOOC ? "⚠" : "✓"}</span>
+        </div>
+
+        <div style={{ flex: "1 1 280px", minWidth: 260 }}>
+          <div className="panel__kicker">Verdict</div>
+          <div className="panel__title" style={{ color }}>
+            {String(result?.verdict || "").replaceAll("-", " ")}
           </div>
-          <div style={{ color: "var(--muted)", fontSize: "0.85rem" }}>
-            {result.confidence_percent}% confidence
-            · processed in {result.processing_time_sec}s
+
+          <div className="kv">
+            <span>
+              <strong className="badge__mono" style={{ color }}>{pct}%</strong> <span>confidence</span>
+            </span>
+            <span>•</span>
+            <span>
+              processed in <strong className="badge__mono">{result?.processing_time_sec}s</strong>
+            </span>
+          </div>
+
+          <div style={{ marginTop: 12 }}>
+            <div className="meter" aria-label={`Confidence ${pct}%`}>
+              <div className="meter__fill" style={{ "--w": `${pct}%`, "--c": color }} />
+            </div>
           </div>
         </div>
-        {/* Confidence bar */}
-        <div style={{ flex: 1, height: 8, background: "var(--border)",
-                      borderRadius: 4, overflow: "hidden", marginLeft: "auto" }}>
-          <div style={{ width: `${result.confidence_percent}%`,
-                        height: "100%", background: color,
-                        transition: "width 1s ease" }} />
-        </div>
+
+        <span className="badge" style={{ borderColor: "rgba(255,255,255,.14)" }}>
+          <span style={{ width: 8, height: 8, borderRadius: 999, background: color }} />
+          <span className="badge__mono">{pct}%</span>
+        </span>
       </div>
 
-      <p style={{ lineHeight: 1.7, marginBottom: "1rem" }}>
-        {result.explanation}
+      <div className="divider" />
+
+      <p style={{ margin: 0, color: "var(--text)", lineHeight: 1.75, fontSize: 16 }}>
+        {result?.explanation}
       </p>
 
-      {result.caption && (
-        <div style={{ color: "var(--muted)", fontSize: "0.85rem",
-                      fontFamily: "'DM Mono', monospace",
-                      background: "#0d0f14", padding: "0.5rem 0.75rem",
-                      borderRadius: 6 }}>
-          Caption: {result.caption}
+      {result?.caption && (
+        <div style={{ marginTop: 14 }}>
+          <div className="panel__kicker">Caption</div>
+          <div
+            className="badge badge__mono"
+            style={{
+              marginTop: 8,
+              display: "block",
+              borderRadius: 14,
+              padding: "10px 12px",
+              background: "rgba(0,0,0,.18)",
+              borderColor: "rgba(255,255,255,.10)",
+              color: "var(--muted)",
+            }}
+          >
+            {result.caption}
+          </div>
         </div>
       )}
 
-      {result.flags.length > 0 && (
-        <div style={{ marginTop: "1rem" }}>
-          <div style={{ color: "var(--ooc)", fontWeight: 700,
-                        fontSize: "0.85rem", marginBottom: "0.4rem" }}>
-            RED FLAGS
-          </div>
-          {result.flags.map((f, i) => (
-            <div key={i} style={{ color: "#fca5a5", fontSize: "0.875rem",
-                                   padding: "0.2rem 0" }}>⚠ {f}</div>
-          ))}
+      {Array.isArray(result?.flags) && result.flags.length > 0 && (
+        <div style={{ marginTop: 14 }}>
+          <div className="panel__kicker" style={{ color: "rgba(239,68,68,.9)" }}>Red Flags</div>
+          <ul style={{ margin: "8px 0 0", paddingLeft: 18, color: "rgba(252,165,165,.95)", lineHeight: 1.7 }}>
+            {result.flags.map((f, i) => <li key={i}>{f}</li>)}
+          </ul>
         </div>
       )}
 
-      {result.key_evidence_for_verdict.length > 0 && (
-        <div style={{ marginTop: "1rem" }}>
-          <div style={{ color: color, fontWeight: 700,
-                        fontSize: "0.85rem", marginBottom: "0.4rem" }}>
-            KEY EVIDENCE
-          </div>
-          {result.key_evidence_for_verdict.map((e, i) => (
-            <div key={i} style={{ fontSize: "0.875rem", padding: "0.2rem 0",
-                                   color: "var(--text)" }}>• {e}</div>
-          ))}
+      {Array.isArray(result?.key_evidence_for_verdict) && result.key_evidence_for_verdict.length > 0 && (
+        <div style={{ marginTop: 14 }}>
+          <div className="panel__kicker" style={{ color }}>Key Evidence</div>
+          <ul style={{ margin: "8px 0 0", paddingLeft: 18, color: "var(--text)", lineHeight: 1.7 }}>
+            {result.key_evidence_for_verdict.map((e, i) => <li key={i}>{e}</li>)}
+          </ul>
         </div>
       )}
-    </div>
+    </section>
   )
 }

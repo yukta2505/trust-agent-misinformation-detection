@@ -1,18 +1,21 @@
-function ScoreBar({ label, score, color }) {
-  const pct = Math.round(score * 100)
+function clamp01(v) {
+  const n = Number(v)
+  if (!Number.isFinite(n)) return 0
+  return Math.max(0, Math.min(1, n))
+}
+
+function ScoreRow({ label, score01, color }) {
+  const pct = Math.round(clamp01(score01) * 100)
   return (
-    <div style={{ marginBottom: "0.75rem" }}>
-      <div style={{ display: "flex", justifyContent: "space-between",
-                    marginBottom: "0.3rem", fontSize: "0.8rem" }}>
-        <span style={{ color: "var(--muted)" }}>{label}</span>
-        <span style={{ fontFamily: "'DM Mono', monospace",
-                       color }}>{pct}%</span>
+    <div style={{ padding: "10px 0" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "baseline" }}>
+        <div style={{ fontWeight: 700, color: "var(--text)" }}>{label}</div>
+        <span className="badge badge__mono" style={{ padding: "4px 10px", borderColor: "rgba(255,255,255,.12)" }}>
+          {pct}%
+        </span>
       </div>
-      <div style={{ height: 6, background: "var(--border)",
-                    borderRadius: 3, overflow: "hidden" }}>
-        <div style={{ width: `${pct}%`, height: "100%",
-                      background: color, borderRadius: 3,
-                      transition: "width 1s ease" }} />
+      <div style={{ marginTop: 10 }} className="meter">
+        <div className="meter__fill" style={{ "--w": `${pct}%`, "--c": color }} />
       </div>
     </div>
   )
@@ -20,26 +23,20 @@ function ScoreBar({ label, score, color }) {
 
 export default function AgentScores({ result }) {
   return (
-    <div style={{ marginTop: "1rem", background: "var(--surface)",
-                  borderRadius: 12, padding: "1.5rem",
-                  border: "1px solid var(--border)" }}>
-      <div style={{ fontWeight: 700, marginBottom: "1rem",
-                    fontSize: "0.85rem", color: "var(--muted)" }}>
-        AGENT SCORES
-      </div>
-      <ScoreBar label="Entity Consistency (35%)"
-                score={result.entity_score} color="#818cf8" />
-      <ScoreBar label="Temporal Consistency (35%)"
-                score={result.temporal_score} color="var(--amber)" />
-      <ScoreBar label="Source Credibility (30%)"
-                score={result.credibility_score} color="#34d399" />
-      <ScoreBar label="Claim Plausibility (soft)"
-                score={result.plausibility_score ?? 0.7} color="#f97316" />
-      <div style={{ marginTop: "1rem", paddingTop: "1rem",
-                    borderTop: "1px solid var(--border)" }}>
-        <ScoreBar label="Final Weighted Score"
-                  score={result.final_score} color="var(--accent)" />
-      </div>
-    </div>
+    <section className="panel panel--pad">
+      <div className="panel__kicker">Agent Scores</div>
+      <div className="panel__title">Signals breakdown</div>
+
+      <div className="divider" />
+
+      <ScoreRow label="Entity Consistency (35%)" score01={result?.entity_score} color="#7c83ff" />
+      <ScoreRow label="Temporal Consistency (35%)" score01={result?.temporal_score} color="var(--amber)" />
+      <ScoreRow label="Source Credibility (30%)" score01={result?.credibility_score} color="var(--pristine)" />
+      <ScoreRow label="Claim Plausibility (soft)" score01={result?.plausibility_score ?? 0.7} color="#f97316" />
+
+      <div className="divider" />
+
+      <ScoreRow label="Final Weighted Score" score01={result?.final_score} color="var(--accent)" />
+    </section>
   )
 }
